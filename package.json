@@ -21,6 +21,7 @@
     "test:lint": "eslint . --ext .ts",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
+    "example:test": "cd example && yarn install && cross-env CI=1 yarn test",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
   },
