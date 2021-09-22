@@ -1,0 +1,46 @@
+name: npm release
+on:
+  release:
+    types: [created]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: yarn
+      - name: Run tests
+        run: yarn test
+      - name: Run example tests
+        run: yarn example:test
+
+  bump-npm-version:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Config step
+        run: git config user.email "github@bendcircular.com"
+      - run: git config user.name "gh-action-bump-npm-version"
+      - run: yarn config set version-git-message "ci(package) Increment npm package version v%s"
+      - run: yarn version --patch
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies and build 🔧
+        run: npm install && npm run build
+
+      - name: Publish package on NPM 📦
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN }}
+
+      - run: git push
+      - run: git push --tags

@@ -1,0 +1,13 @@
+name: CI
+on: [pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: yarn
+      - name: Run tests
+        run: yarn test
+      - name: Run example tests
+        run: yarn example:test
