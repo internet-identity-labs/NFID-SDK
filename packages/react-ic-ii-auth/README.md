@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save react-ic-ii-auth
+npm install --save @bendcircular/react-ic-ii-auth
 ```
 
 ## Usage
@@ -39,4 +39,4 @@ export default App
 
 ## License
 
-MIT © [plitzenberger](https://github.com/plitzenberger)
+[MIT](./LICENSE) [© bendcircular GmbH](https://www.bendcircular.com)
