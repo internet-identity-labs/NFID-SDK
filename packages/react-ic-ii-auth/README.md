@@ -2,7 +2,7 @@
 
 > React components to use DFINITY Internet Identity Authentication
 
-[![NPM](https://img.shields.io/npm/v/react-ic-ii-auth.svg)](https://www.npmjs.com/package/@bendcircular/react-ic-ii-auth) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@bendcircular/react-ic-ii-auth.svg)](https://www.npmjs.com/package/@bendcircular/react-ic-ii-auth) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
