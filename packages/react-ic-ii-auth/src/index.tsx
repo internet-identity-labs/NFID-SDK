@@ -6,7 +6,7 @@ import React from 'react'
 interface InternetIdentityContextState {
   error: string | null
   isAuthenticated: boolean
-  principleId: Identity | null
+  identity: Identity | null
   authenticate: () => void
   signout: () => void
 }
@@ -15,21 +15,25 @@ export const InternetIdentityContext =
   React.createContext<InternetIdentityContextState>({
     error: null,
     isAuthenticated: false,
-    principleId: null,
+    identity: null,
     authenticate: () => {},
     signout: () => {}
   })
 
+interface AuthClientOptions extends Omit<AuthClientLoginOptions, 'onSuccess'> {
+  onSuccess?: (identity: Identity) => void
+}
+
 interface UseInternetIdentityProps {
-  authClientOptions?: AuthClientLoginOptions
+  authClientOptions?: AuthClientOptions
 }
 
 export const useInternetIdentity = ({
-  authClientOptions = {}
+  authClientOptions: { onError, onSuccess, ...authClientOptions } = {}
 }: UseInternetIdentityProps = {}) => {
   const [authClient, setAuthClient] = React.useState<AuthClient | null>(null)
   const [isAuthenticated, setIsAuthenticated] = React.useState(false)
-  const [principleId, setPrincipalId] = React.useState<Identity | null>(null)
+  const [identity, setIdentity] = React.useState<Identity | null>(null)
   const [error, setError] = React.useState<string | null>(null)
 
   const createAuthClient = React.useCallback(async () => {
@@ -51,42 +55,42 @@ export const useInternetIdentity = ({
 
   React.useEffect(() => {
     authClient && setAuthStatus(authClient)
-  }, [authClient, setAuthStatus, principleId])
+  }, [authClient, setAuthStatus, identity])
 
-  const getIdentity = React.useCallback(() => {
-    if (authClient) {
-      const identity = authClient.getIdentity()
-      setPrincipalId(identity)
-    }
-  }, [authClient])
+  const handleOnSuccess = React.useCallback((authClient) => {
+    onSuccess && onSuccess(authClient.getIdentity())
+  }, [])
 
-  React.useEffect(() => {
-    isAuthenticated ? getIdentity() : setPrincipalId(null)
-  }, [getIdentity, isAuthenticated])
-
-  const handleError = React.useCallback((error) => {
+  const handleOnError = React.useCallback((error) => {
     setError(error)
+    onError && onError(error)
   }, [])
 
   const authenticate = React.useCallback(async () => {
     if (authClient) {
       await authClient.login({
-        onSuccess: getIdentity,
-        onError: handleError,
+        onSuccess: () => handleOnSuccess(authClient),
+        onError: handleOnError,
         identityProvider: 'https://identity.ic0.app/#authorize',
         ...authClientOptions
       })
     }
-  }, [authClient, getIdentity, handleError])
+  }, [authClient, handleOnError])
 
   const signout = React.useCallback(async () => {
     if (authClient) {
       await authClient.logout()
-      setPrincipalId(null)
+      setIdentity(null)
     }
   }, [authClient])
 
-  return { error, isAuthenticated, principleId, authenticate, signout }
+  return {
+    error,
+    isAuthenticated,
+    identity: authClient ? authClient.getIdentity() : null,
+    authenticate,
+    signout
+  }
 }
 
 interface InternetIdentityProviderProps {
@@ -95,11 +99,11 @@ interface InternetIdentityProviderProps {
 
 export const InternetIdentityProvider: React.FC<InternetIdentityProviderProps> =
   ({ children, authClientOptions = {} }) => {
-    const { error, isAuthenticated, principleId, authenticate, signout } =
+    const { error, isAuthenticated, identity, authenticate, signout } =
       useInternetIdentity({ authClientOptions })
     return (
       <InternetIdentityContext.Provider
-        value={{ error, isAuthenticated, principleId, authenticate, signout }}
+        value={{ error, isAuthenticated, identity, authenticate, signout }}
       >
         {children}
       </InternetIdentityContext.Provider>
