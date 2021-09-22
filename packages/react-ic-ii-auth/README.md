@@ -15,10 +15,14 @@ npm install --save @bendcircular/react-ic-ii-auth
 ```tsx
 import React from 'react'
 
-import { InternetIdentityProvider, useInternetIdentity } from 'react-ic-ii-auth'
+import {
+  InternetIdentityProvider,
+  useInternetIdentity
+} from '@bendcircular/react-ic-ii-auth'
 
 const AuthButthon = () => {
-  const { authenticate, isAuthenticated } = useInternetIdentity()
+  const { authenticate, isAuthenticated, identity } = useInternetIdentity()
+  console.log('>> initialize your actors with', { identity })
   return (
     <button onClick={authenticate}>
       {isAuthenticated ? 'Logout' : 'Login'}
@@ -30,6 +34,9 @@ const App = () => {
   return (
     <InternetIdentityProvider
       authClientOptions={{
+        onSuccess: (identity) => console.log(
+          ">> initialize your actors with", {identity}
+        )
         // NOTE: Overwrite identityProvider in dev mode
         // defaults to "https://identity.ic0.app/#authorize"
         identityProvider: `http://${process.env.II_CANISTER_ID}.localhost:8000/#authorize`

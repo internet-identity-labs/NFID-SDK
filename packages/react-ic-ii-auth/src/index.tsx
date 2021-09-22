@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Identity } from '@dfinity/agent'
 import { AuthClient, AuthClientLoginOptions } from '@dfinity/auth-client'
-import React from 'react'
+import React, { useContext } from 'react'
 
 interface InternetIdentityContextState {
   error: string | null
@@ -28,7 +28,7 @@ interface UseInternetIdentityProps {
   authClientOptions?: AuthClientOptions
 }
 
-export const useInternetIdentity = ({
+const useICIIAuth = ({
   authClientOptions: { onError, onSuccess, ...authClientOptions } = {}
 }: UseInternetIdentityProps = {}) => {
   const [authClient, setAuthClient] = React.useState<AuthClient | null>(null)
@@ -94,13 +94,13 @@ export const useInternetIdentity = ({
 }
 
 interface InternetIdentityProviderProps {
-  authClientOptions?: AuthClientLoginOptions
+  authClientOptions?: AuthClientOptions
 }
 
 export const InternetIdentityProvider: React.FC<InternetIdentityProviderProps> =
   ({ children, authClientOptions = {} }) => {
     const { error, isAuthenticated, identity, authenticate, signout } =
-      useInternetIdentity({ authClientOptions })
+      useICIIAuth({ authClientOptions })
     return (
       <InternetIdentityContext.Provider
         value={{ error, isAuthenticated, identity, authenticate, signout }}
@@ -109,3 +109,7 @@ export const InternetIdentityProvider: React.FC<InternetIdentityProviderProps> =
       </InternetIdentityContext.Provider>
     )
   }
+
+export const useInternetIdentity = () => {
+  return useContext(InternetIdentityContext)
+}
