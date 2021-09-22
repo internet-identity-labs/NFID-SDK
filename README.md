@@ -43,6 +43,11 @@ const App = () => {
 export default App
 ```
 
+## Inspired by:
+
+- https://github.com/dfinity/cancan/blob/031f31c0f45af72e42416043e1a2415642844d4e/src/utils/auth.tsx
+- https://github.com/krpeacock/ic-avatar/blob/main/src/avatar_assets/src/hooks.ts
+
 ## License
 
 [MIT](./LICENSE) [© bendcircular GmbH](https://www.bendcircular.com)
