@@ -1,13 +1,16 @@
 {
-  "name": "react-ic-ii-auth",
+  "name": "@bendcircular/react-ic-ii-auth",
   "version": "0.0.1",
   "description": "React components to use DFINITYs Internet Identity Authentication",
-  "author": "plitzenberger",
+  "author": "Philipp Litzenberger <philipp@bendcircular.com>",
   "license": "MIT",
   "repository": "bendcircular/react-ic-ii-auth",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
+  "keywords": [
+    "react"
+  ],
   "engines": {
     "node": ">=10"
   },
