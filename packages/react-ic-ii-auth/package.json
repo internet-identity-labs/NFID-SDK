@@ -9,7 +9,12 @@
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "keywords": [
-    "react"
+    "typescript",
+    "react",
+    "internet computer",
+    "ic",
+    "webauthn",
+    "identity"
   ],
   "engines": {
     "node": ">=10"
