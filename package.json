@@ -1,6 +1,6 @@
 {
   "name": "@bendcircular/react-ic-ii-auth",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React components to use DFINITYs Internet Identity Authentication",
   "author": "Philipp Litzenberger <philipp@bendcircular.com>",
   "license": "MIT",
