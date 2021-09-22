@@ -13,7 +13,11 @@ const AuthButthon = () => {
 
 const App = () => {
   return (
-    <InternetIdentityProvider>
+    <InternetIdentityProvider
+      authClientOptions={{
+        identityProvider: `http://${process.env.II_CANISTER_ID}.localhost:8000/#authorize`
+      }}
+    >
       <AuthButthon />
     </InternetIdentityProvider>
   )
