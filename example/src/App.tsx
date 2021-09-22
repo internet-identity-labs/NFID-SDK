@@ -1,10 +1,22 @@
 import React from 'react'
 
-import { ExampleComponent } from 'react-ic-ii-auth'
-import 'react-ic-ii-auth/dist/index.css'
+import { InternetIdentityProvider, useInternetIdentity } from 'react-ic-ii-auth'
+
+const AuthButthon = () => {
+  const { authenticate, isAuthenticated } = useInternetIdentity()
+  return (
+    <button onClick={authenticate}>
+      {isAuthenticated ? 'Logout' : 'Login'}
+    </button>
+  )
+}
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return (
+    <InternetIdentityProvider>
+      <AuthButthon />
+    </InternetIdentityProvider>
+  )
 }
 
 export default App
