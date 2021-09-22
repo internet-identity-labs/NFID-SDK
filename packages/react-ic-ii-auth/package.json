@@ -29,7 +29,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "^12.1.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.2",
@@ -67,5 +67,17 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ],
+  "dependencies": {
+    "@dfinity/agent": "0.10.0",
+    "@dfinity/auth-client": "0.10.0",
+    "@dfinity/authentication": "0.10.0",
+    "@dfinity/candid": "0.10.0",
+    "@dfinity/identity": "0.10.0",
+    "@dfinity/principal": "0.10.0"
   }
 }
