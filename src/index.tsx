@@ -1,9 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Identity } from '@dfinity/agent'
-import { AuthClient } from '@dfinity/auth-client'
+import { AuthClient, AuthClientLoginOptions } from '@dfinity/auth-client'
 import React from 'react'
-
-const IDENTITY_PROVIDER = process.env.NEXT_PUBLIC_II_CANISTER_URL
 
 interface InternetIdentityContextState {
   error: string | null
@@ -22,7 +20,13 @@ export const InternetIdentityContext =
     signout: () => {}
   })
 
-export const useInternetIdentity = () => {
+interface UseInternetIdentityProps {
+  authClientOptions?: AuthClientLoginOptions
+}
+
+export const useInternetIdentity = ({
+  authClientOptions = {}
+}: UseInternetIdentityProps = {}) => {
   const [authClient, setAuthClient] = React.useState<AuthClient | null>(null)
   const [isAuthenticated, setIsAuthenticated] = React.useState(false)
   const [principleId, setPrincipalId] = React.useState<Identity | null>(null)
@@ -69,7 +73,8 @@ export const useInternetIdentity = () => {
       await authClient.login({
         onSuccess: getIdentity,
         onError: handleError,
-        identityProvider: IDENTITY_PROVIDER
+        identityProvider: 'https://identity.ic0.app/#authorize',
+        ...authClientOptions
       })
     }
   }, [authClient, getIdentity, handleError])
@@ -84,14 +89,19 @@ export const useInternetIdentity = () => {
   return { error, isAuthenticated, principleId, authenticate, signout }
 }
 
-export const InternetIdentityProvider: React.FC = ({ children }) => {
-  const { error, isAuthenticated, principleId, authenticate, signout } =
-    useInternetIdentity()
-  return (
-    <InternetIdentityContext.Provider
-      value={{ error, isAuthenticated, principleId, authenticate, signout }}
-    >
-      {children}
-    </InternetIdentityContext.Provider>
-  )
+interface InternetIdentityProviderProps {
+  authClientOptions?: AuthClientLoginOptions
 }
+
+export const InternetIdentityProvider: React.FC<InternetIdentityProviderProps> =
+  ({ children, authClientOptions = {} }) => {
+    const { error, isAuthenticated, principleId, authenticate, signout } =
+      useInternetIdentity({ authClientOptions })
+    return (
+      <InternetIdentityContext.Provider
+        value={{ error, isAuthenticated, principleId, authenticate, signout }}
+      >
+        {children}
+      </InternetIdentityContext.Provider>
+    )
+  }

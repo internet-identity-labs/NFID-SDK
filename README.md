@@ -28,7 +28,13 @@ const AuthButthon = () => {
 
 const App = () => {
   return (
-    <InternetIdentityProvider>
+    <InternetIdentityProvider
+      authClientOptions={{
+        // NOTE: Overwrite identityProvider in dev mode
+        // defaults to "https://identity.ic0.app/#authorize"
+        identityProvider: `http://${process.env.II_CANISTER_ID}.localhost:8000/#authorize`
+      }}
+    >
       <AuthButthon />
     </InternetIdentityProvider>
   )
