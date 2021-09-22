@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { InternetIdentityProvider } from '.'
 
 describe('ExampleComponent', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(InternetIdentityProvider).toBeTruthy()
   })
 })
