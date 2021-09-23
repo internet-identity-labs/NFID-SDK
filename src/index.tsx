@@ -58,6 +58,7 @@ const useICIIAuth = ({
   }, [authClient, setAuthStatus, identity])
 
   const handleOnSuccess = React.useCallback((authClient) => {
+    setIsAuthenticated(true)
     onSuccess && onSuccess(authClient.getIdentity())
   }, [])
 
