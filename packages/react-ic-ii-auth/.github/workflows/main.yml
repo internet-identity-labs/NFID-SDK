@@ -9,5 +9,3 @@ jobs:
         run: yarn
       - name: Run tests
         run: yarn test
-      - name: Run example tests
-        run: yarn example:test
