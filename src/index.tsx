@@ -6,7 +6,7 @@ import React, { useContext } from 'react'
 interface InternetIdentityContextState {
   error: string | null
   authClient: AuthClient | null
-  identityProvider: string | URL
+  identityProvider: string
   isAuthenticated: boolean
   identity: Identity | null
   authenticate: () => void
@@ -14,7 +14,15 @@ interface InternetIdentityContextState {
 }
 
 export const InternetIdentityContext =
-  React.createContext<InternetIdentityContextState | null>(null)
+  React.createContext<InternetIdentityContextState>({
+    error: null,
+    authClient: null,
+    identityProvider: '',
+    isAuthenticated: false,
+    identity: null,
+    authenticate: () => {},
+    signout: () => {}
+  })
 
 interface AuthClientOptions extends Omit<AuthClientLoginOptions, 'onSuccess'> {
   onSuccess?: (identity: Identity) => void
@@ -31,8 +39,9 @@ const useICIIAuth = ({
   const [isAuthenticated, setIsAuthenticated] = React.useState(false)
   const [error, setError] = React.useState<string | null>(null)
 
-  const identityProvider =
+  const identityProvider = (
     authClientOptions.identityProvider || 'https://identity.ic0.app/#authorize'
+  ).toString()
 
   const createAuthClient = React.useCallback(async () => {
     const authClient = await AuthClient.create()
