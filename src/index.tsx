@@ -5,6 +5,8 @@ import React, { useContext } from 'react'
 
 interface InternetIdentityContextState {
   error: string | null
+  authClient: AuthClient | null
+  identityProvider: string | URL
   isAuthenticated: boolean
   identity: Identity | null
   authenticate: () => void
@@ -12,13 +14,7 @@ interface InternetIdentityContextState {
 }
 
 export const InternetIdentityContext =
-  React.createContext<InternetIdentityContextState>({
-    error: null,
-    isAuthenticated: false,
-    identity: null,
-    authenticate: () => {},
-    signout: () => {}
-  })
+  React.createContext<InternetIdentityContextState | null>(null)
 
 interface AuthClientOptions extends Omit<AuthClientLoginOptions, 'onSuccess'> {
   onSuccess?: (identity: Identity) => void
@@ -33,8 +29,10 @@ const useICIIAuth = ({
 }: UseInternetIdentityProps = {}) => {
   const [authClient, setAuthClient] = React.useState<AuthClient | null>(null)
   const [isAuthenticated, setIsAuthenticated] = React.useState(false)
-  const [identity, setIdentity] = React.useState<Identity | null>(null)
   const [error, setError] = React.useState<string | null>(null)
+
+  const identityProvider =
+    authClientOptions.identityProvider || 'https://identity.ic0.app/#authorize'
 
   const createAuthClient = React.useCallback(async () => {
     const authClient = await AuthClient.create()
@@ -55,7 +53,7 @@ const useICIIAuth = ({
 
   React.useEffect(() => {
     authClient && setAuthStatus(authClient)
-  }, [authClient, setAuthStatus, identity])
+  }, [authClient, setAuthStatus])
 
   const handleOnSuccess = React.useCallback((authClient) => {
     setIsAuthenticated(true)
@@ -72,7 +70,7 @@ const useICIIAuth = ({
       await authClient.login({
         onSuccess: () => handleOnSuccess(authClient),
         onError: handleOnError,
-        identityProvider: 'https://identity.ic0.app/#authorize',
+        identityProvider,
         ...authClientOptions
       })
     }
@@ -81,12 +79,14 @@ const useICIIAuth = ({
   const signout = React.useCallback(async () => {
     if (authClient) {
       await authClient.logout()
-      setIdentity(null)
+      setIsAuthenticated(false)
     }
   }, [authClient])
 
   return {
     error,
+    authClient,
+    identityProvider,
     isAuthenticated,
     identity: authClient ? authClient.getIdentity() : null,
     authenticate,
@@ -100,11 +100,26 @@ interface InternetIdentityProviderProps {
 
 export const InternetIdentityProvider: React.FC<InternetIdentityProviderProps> =
   ({ children, authClientOptions = {} }) => {
-    const { error, isAuthenticated, identity, authenticate, signout } =
-      useICIIAuth({ authClientOptions })
+    const {
+      error,
+      authClient,
+      identityProvider,
+      isAuthenticated,
+      identity,
+      authenticate,
+      signout
+    } = useICIIAuth({ authClientOptions })
     return (
       <InternetIdentityContext.Provider
-        value={{ error, isAuthenticated, identity, authenticate, signout }}
+        value={{
+          error,
+          authClient,
+          identityProvider,
+          isAuthenticated,
+          identity,
+          authenticate,
+          signout
+        }}
       >
         {children}
       </InternetIdentityContext.Provider>
