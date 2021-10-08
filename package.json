@@ -24,11 +24,12 @@
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
-    "test": "run-s test:unit test:lint test:build",
+    "test": "run-s test:unit test:lint test:build test:example",
     "test:build": "run-s build",
     "test:lint": "eslint . --ext .ts",
     "test:unit": "cross-env CI=1 react-scripts test --env=jest-environment-jsdom-sixteen",
     "test:watch": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "test:example": "cd example && yarn install && cross-env CI=1 yarn test",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
   },
