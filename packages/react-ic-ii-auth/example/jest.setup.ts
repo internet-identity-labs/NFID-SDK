@@ -1,6 +1,6 @@
 // jest.setup.ts
-import "@testing-library/jest-dom";
+import '@testing-library/jest-dom'
 
 // https://stackoverflow.com/questions/68468203/why-am-i-getting-textencoder-is-not-definedin-jest
-import { TextEncoder, TextDecoder } from "util";
-global.TextEncoder = TextEncoder;
+import { TextEncoder } from 'util'
+global.TextEncoder = TextEncoder
