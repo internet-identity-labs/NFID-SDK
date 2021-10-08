@@ -29,7 +29,7 @@
     "test:lint": "eslint . --ext .ts",
     "test:unit": "cross-env CI=1 react-scripts test --env=jest-environment-jsdom-sixteen",
     "test:watch": "react-scripts test --env=jest-environment-jsdom-sixteen",
-    "test:example": "cd example && yarn install && make deploy-local && make test && cross-env CI=1 yarn test",
+    "test:example": "cd example && yarn install && make test && cross-env CI=1 yarn test",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
   },
