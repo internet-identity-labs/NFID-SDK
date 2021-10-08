@@ -1,0 +1,26 @@
+diff --git a/node_modules/@dfinity/agent/lib/cjs/request_id.js b/node_modules/@dfinity/agent/lib/cjs/request_id.js
+index a59edf5..91e2790 100644
+--- a/node_modules/@dfinity/agent/lib/cjs/request_id.js
++++ b/node_modules/@dfinity/agent/lib/cjs/request_id.js
+@@ -34,7 +34,7 @@ function hashValue(value) {
+         const vals = value.map(hashValue);
+         return hash(buffer_1.concat(...vals));
+     }
+-    else if (value instanceof principal_1.Principal) {
++    else if (typeof ((_a = value) === null || _a === void 0 ? void 0 : _a.toUint8Array) === 'function') {
+         return hash(value.toUint8Array());
+     }
+     else if (typeof value === 'object' &&
+diff --git a/node_modules/@dfinity/agent/lib/esm/request_id.js b/node_modules/@dfinity/agent/lib/esm/request_id.js
+index c772c1f..cdcbb8f 100644
+--- a/node_modules/@dfinity/agent/lib/esm/request_id.js
++++ b/node_modules/@dfinity/agent/lib/esm/request_id.js
+@@ -27,7 +27,7 @@ function hashValue(value) {
+         const vals = value.map(hashValue);
+         return hash(concat(...vals));
+     }
+-    else if (value instanceof Principal) {
++    else if (typeof ((_a = value) === null || _a === void 0 ? void 0 : _a.toUint8Array) === 'function') {
+         return hash(value.toUint8Array());
+     }
+     else if (typeof value === 'object' &&

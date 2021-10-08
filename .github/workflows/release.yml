@@ -1,0 +1,45 @@
+name: Deployment
+on: workflow_dispatch
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: BACKEND | write identity pem
+        run: |
+          mkdir -p $ID_PATH
+          echo $GH_ACTION_ADMIN_PEM >> $ID_PATH/identity.pem
+          sed -i 's/\\r\\n/\r\n/g' $ID_PATH/identity.pem
+        shell: bash
+        env:
+          GH_ACTION_ADMIN_PEM: ${{secrets.GH_ACTION_ADMIN_PEM}}
+          ID_PATH: /home/runner/.config/dfx/identity/gin_admin
+      - name: BACKEND | Provision Linux
+        run: bash .github/workflows/dfx-provision-linux.sh
+      - name: BACKEND | Deploy to local network
+        run: make deploy-local
+      - name: BACKEND | Test on local network
+        run: make test
+      - name: BACKEND | Deploy to production
+        run: make deploy
+
+      - name: FRONTEND | setup
+        run: yarn
+      - name: FRONTEND | run tests
+        run: yarn test
+      - name: FRONTEND | build
+        run: yarn build
+        env:
+          NEXT_PUBLIC_IC_HOST: https://ic0.app
+      - name: 'FRONTEND | Deploy to Vercel'
+        run: |
+          prodRun=""
+          if [[ ${GITHUB_REF} == "refs/heads/main" ]]; then
+            prodRun="--prod"
+          fi
+
+          npx vercel --token ${VERCEL_TOKEN} $prodRun
+        env:
+          VERCEL_TOKEN: ${{ secrets.GIN_DEPLOYMENT_GITHUB_ACTION }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
