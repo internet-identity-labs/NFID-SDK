@@ -7,10 +7,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Provision Linux
         run: bash .github/workflows/dfx-provision-linux.sh
-      - name: Build ic components
-        run: make deploy-local
-      - name: Test ic components
-        run: make test
       - name: Install modules
         run: yarn
       - name: Run tests
