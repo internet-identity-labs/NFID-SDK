@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "7.15.8",
     "@babel/plugin-transform-typescript": "7.15.8",
     "@testing-library/jest-dom": "link:../node_modules/@testing-library/jest-dom",
     "@testing-library/react": "link:../node_modules/@testing-library/react",
