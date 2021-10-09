@@ -16,6 +16,7 @@
 
 # NEXT.JS
 .next
+out
 
 # misc
 .DS_Store

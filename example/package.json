@@ -15,8 +15,8 @@
     "dev": "next",
     "start": "next start",
     "build": "next build",
-    "test": "jest",
     "export": "next export",
+    "test": "jest",
     "ic:deploy": "dfx deploy",
     "ic:start": "dfx start --background",
     "ic:start-clean": "dfx start --background --clean"
