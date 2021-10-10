@@ -3,6 +3,17 @@ RUN apt-get update && \
     apt-get install \
     curl \
     git \
+    unzip \
+    sudo \
+    build-essential \
+    cmake \
     -y
 
-RUN DFX_VERSION=0.8.1 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
+ADD ./scripts /scripts
+
+RUN /scripts/provision-linux.sh
+
+RUN git clone https://github.com/dfinity/internet-identity.git
+
+RUN cd internet-identity
+RUN npm install
