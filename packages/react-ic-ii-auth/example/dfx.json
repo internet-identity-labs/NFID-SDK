@@ -3,6 +3,14 @@
     "profile": {
       "main": "ic/profile/main.mo",
       "type": "motoko"
+    },
+    "assets": {
+      "dependencies": ["profile"],
+      "ui": {
+        "entrypoint": "out/index.html"
+      },
+      "source": ["out/"],
+      "type": "assets"
     }
   },
   "defaults": {

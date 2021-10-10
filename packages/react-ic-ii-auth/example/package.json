@@ -14,9 +14,9 @@
   "scripts": {
     "dev": "next",
     "start": "next start",
-    "build": "next build",
-    "test": "jest",
+    "build": "next build && next export",
     "export": "next export",
+    "test": "jest",
     "ic:deploy": "dfx deploy",
     "ic:start": "dfx start --background",
     "ic:start-clean": "dfx start --background --clean"
