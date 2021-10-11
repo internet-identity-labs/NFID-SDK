@@ -24,9 +24,6 @@ WORKDIR /internet-identity
 
 RUN npm install
 
-# TODO: move to init script
-# RUN dfx start --background --clean
-# RUN II_ENV=development dfx deploy --no-wallet --argument '(null)'
-# RUN dfx stop
+CMD /scripts/dfx_run.sh
 
-CMD dfx start --background
+
