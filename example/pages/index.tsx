@@ -2,7 +2,7 @@ import React from 'react'
 import {
   InternetIdentityProvider,
   useInternetIdentity
-} from '@bendcircular/react-ic-ii-auth'
+} from '@identity-labs/react-ic-ii-auth'
 
 import { InternetAuthButton } from 'src/ui-lib/molecules/login'
 import { useProfile } from 'src/ic-utils/profile'
@@ -13,10 +13,11 @@ import { Navigation } from 'src/ui-lib/organisms/navigation'
 // eslint-disable-next-line no-unused-vars
 import { Principal } from '@dfinity/principal'
 import { Button } from 'src/ui-lib/atoms/button'
+import clsx from 'clsx'
 
 const AuthComponent = () => {
   const [iam, setIam] = React.useState('')
-  const { identity, isAuthenticated } = useInternetIdentity()
+  const { identity, isAuthenticated, signout } = useInternetIdentity()
 
   const { whoami } = useProfile({ identity })
 
@@ -27,11 +28,20 @@ const AuthComponent = () => {
 
   return isAuthenticated ? (
     <>
-      <div>
-        your identity is: {identity && identity.getPrincipal().toText()}
-      </div>
-      <Button onClick={handleWhoami}>whoami</Button>
-      {iam && <div>you are: {iam}</div>}
+      {!iam ? (
+        <Button onClick={handleWhoami}>whoami</Button>
+      ) : (
+        <div className={clsx('flex flex-col')}>
+          <div className={clsx('font-bold mb-2')}>your identity is:</div>
+          <div className={clsx('mb-6')}>{iam}</div>
+          <div className={clsx('flex flex-col')}>
+            <Button onClick={signout}>signout</Button>
+            <Button className='mt-2' onClick={() => setIam('')}>
+              clear
+            </Button>
+          </div>
+        </div>
+      )}
     </>
   ) : (
     <InternetAuthButton />
@@ -43,7 +53,8 @@ function App() {
     <InternetIdentityProvider
       authClientOptions={{
         // useIframe: true // TODO: make sure it only opens iframe for safari
-        maxTimeToLive: BigInt(1000),
+        // TODO: find out how to use it
+        // maxTimeToLive: BigInt(1000_000),
         identityProvider: process.env.NEXT_PUBLIC_II_CANISTER_URL,
         onSuccess: (principal) => {
           console.log('>> onSuccess', { principal })
