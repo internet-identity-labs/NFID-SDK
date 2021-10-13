@@ -2,12 +2,12 @@
 
 > React components to use DFINITY Internet Identity Authentication
 
-[![NPM](https://img.shields.io/npm/v/@bendcircular/react-ic-ii-auth.svg)](https://www.npmjs.com/package/@bendcircular/react-ic-ii-auth) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@identity-labs/react-ic-ii-auth.svg)](https://www.npmjs.com/package/@identity-labs/react-ic-ii-auth) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save @bendcircular/react-ic-ii-auth
+npm install --save @identity-labs/react-ic-ii-auth
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ import React from 'react'
 import {
   InternetIdentityProvider,
   useInternetIdentity
-} from '@bendcircular/react-ic-ii-auth'
+} from '@identity-labs/react-ic-ii-auth'
 
 const AuthButthon = () => {
   const { authenticate, isAuthenticated, identity } = useInternetIdentity()
