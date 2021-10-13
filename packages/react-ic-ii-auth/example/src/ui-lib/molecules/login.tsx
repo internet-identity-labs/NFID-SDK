@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from 'src/ui-lib/atoms/button'
-import { useInternetIdentity } from '@bendcircular/react-ic-ii-auth'
+import { useInternetIdentity } from '@identity-labs/react-ic-ii-auth'
 import { Modal } from 'src/ui-lib/molecules/modal'
 import { InternetIdentityIframe } from './internet-identity-auth'
 

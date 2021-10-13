@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import React from 'react'
-import { AuthIframe } from '@bendcircular/react-ic-ii-auth'
+import { AuthIframe } from '@identity-labs/react-ic-ii-auth'
 import { Loader } from 'src/ui-lib/atoms/loader'
 
 interface AuthContentProps {
