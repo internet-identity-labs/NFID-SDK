@@ -5,22 +5,25 @@ import { Loader } from 'src/ui-lib/atoms/loader'
 
 interface AuthContentProps {
   internetIdentityProvider: string
+  onLoad: () => void
 }
 
 export const InternetIdentityIframe: React.FC<AuthContentProps> = ({
-  internetIdentityProvider
+  internetIdentityProvider,
+  onLoad
 }) => {
   const [isLoading, loading] = React.useState(true)
+  const handleOnLoad = React.useCallback(() => {
+    loading(false)
+    onLoad()
+  }, [])
   return (
     <div className={clsx(['h-[90%] md:h-full md:overflow-scroll'])}>
       <div className={clsx(['h-full w-full', isLoading ? 'block' : 'hidden'])}>
         <Loader />
       </div>
       <div className={clsx(['h-full pb-4'])}>
-        <AuthIframe
-          src={internetIdentityProvider}
-          onLoad={() => loading(false)}
-        />
+        <AuthIframe src={internetIdentityProvider} onLoad={handleOnLoad} />
       </div>
     </div>
   )
