@@ -3,6 +3,8 @@ import { Identity } from '@dfinity/agent'
 import { AuthClient, AuthClientLoginOptions } from '@dfinity/auth-client'
 import React, { useContext } from 'react'
 
+export * from './modal'
+
 interface InternetIdentityContextState {
   error: string | null
   authClient: AuthClient | null
