@@ -1,6 +1,6 @@
 {
-  "name": "multipass-demo",
-  "version": "0.1.0",
+  "name": "identity-labs-react-ic-ii-auth-example",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@identity-labs/react-ic-ii-auth": "link:..",
