@@ -57,4 +57,4 @@ export default App
 
 ## License
 
-[MIT](./LICENSE) [© bendcircular GmbH](https://www.bendcircular.com)
+[MIT © 2021 Internet Identity Labs, Inc](./LICENSE)
