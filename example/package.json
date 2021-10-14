@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@bendcircular/react-ic-ii-auth": "link:..",
+    "@identity-labs/react-ic-ii-auth": "link:..",
     "clsx": "1.1.1",
     "next": "11.1.2",
     "react": "link:../node_modules/react",

@@ -23,5 +23,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", ".dfx"]
+  "exclude": ["node_modules", ".dfx", "internet-identity"]
 }

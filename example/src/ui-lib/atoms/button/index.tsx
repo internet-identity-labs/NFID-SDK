@@ -1,11 +1,19 @@
-import React from "react";
+import clsx from 'clsx'
+import React from 'react'
 
 export const Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> =
-  ({ onClick, children }) => (
+  ({ onClick, children, className }) => (
     <button
       onClick={onClick}
-      className="transition duration-300 w-full max-w-xs font-lato tracking-widest uppercase text-lg rounded-full border-2 border-black hover:border-white hover:text-white py-2 px-28"
+      className={clsx(
+        'transition duration-300',
+        'rounded-full border-2 border-black hover:border-white',
+        'w-full max-w-xs',
+        'py-2 px-28',
+        'font-lato tracking-widest uppercase text-lg hover:text-white',
+        className
+      )}
     >
       {children}
     </button>
-  );
+  )
