@@ -45,10 +45,12 @@ export const InternetAuthButton: React.FC<InternetAuthProps> = ({
           title='Login'
           isVisible={showModal}
           onClose={() => setShowModal(false)}
-          onModalMounted={handleAuthentication}
         >
           <ModalHeader onClose={() => setShowModal(false)} />
-          <InternetIdentityIframe internetIdentityProvider={identityProvider} />
+          <InternetIdentityIframe
+            internetIdentityProvider={identityProvider}
+            onLoad={handleAuthentication}
+          />
         </Modal>
       )}
     </>

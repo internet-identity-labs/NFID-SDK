@@ -9,7 +9,6 @@ import { useProfile } from 'src/ic-utils/profile'
 import { H1 } from 'src/ui-lib/atoms/headlines'
 import { Navigation } from 'src/ui-lib/organisms/navigation'
 
-// TODO: fix this
 // eslint-disable-next-line no-unused-vars
 import { Principal } from '@dfinity/principal'
 import { Button } from 'src/ui-lib/atoms/button'
@@ -29,7 +28,10 @@ const AuthComponent = () => {
   return isAuthenticated ? (
     <>
       {!iam ? (
-        <Button onClick={handleWhoami}>whoami</Button>
+        <>
+          <Button onClick={handleWhoami}>whoami</Button>
+          <Button onClick={signout}>signout</Button>
+        </>
       ) : (
         <div className={clsx('flex flex-col')}>
           <div className={clsx('font-bold mb-2')}>your identity is:</div>
@@ -52,9 +54,6 @@ function App() {
   return (
     <InternetIdentityProvider
       authClientOptions={{
-        // useIframe: true // TODO: make sure it only opens iframe for safari
-        // TODO: find out how to use it
-        // maxTimeToLive: BigInt(1000_000),
         identityProvider: process.env.NEXT_PUBLIC_II_CANISTER_URL,
         onSuccess: (principal) => {
           console.log('>> onSuccess', { principal })
