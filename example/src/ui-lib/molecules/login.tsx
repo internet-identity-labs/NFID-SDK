@@ -14,13 +14,13 @@ export const InternetAuthButton: React.FC<InternetAuthProps> = ({
   onClick
 } = {}) => {
   const [showModal, setShowModal] = React.useState(false)
-  const { isAuthenticated, identityProvider, authenticate, signout } =
+  const { isAuthenticated, identityProvider, authenticate } =
     useInternetIdentity()
 
-  const handleLogIn = React.useCallback(() => {
-    isAuthenticated ? signout() : setShowModal(true)
+  const handleAuthModal = React.useCallback(() => {
+    setShowModal(true)
     onClick && onClick()
-  }, [isAuthenticated, onClick, signout])
+  }, [onClick])
 
   const handleAuthentication = React.useCallback(async () => {
     try {
@@ -36,9 +36,8 @@ export const InternetAuthButton: React.FC<InternetAuthProps> = ({
 
   return (
     <>
-      <Button onClick={handleLogIn}>
-        {isAuthenticated ? 'Sign out' : 'Login'}
-      </Button>
+      <Button onClick={handleAuthModal}>Login Modal</Button>
+      <Button onClick={handleAuthentication}>Login Tab</Button>
       {showModal && (
         <Modal
           className='md:min-w-[650px]'
