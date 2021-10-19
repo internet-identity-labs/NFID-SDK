@@ -1,20 +1,20 @@
 #!/bin/bash
 
-DFX_PROJECTS_DIR=${DFX_PROJECTS_DIR:-/Projects}
+DFX_PROJECTS_DIR="${DFX_PROJECTS_DIR:-/Projects}"
 
 Help() {
     # Display Help
-    echo "DFX Contorller script."
+    echo "DFX Controller script."
     echo
-    echo "Syntax: $0 [help] (start|stop|status|delete|clean|list) project_name"
+    echo "Syntax: $0 [-h|--help] (start|stop|status|delete|clean|list) project_name"
     echo "options:"
     echo -e "help      \t      Print this Help."
     echo -e "start      \t      Start your project in dfx."
     echo -e "stop      \t      Stop your project in dfx."
     echo -e "status      \t      Status of canisters in your project."
-    echo -e "delete      \t      Delete canister in dfx."
-    echo -e "clean      \t      Clean your project in dfx."
-    echo -e "list      \t      List of Projects."
+    echo -e "delete      \t      Delete canisters from the project."
+    echo -e "clean      \t      Clean your dfx folder."
+    echo -e "list      \t      List of projects."
     echo
 }
 
@@ -32,29 +32,38 @@ Start() {
 
     if pushd "${DFX_PROJECTS_DIR}/${project}" > /dev/null; then
         dfx deploy
-        popd > /dev/null
+        popd > /dev/null || return 1
+    else
+        echo "Can't find project: ${project} in ${DFX_PROJECTS_DIR}"
+        return 1
     fi
 }
 
 Stop() {
     Check_Project_Name "${1}" || return 1
     local project="${1}"
-    echo "Stoping Project: ${project}"
+    echo "Stopping Project: ${project}"
 
     if pushd "${DFX_PROJECTS_DIR}/${project}" > /dev/null; then
         dfx canister stop --all
-        popd > /dev/null
+        popd > /dev/null || return 1
+    else
+        echo "Can't find project: ${project} in ${DFX_PROJECTS_DIR}"
+        return 1
     fi
 }
 
 Status() {
     Check_Project_Name "${1}" || return 1
     local project="${1}"
-    echo "Status for Project: ${project}"
+    echo "Status of project: ${project}"
 
     if pushd "${DFX_PROJECTS_DIR}/${project}" > /dev/null; then
         dfx canister status --all
-        popd > /dev/null
+        popd > /dev/null || return 1
+    else
+        echo "Can't find project: ${project} in ${DFX_PROJECTS_DIR}"
+        return 1
     fi
 }
 
@@ -65,7 +74,10 @@ Delete() {
 
     if pushd "${DFX_PROJECTS_DIR}/${project}" > /dev/null; then
         dfx canister delete --all
-        popd > /dev/null
+        popd > /dev/null || return 1
+    else
+        echo "Can't find project: ${project} in ${DFX_PROJECTS_DIR}"
+        return 1
     fi
 }
 
@@ -76,16 +88,24 @@ Clean() {
 
     if pushd "${DFX_PROJECTS_DIR}/${project}" > /dev/null; then
         rm -rf "${DFX_PROJECTS_DIR}/${project}/.dfx"
-        popd > /dev/null
+        popd > /dev/null || return 1
+    else
+        echo "Can't find project: ${project} in ${DFX_PROJECTS_DIR}"
+        return 1
     fi
 }
 
 List() {
     echo "Listing your projects"
     echo "Current project folder is: ${DFX_PROJECTS_DIR}"
-    pushd "${DFX_PROJECTS_DIR}" > /dev/null
-    find -maxdepth 1 -type d | awk -F"./" '{print $2}'
-    popd > /dev/null
+
+    if pushd "${DFX_PROJECTS_DIR}" > /dev/null; then
+        find . -maxdepth 1 -type d | awk -F"./" '{print $2}'
+        popd > /dev/null || return 1
+    else
+        echo "Can't access ${DFX_PROJECTS_DIR}"
+        return 1
+    fi
 }
 
 ############################## MAIN ##############################
