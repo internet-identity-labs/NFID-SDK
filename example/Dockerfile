@@ -16,12 +16,14 @@ RUN apt-get update \
 
 ADD ./scripts /scripts
 
-RUN cp /scripts/controller.sh /usr/bin/dfx-controller \
-    && chmod +x /usr/bin/dfx-controller
+RUN cp /scripts/dfxctl.sh /usr/bin/dfxctl \
+    && chmod +x /usr/bin/dfxctl
 
 RUN /scripts/provision-linux.sh
 
 RUN git clone https://github.com/dfinity/internet-identity.git
+
+ENV DFX_PROJECTS_DIR=/Projects
 
 WORKDIR internet-identity
 

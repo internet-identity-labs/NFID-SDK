@@ -1,85 +1,54 @@
-# MultipassDemo
+## Info
+This file contains HOWTO instructions for running scripts on your environments
 
-## Background
+## Requirements
+- Docker >= 17
+- User with shell and rights to run docker
+- Git for downloading repository
+- Internet connection for downloading docker images from docker hub
 
-When we release our identity interface, we need to know that there exists a way
-to link existing Internet Identities such that data associated with those
-anchors will still be accessible when masquerading through a Multipass account.
+*All instructions tested on Ubuntu 20, but they will work for other Linux system.*
+*You can choose which you are familiar with.*
 
-## Acceptance criteria:
+------------
+## Build
+- Open shell in the folder which contains Dockerfile
+- Run `docker build -t dfx_ctl .`
+- You will get the docker image with the name **dfx_ctl** after build finished
 
-- Build a simple app X locally that authenticates an Internet Identity A
-- Let this Identity create a post only this Identity can view
-- Log out
-- Demo a way for hard-coded information about Internet Identity A on app X to
-  display Internet Identity A's private post
-- Written requirements for which data should be stored such that a Multipass
-  account could masquerade as a principal ID
+## Run
 
-## Build with Next.js
+- Create root folder for you projects
+- Put your projects as subfolders
+- Open shell in the root folder which contain your projects
+- Run `docker run -v $(pwd):/Projects --name my_dfx dfx_ctl`
 
-This project is bootstrapped with [Next.js](https://nextjs.org/).
+Docker will run `/scripts/dfx_run.sh` script, which will run **dfx** with **internet-identity** project.
 
-### Before you start
+##### Environment Variables:
+- **DFX_PROJECTS_DIR** - Will provide dir **inside** your docker which contains projects. Default: **/Projects**
 
-copy `.env.template` to `.env`. If you have Internet Identity deployed locally
-and want to use it for authentication, you need to provide the url to it.
-Default is:
+
+##### dfxctl
+Script works as a wrapper above dfx and allow auto actions with dfx
+For manipulating your projects inside this Docker you need use `docker exec` command additionaly to main `docker run` process.
+For example:
+- `docker exec my_dfx dfxctl help`  - will show help page of **dfxctl**
+- `docker exec my_dfx dfxctl list`  - will show projects inside Project dir
+
+Whole list of command you can found bellow:
+```bash
+DFX Controller script.
+
+Syntax: dfxctl [-h|--help] (start|stop|status|delete|clean|list) project_name
+
+options:
+help                  Print this Help.
+start                 Start your project in dfx.
+stop                  Stop your project in dfx.
+status                Status of canisters in your project.
+delete                Delete your project in dfx.
+clean                 Clean your project in dfx.
+list                  List of Projects.
 
 ```
-REACT_APP_II_CANISTER_URL=https://identity.ic0.app/#authorize
-```
-
-Your local version might look like this:
-
-```
-http://r7inp-6aaaa-aaaaa-aaabq-cai.localhost:8000/#authorize
-#      |    <II canister id>     |
-```
-
-Get the canister id by:
-
-```
-dfx canister id internet_identity
-```
-
-### Available Scripts
-
-In the project directory, you can run:
-
-#### `yarn dev`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-#### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests)
-for more information.
-
-#### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best
-performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about
-[deployment](https://facebook.github.io/create-react-app/docs/deployment) for
-more information.
-
-#### `yarn start`
-
-to run the production build.
-
-#### `yarn ic:deploy`
-
-TODO: be more specific
-
-deploys your canisters to your local network
