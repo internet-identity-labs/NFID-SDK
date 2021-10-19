@@ -19,9 +19,7 @@ export const InternetIdentityIframe: React.FC<AuthContentProps> = ({
   }, [])
   return (
     <div className={clsx(['h-[90%] md:h-full md:overflow-scroll'])}>
-      <div className={clsx(['h-full w-full', isLoading ? 'block' : 'hidden'])}>
-        <Loader />
-      </div>
+      <Loader isLoading={isLoading} />
       <div className={clsx(['h-full pb-4'])}>
         <AuthIframe src={internetIdentityProvider} onLoad={handleOnLoad} />
       </div>
