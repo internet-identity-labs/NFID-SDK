@@ -11,17 +11,20 @@ import { Navigation } from 'src/ui-lib/organisms/navigation'
 
 // eslint-disable-next-line no-unused-vars
 import { Principal } from '@dfinity/principal'
-import { Button } from 'src/ui-lib/atoms/button'
+import { Button, LoadingButton } from 'src/ui-lib/atoms/button'
 import clsx from 'clsx'
 
 const AuthComponent = () => {
+  const [isLoading, setIsLoading] = React.useState(false)
   const [iam, setIam] = React.useState('')
   const { identity, isAuthenticated, signout } = useInternetIdentity()
 
   const { whoami } = useProfile({ identity })
 
   const handleWhoami = React.useCallback(async () => {
+    setIsLoading(true)
     const response = await whoami()
+    setIsLoading(false)
     setIam((response as Principal).toString())
   }, [whoami])
 
@@ -29,7 +32,9 @@ const AuthComponent = () => {
     <>
       {!iam ? (
         <>
-          <Button onClick={handleWhoami}>whoami</Button>
+          <LoadingButton isLoading={isLoading} onClick={handleWhoami}>
+            whoami
+          </LoadingButton>
           <Button onClick={signout}>signout</Button>
         </>
       ) : (
