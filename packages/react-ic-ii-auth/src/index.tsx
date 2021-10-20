@@ -22,8 +22,8 @@ export const InternetIdentityContext =
     identityProvider: '',
     isAuthenticated: false,
     identity: null,
-    authenticate: () => {},
-    signout: () => {}
+    authenticate: () => null,
+    signout: () => null
   })
 
 interface AuthClientOptions extends Omit<AuthClientLoginOptions, 'onSuccess'> {
@@ -66,15 +66,21 @@ const useICIIAuth = ({
     authClient && setAuthStatus(authClient)
   }, [authClient, setAuthStatus])
 
-  const handleOnSuccess = React.useCallback((authClient) => {
-    setIsAuthenticated(true)
-    onSuccess && onSuccess(authClient.getIdentity())
-  }, [])
+  const handleOnSuccess = React.useCallback(
+    (authClient) => {
+      setIsAuthenticated(true)
+      onSuccess && onSuccess(authClient.getIdentity())
+    },
+    [onSuccess]
+  )
 
-  const handleOnError = React.useCallback((error) => {
-    setError(error)
-    onError && onError(error)
-  }, [])
+  const handleOnError = React.useCallback(
+    (error) => {
+      setError(error)
+      onError && onError(error)
+    },
+    [onError]
+  )
 
   const authenticate = React.useCallback(async () => {
     if (authClient) {
@@ -85,7 +91,13 @@ const useICIIAuth = ({
         ...authClientOptions
       })
     }
-  }, [authClient, handleOnError])
+  }, [
+    authClient,
+    authClientOptions,
+    handleOnError,
+    handleOnSuccess,
+    identityProvider
+  ])
 
   const signout = React.useCallback(async () => {
     if (authClient) {
@@ -111,27 +123,9 @@ interface InternetIdentityProviderProps {
 
 export const InternetIdentityProvider: React.FC<InternetIdentityProviderProps> =
   ({ children, authClientOptions = {} }) => {
-    const {
-      error,
-      authClient,
-      identityProvider,
-      isAuthenticated,
-      identity,
-      authenticate,
-      signout
-    } = useICIIAuth({ authClientOptions })
+    const authContext = useICIIAuth({ authClientOptions })
     return (
-      <InternetIdentityContext.Provider
-        value={{
-          error,
-          authClient,
-          identityProvider,
-          isAuthenticated,
-          identity,
-          authenticate,
-          signout
-        }}
-      >
+      <InternetIdentityContext.Provider value={authContext}>
         {children}
       </InternetIdentityContext.Provider>
     )
