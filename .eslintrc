@@ -1,11 +1,13 @@
 {
   "parser": "@typescript-eslint/parser",
+  "plugins": ["react-hooks"],
   "extends": [
     "standard",
     "standard-react",
     "plugin:prettier/recommended",
     "prettier/standard",
     "prettier/react",
+    "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/eslint-recommended"
   ],
   "env": {
@@ -29,6 +31,8 @@
     "react/jsx-handler-names": 0,
     "react/jsx-fragments": 0,
     "react/no-unused-prop-types": 0,
-    "import/export": 0
+    "import/export": 0,
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "error" // Checks effect dependencies
   }
 }
