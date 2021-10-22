@@ -4,7 +4,7 @@ This project is bootstrapped with [Next.js](https://nextjs.org/).
 
 ## Before you start
 
-For the example to work fully, you need to run II locally. [Check out the docs how to do this](../docs/setup-internet-identity.md).
+For the example to work fully, you need to run II locally. [Check out the II setup instructions on how to do this](../docs/setup-internet-identity.md).
 
 Copy `.env.local.template` to `.env.local`. If you have Internet Identity deployed locally
 and want to use it for authenticated calls, you need to provide the `II_CANISTER_ID` and set `DFX_NETWORK=local`.
