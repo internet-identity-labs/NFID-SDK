@@ -11,7 +11,7 @@ we provide two samples on how to integrate II into your app. The first one and m
 1. Safari currently prevents the iFrame to load properly because of an issue with the boundary nodes (out of our control).
 2. First time authentication doesn't work as the iFrame fails to trigger the secure device selection (No further information so far).
 
-**[Check out our example to see it in action!](./example/README.md)**
+**we ship an example with this repo [check the example/README.md](./example/README.md) to run this locally**
 
 ## Install within your own project
 
