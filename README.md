@@ -11,7 +11,7 @@ we provide two samples on how to integrate II into your app. The first one and m
 1. Safari currently prevents the iFrame to load properly because of an issue with the boundary nodes (out of our control).
 2. First time authentication doesn't work as the iFrame fails to trigger the secure device selection (No further information so far).
 
-## Install
+## Install within your own project
 
 ```bash
 npm install --save @identity-labs/react-ic-ii-auth
@@ -58,8 +58,6 @@ export default App
 ```
 
 ### open II within iFrame
-
-the iFrame version currently has limited functionality. This is mostly an issue with II itself.
 
 ```tsx
 import React from 'react'
@@ -124,7 +122,7 @@ export default App
 
 ### run Internet Identity locally to use authenticated calls
 
-in order to do authenticated calls to your local replica you need to run II locally.
+In order to do authenticated calls against your local IC replica you need to run II locally.
 
 [Read more how to setup II locally](./docs/setup-internet-identity.md)
 
