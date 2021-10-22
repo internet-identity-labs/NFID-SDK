@@ -4,13 +4,20 @@
 
 [![NPM](https://img.shields.io/npm/v/@identity-labs/react-ic-ii-auth.svg)](https://www.npmjs.com/package/@identity-labs/react-ic-ii-auth) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## Usage and limitations
+
+we provide two samples on how to integrate II into your app. The first one and most commonly used is, open II within a new browser tab. The second one is open II within an iFrame. This is our preferred integration. But there are some limitations to it:
+
+1. Safari currently prevents the iFrame to load properly because of an issue with the boundary nodes (out of our control).
+2. First time authentication doesn't work as the iFrame fails to trigger the secure device selection (No further information so far).
+
 ## Install
 
 ```bash
 npm install --save @identity-labs/react-ic-ii-auth
 ```
 
-## Usage
+### setup React IC II Auth to open auth flow within new tab
 
 ```tsx
 import React from 'react'
@@ -21,10 +28,10 @@ import {
 } from '@identity-labs/react-ic-ii-auth'
 
 const AuthButthon = () => {
-  const { authenticate, isAuthenticated, identity } = useInternetIdentity()
+  const { authenticate, signout, isAuthenticated, identity } = useInternetIdentity()
   console.log('>> initialize your actors with', { identity })
   return (
-    <button onClick={authenticate}>
+    <button onClick={isAuthenticated ? authenticate : signout}>
       {isAuthenticated ? 'Logout' : 'Login'}
     </button>
   )
@@ -49,6 +56,85 @@ const App = () => {
 
 export default App
 ```
+
+### open II within iFrame
+
+the iFrame version currently has limited functionality. This is mostly an issue with II itself.
+
+```tsx
+import React from 'react'
+
+import {
+  InternetIdentityProvider,
+  useInternetIdentity,
+  AuthIframe
+} from '@identity-labs/react-ic-ii-auth'
+
+const AuthButthon = () => {
+  const [showModal, setShowModal] = React.useState(false)
+  const { authenticate, isAuthenticated, identity, identityProvider } = useInternetIdentity()
+  console.log('>> initialize your actors with', { identity })
+
+  const handleAuthButtonClick = React.useCallback(() => {
+    setShowModal(true)
+  }, [])
+
+  const handleAuth = React.useCallback(async () => {
+    try {
+      await authenticate()
+    } catch (e) {
+      console.error(e)
+      setShowModal(false)
+    }
+  }, [authenticate])
+
+  return (
+    <>
+    <button onClick={authenticate}>
+      {isAuthenticated ? 'Logout' : 'Login'}
+    </button>
+    {showModal && (
+      <div className="yourModalClass">
+        <AuthIframe src={identityProvider} onLoad={handleAuth} />
+      </div>
+    )}
+    </>
+  )
+}
+
+const App = () => {
+  return (
+    <InternetIdentityProvider
+      authClientOptions={{
+        onSuccess: (identity) => console.log(
+          ">> initialize your actors with", {identity}
+        )
+        // NOTE: Overwrite identityProvider in dev mode
+        // defaults to "https://identity.ic0.app/#authorize"
+        identityProvider: `http://${process.env.II_CANISTER_ID}.localhost:8000/#authorize`
+      }}
+    >
+      <AuthButthon />
+    </InternetIdentityProvider>
+  )
+}
+
+export default App
+```
+
+### run Internet Identity locally to use authenticated calls
+
+in order to do authenticated calls to your local replica you need to run II locally.
+
+[Read more how to setup II locally](./docs/setup-internet-identity.md)
+
+## Identity Labs Maintenance
+
+TODO: elaborate on the process to keep everything working
+
+## Issue Reporting
+
+## Contribution guidelines
 
 ## Inspired by:
 

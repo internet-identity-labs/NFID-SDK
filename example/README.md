@@ -1,51 +1,41 @@
-# MultipassDemo
-
-## Background
-
-When we release our identity interface, we need to know that there exists a way
-to link existing Internet Identities such that data associated with those
-anchors will still be accessible when masquerading through a Multipass account.
-
-## Acceptance criteria:
-
-- Build a simple app X locally that authenticates an Internet Identity A
-- Let this Identity create a post only this Identity can view
-- Log out
-- Demo a way for hard-coded information about Internet Identity A on app X to
-  display Internet Identity A's private post
-- Written requirements for which data should be stored such that a Multipass
-  account could masquerade as a principal ID
-
-## Build with Next.js
+# React IC II Auth example
 
 This project is bootstrapped with [Next.js](https://nextjs.org/).
 
-### Before you start
+## Before you start
 
-copy `.env.template` to `.env`. If you have Internet Identity deployed locally
-and want to use it for authentication, you need to provide the url to it.
-Default is:
+For the example to work fully, you need to run II locally. [Check out the docs how to do this](../docs/setup-internet-identity.md).
 
-```
-REACT_APP_II_CANISTER_URL=https://identity.ic0.app/#authorize
-```
+Copy `.env.local.template` to `.env.local`. If you have Internet Identity deployed locally
+and want to use it for authenticated calls, you need to provide the `II_CANISTER_ID` and set `DFX_NETWORK=local`.
 
-Your local version might look like this:
-
-```
-http://r7inp-6aaaa-aaaaa-aaabq-cai.localhost:8000/#authorize
-#      |    <II canister id>     |
-```
-
-Get the canister id by:
+Get the II canister id by:
 
 ```
 dfx canister id internet_identity
+
+Creating a wallet canister on the local network.
+The wallet canister on the "local" network for user "<your_identity>" is "renrk-eyaaa-aaaaa-aaada-cai"
+rkp4c-7iaaa-aaaaa-aaaca-cai
 ```
+
+take the last line and put it into `.env.local`.
+
+**`.env.local` should then look something like this:**
+
+```
+DFX_NETWORK=local
+II_CANISTER_ID=r7inp-6aaaa-aaaaa-aaabq-cai
+```
+
+now you can run `yarn ic:deploy` which deploys the example backend canister. When this is successful,
+proceed with running `yarn dev`.
+
+now your browser should automatically open [http://localhost:3000](http://localhost:3000).
 
 ### Available Scripts
 
-In the project directory, you can run:
+In this directory (`example`), you can run the following commands:
 
 #### `yarn dev`
 
@@ -76,10 +66,8 @@ more information.
 
 #### `yarn start`
 
-to run the production build.
+requires `yarn build` first and runs the production build.
 
 #### `yarn ic:deploy`
 
-TODO: be more specific
-
-deploys your canisters to your local network
+deploys the example backend canisters to your local network
