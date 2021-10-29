@@ -4,7 +4,7 @@ Thank you for investing your time in contributing to our project! Any contributi
 
 Most of the below is Github's standard contribution guideline, so at some point we'll need to come back and update this doc (we're very busy building super interesting Identity things).
 
-Read our [Code of Conduct](https://github.com/github/docs/blob/main/CODE_OF_CONDUCT.md) to keep our community approachable and respectable.
+Read our [Code of Conduct](../CODE_OF_CONDUCT.md) to keep our community approachable and respectable.
 
 In this guide you will get an overview of the contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.
 
@@ -46,9 +46,7 @@ Click **Make a contribution** at the bottom of any docs page to make small chang
 
 #### Make changes locally
 
-1. [Install Git LFS](https://docs.github.com/en/github/managing-large-files/versioning-large-files/installing-git-large-file-storage).
-
-2. Fork the repository.
+1. Fork the repository.
 - Using GitHub Desktop:
   - [Getting started with GitHub Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/getting-started-with-github-desktop) will guide you through setting up Desktop.
   - Once Desktop is set up, you can use it to [fork the repo](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/cloning-and-forking-repositories-from-github-desktop)!
@@ -59,9 +57,9 @@ Click **Make a contribution** at the bottom of any docs page to make small chang
 - GitHub Codespaces:
   - [Fork, edit, and preview](https://docs.github.com/en/free-pro-team@latest/github/developing-online-with-codespaces/creating-a-codespace) using [GitHub Codespaces](https://github.com/features/codespaces) without having to install and run the project locally.
 
-3. Install or update to **Node.js v16**. For more information, see [the development guide](https://github.com/github/docs/blob/main/contributing/development.md).
+2. Check our [README](../README.md) to get `react-ic-ii-auth` plugin working locally.
 
-4. Create a working branch and start with your changes!
+3. Create a working branch and start with your changes!
 
 ### Commit your update
 
@@ -82,19 +80,4 @@ Once you submit your PR, a Docs team member will review your proposal. We may as
 
 ### Your PR is merged!
 
-Congratulations :tada::tada: The GitHub team thanks you :sparkles:. 
-
-Once your PR is merged, your contributions will be publicly visible on the [GitHubs docs](https://docs.github.com/en). 
-
-Now that you are part of the GitHub docs community, see how else you can [contribute to the docs](https://github.com/github/docs/tree/main/contributing/types-of-contributions.md).
-
-## Windows
-
-This site can be developed on Windows, however a few potential gotchas need to be kept in mind:
-
-1. Regular Expressions: Windows uses `\r\n` for line endings, while Unix based systems use `\n`. Therefore when working on Regular Expressions, use `\r?\n` instead of `\n` in order to support both environments. The Node.js [`os.EOL`](https://nodejs.org/api/os.html#os_os_eol) property can be used to get an OS-specific end-of-line marker.
-2. Paths: Windows systems use `\` for the path separator, which would be returned by `path.join` and others. You could use `path.posix`, `path.posix.join` etc and the [slash](https://ghub.io/slash) module, if you need forward slashes - like for constructing URLs - or ensure your code works with either.
-3. Bash: Not every Windows developer has a terminal that fully supports Bash, so it's generally preferred to write [scripts](/script) in JavaScript instead of Bash.
-4. Filename too long error: There is a 260 character limit for a filename when Git is compiled with `msys`. While the suggestions below are not guaranteed to work and could possibly cause other issues, a few workarounds include:
-    - Update Git configuration: `git config --system core.longpaths true`
-    - Consider using a different Git client on Windows
+Congratulations :tada::tada: The Internet Identity Labs team thanks you :sparkles:. 
