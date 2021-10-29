@@ -73,6 +73,10 @@ import {
 const AuthButthon = () => {
   const [showModal, setShowModal] = React.useState(false)
   const { authenticate, isAuthenticated, identity, identityProvider } = useInternetIdentity()
+
+  // THE IFRAME CURRENTLY IS NOT SUPPORTED ON SAFARI
+  const isSafari = navigator.userAgent.match(/(Safari)/)
+
   console.log('>> initialize your actors with', { identity })
 
   const handleAuthButtonClick = React.useCallback(() => {
@@ -90,10 +94,11 @@ const AuthButthon = () => {
 
   return (
     <>
-    <button onClick={authenticate}>
+    <button onClick={isSafari ? handleAuth : authenticate}>
       {isAuthenticated ? 'Logout' : 'Login'}
     </button>
-    {showModal && (
+    {/* THE IFRAME CURRENTLY IS NOT SUPPORTED ON SAFARI */}
+    {!isSafari && showModal && (
       <div className="yourModalClass">
         <AuthIframe src={identityProvider} onLoad={handleAuth} />
       </div>
