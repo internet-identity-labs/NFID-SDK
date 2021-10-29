@@ -128,13 +128,15 @@ In order to do authenticated calls against your local IC replica you need to run
 
 [Read more how to setup II locally](./docs/setup-internet-identity.md)
 
-## Identity Labs Maintenance
+## Identity Labs QA:
 
-TODO: elaborate on the process to keep everything working
+- [x] setup dependabot to keep dependencies up to date
+- [x] setup unit testing pipeline
+- [ ] setup e2e testing pipeline
 
-## Issue Reporting
+## Issue Reporting and Contribution guidelines
 
-## Contribution guidelines
+please read our [contribution guidelines](./docs/CONTRIBUTING.md).
 
 ## Inspired by:
 
