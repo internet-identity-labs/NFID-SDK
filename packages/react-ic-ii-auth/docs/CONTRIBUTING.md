@@ -38,14 +38,6 @@ Scan through our [existing issues](https://github.com/InternetIdentityLabs/react
 
 ### Make Changes
 
-#### Make changes in the UI
-
-Click **Make a contribution** at the bottom of any docs page to make small changes such as a typo, sentence fix, or a broken link. This takes you to the `.md` file where you can make your changes and [create a pull request](#pull-request) for a review. 
-
- <img src="./assets/images/contribution_cta.png" width="300" height="150" /> 
-
-#### Make changes locally
-
 1. Fork the repository.
 - Using GitHub Desktop:
   - [Getting started with GitHub Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/getting-started-with-github-desktop) will guide you through setting up Desktop.
