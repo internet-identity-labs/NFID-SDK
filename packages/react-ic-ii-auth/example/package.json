@@ -45,7 +45,7 @@
     "@types/node": "link:../node_modules/@types/node",
     "@types/react": "link:../node_modules/@types/react",
     "@types/react-dom": "link:../node_modules/@types/react-dom",
-    "autoprefixer": "10.3.7",
+    "autoprefixer": "10.4.0",
     "cross-env": "7.0.3",
     "jest": "27.2.4",
     "patch-package": "6.4.7",
