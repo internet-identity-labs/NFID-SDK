@@ -40,7 +40,7 @@
     "@testing-library/dom": "8.7.2",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.1.2",
-    "@testing-library/user-event": "13.2.1",
+    "@testing-library/user-event": "13.5.0",
     "@types/jest": "27.0.2",
     "@types/node": "link:../node_modules/@types/node",
     "@types/react": "link:../node_modules/@types/react",
