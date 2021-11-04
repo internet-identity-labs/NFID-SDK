@@ -50,7 +50,7 @@
     "@dfinity/candid": "0.10.0",
     "@dfinity/identity": "0.10.0",
     "@dfinity/principal": "0.10.1",
-    "@testing-library/jest-dom": "5.14.1",
+    "@testing-library/jest-dom": "5.15.0",
     "@testing-library/react": "^12.1.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.2",
