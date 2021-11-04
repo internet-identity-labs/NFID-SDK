@@ -51,6 +51,6 @@
     "patch-package": "6.4.7",
     "postcss": "8.3.9",
     "tailwindcss": "2.2.16",
-    "ts-jest": "27.0.5"
+    "ts-jest": "27.0.7"
   }
 }
