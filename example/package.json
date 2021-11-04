@@ -9,7 +9,7 @@
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
     "typescript": "link:../node_modules/typescript",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^2.1.2"
   },
   "scripts": {
     "dev": "next",
