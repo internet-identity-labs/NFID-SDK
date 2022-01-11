@@ -1280,10 +1280,10 @@
   resolved "https://registry.yarnpkg.com/@dfinity/candid/-/candid-0.10.2.tgz#545692c4f9a954b2133436049a707434d5c6c7c9"
   integrity sha512-vHRw6G5N6Nj8PlGl+Dx8pRGNCA/OQJ5v5ktj+t4ZL/4UIaebDZYzRZyrtBC0Vs1iG9BA5l48b7ByMH26UKLC6w==
 
-"@dfinity/identity@0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@dfinity/identity/-/identity-0.10.0.tgz#cbb6fc6f2c139244c9ec2a1487ccc16c856a4494"
-  integrity sha512-0KUAcP/s5j/3q8uWXAFbE5dWuxf9xSack6OYkSa5LGGdJ/s3DCwrgb0bPzYEX2CeIqNUG3x8/YwUZrMNWBxvNQ==
+"@dfinity/identity@0.10.1":
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/@dfinity/identity/-/identity-0.10.1.tgz#f701b8f0205d83431dda7352fa8d9f30af137c5b"
+  integrity sha512-d5rkr5Sg1Eiwnmd2mkz1xvrzAdITbMBcIaU0LlKCG+eKMxcgDLm4eB8FBvS5Pqr0S5sHb/YXpLZrhpL5xC38bg==
   dependencies:
     borc "^2.1.1"
     js-sha256 "^0.9.0"

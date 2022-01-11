@@ -48,7 +48,7 @@
     "@dfinity/auth-client": "0.10.0",
     "@dfinity/authentication": "0.10.0",
     "@dfinity/candid": "0.10.2",
-    "@dfinity/identity": "0.10.0",
+    "@dfinity/identity": "0.10.1",
     "@dfinity/principal": "0.10.2",
     "@testing-library/jest-dom": "5.16.1",
     "@testing-library/react": "^12.1.0",
