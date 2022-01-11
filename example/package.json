@@ -5,7 +5,7 @@
   "dependencies": {
     "@identity-labs/react-ic-ii-auth": "link:..",
     "clsx": "1.1.1",
-    "next": "11.1.2",
+    "next": "11.1.3",
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
     "typescript": "link:../node_modules/typescript",
