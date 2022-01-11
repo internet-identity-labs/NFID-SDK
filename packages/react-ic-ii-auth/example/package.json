@@ -47,7 +47,7 @@
     "@types/react-dom": "link:../node_modules/@types/react-dom",
     "autoprefixer": "10.4.2",
     "cross-env": "7.0.3",
-    "jest": "27.3.1",
+    "jest": "27.4.7",
     "patch-package": "6.4.7",
     "postcss": "8.4.5",
     "tailwindcss": "2.2.19",
