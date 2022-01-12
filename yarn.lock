@@ -1254,10 +1254,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
-"@dfinity/agent@0.10.1":
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/@dfinity/agent/-/agent-0.10.1.tgz#6379b42977ca30a3718ee5b6f67f0d69c995aa21"
-  integrity sha512-VUHO5mveK0XX8b9xbfg5SThEGLhMAwkfejuwS5fzF9gqQVWqnIx5ISrbre8UvNNyuzM5v4/vZI+kpE2zL54rwg==
+"@dfinity/agent@0.10.2":
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/@dfinity/agent/-/agent-0.10.2.tgz#1c591e9f5d0b3acaeea767d402f53c8732f754ac"
+  integrity sha512-ipzw+UYSUJWgwq5IM8PwHLXlfViFJWX+ZPvMD4vclDjwxiLf/nDZNk2sgLfYAi/2o2MpG6wUTUYriX/gmYrbkg==
   dependencies:
     base64-arraybuffer "^0.2.0"
     bignumber.js "^9.0.0"
