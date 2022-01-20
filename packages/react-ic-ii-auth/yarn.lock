@@ -1270,10 +1270,10 @@
   resolved "https://registry.yarnpkg.com/@dfinity/auth-client/-/auth-client-0.10.0.tgz#f2454c1d8e53d360b8df7082f5aef518db566465"
   integrity sha512-Po6TLXWOmytH7t9wuzeJ+FiM7rUmRGStCDAnbhpSAGstTtOh2HheTXIVgpwv3XFbUgkdOjpI3lNsG+G1kNm/1Q==
 
-"@dfinity/authentication@0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@dfinity/authentication/-/authentication-0.10.0.tgz#6be2519d4deedde10b25f0f1841a09dfc7472084"
-  integrity sha512-KDz34wLx/mg3JVsQ5QEX4ryTzn6lO7hE7xe+FWYE3KfFt1hKoQzlt/4OSo6UFFu3Bp0LCEZpQn5AuARr4FBK9Q==
+"@dfinity/authentication@0.10.1":
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/@dfinity/authentication/-/authentication-0.10.1.tgz#64690d06323fb2857acba0742488dceadf84f940"
+  integrity sha512-k8D80Ba27Kw3sgVtnz9j3jZ/7rpg5r8n1/NWdmy8aHMJnVhTXghIskptM0YRpA7bS9cJW5tSFLnvalKNGWcnuA==
 
 "@dfinity/candid@0.10.2":
   version "0.10.2"
