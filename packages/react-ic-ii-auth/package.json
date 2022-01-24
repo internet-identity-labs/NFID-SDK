@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@dfinity/agent": "0.10.2",
-    "@dfinity/auth-client": "0.10.0",
+    "@dfinity/auth-client": "0.10.1",
     "@dfinity/authentication": "0.10.1",
     "@dfinity/candid": "0.10.2",
     "@dfinity/identity": "0.10.2",
