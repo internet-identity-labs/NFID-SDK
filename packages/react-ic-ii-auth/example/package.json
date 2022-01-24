@@ -35,7 +35,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "7.16.10",
+    "@babel/core": "7.16.12",
     "@babel/plugin-transform-typescript": "7.16.8",
     "@testing-library/dom": "8.11.1",
     "@testing-library/jest-dom": "5.16.1",
