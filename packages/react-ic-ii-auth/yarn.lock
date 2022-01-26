@@ -1265,10 +1265,10 @@
     js-sha256 "0.9.0"
     simple-cbor "^0.4.1"
 
-"@dfinity/auth-client@0.10.1":
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/@dfinity/auth-client/-/auth-client-0.10.1.tgz#11b4cf48ee0450ab586ff8ac88663b61164a0768"
-  integrity sha512-nKEUOyislqX4IklLh1kPGZyh5NHKusJCA6W+ySgh5VmGvE1qXHajRof0SY6z/i/lncjg7vi4fxtod/4knWtp/A==
+"@dfinity/auth-client@0.10.2":
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/@dfinity/auth-client/-/auth-client-0.10.2.tgz#36079df982ffc73ba99fa18ebc4800953616d704"
+  integrity sha512-u9RThzTvsrKb85PhnEUXgZ3KwdSJCeNwHBZ3zVCZ7XQEkDhwNZK87JD00Mh2Z5kCbN3+A+OdGZtYXloFlgENew==
 
 "@dfinity/authentication@0.10.2":
   version "0.10.2"

@@ -35,7 +35,7 @@
   },
   "peerDependencies": {
     "@dfinity/agent": "0.10.2",
-    "@dfinity/auth-client": "0.10.1",
+    "@dfinity/auth-client": "0.10.2",
     "@dfinity/authentication": "0.10.2",
     "@dfinity/candid": "0.10.2",
     "@dfinity/identity": "0.10.2",
@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@dfinity/agent": "0.10.2",
-    "@dfinity/auth-client": "0.10.1",
+    "@dfinity/auth-client": "0.10.2",
     "@dfinity/authentication": "0.10.2",
     "@dfinity/candid": "0.10.2",
     "@dfinity/identity": "0.10.2",
