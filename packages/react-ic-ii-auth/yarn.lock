@@ -1275,10 +1275,10 @@
   resolved "https://registry.yarnpkg.com/@dfinity/authentication/-/authentication-0.10.2.tgz#fcc4e82e13f18e66556e40807190709dbbde92d7"
   integrity sha512-+fNuknjSl1SI4f0e+KQdCnJy3vuSTeGFriLXstjYDCO2ez432lMiyqoF9eC4Gvp6AX9RZifRt2BXuWnhzwZwEQ==
 
-"@dfinity/candid@0.10.2":
-  version "0.10.2"
-  resolved "https://registry.yarnpkg.com/@dfinity/candid/-/candid-0.10.2.tgz#545692c4f9a954b2133436049a707434d5c6c7c9"
-  integrity sha512-vHRw6G5N6Nj8PlGl+Dx8pRGNCA/OQJ5v5ktj+t4ZL/4UIaebDZYzRZyrtBC0Vs1iG9BA5l48b7ByMH26UKLC6w==
+"@dfinity/candid@0.10.3":
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/@dfinity/candid/-/candid-0.10.3.tgz#0c93b7ad9a1f7250f01c11a8f786443319d8e18f"
+  integrity sha512-+zhJGIlhPLsxh6ft2HPwKz6TQzkBIZHkOCgyrZ9ajvBWq1riyCEVlIgISlIiGfNcCWT4UjWZfe8s/2YIR2VqrQ==
 
 "@dfinity/identity@0.10.2":
   version "0.10.2"
