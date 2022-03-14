@@ -39,7 +39,7 @@
     "@dfinity/authentication": "0.10.2",
     "@dfinity/candid": "0.10.3",
     "@dfinity/identity": "0.10.2",
-    "@dfinity/principal": "0.10.2",
+    "@dfinity/principal": "0.10.3",
     "react": ">=16.8.1",
     "react-dom": ">=16.8.1"
   },
@@ -49,7 +49,7 @@
     "@dfinity/authentication": "0.10.2",
     "@dfinity/candid": "0.10.3",
     "@dfinity/identity": "0.10.2",
-    "@dfinity/principal": "0.10.2",
+    "@dfinity/principal": "0.10.3",
     "@testing-library/jest-dom": "5.16.2",
     "@testing-library/react": "^12.1.0",
     "@testing-library/user-event": "^13.2.1",
