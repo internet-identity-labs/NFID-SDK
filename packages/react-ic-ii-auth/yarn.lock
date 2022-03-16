@@ -1290,10 +1290,10 @@
     secp256k1 "^4.0.2"
     tweetnacl "^1.0.1"
 
-"@dfinity/principal@0.10.3":
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/@dfinity/principal/-/principal-0.10.3.tgz#31b4d9e626dad7a5e0bc0ef07c40f996eb6218b8"
-  integrity sha512-32xwA+uSr3ieus55OG70b+wctiWxUJ5e/3JcmXgvC4o8TredAnfbQFuTqRi4AO+dh230hHqeRsKLoCvTdDRBXg==
+"@dfinity/principal@0.10.4":
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/@dfinity/principal/-/principal-0.10.4.tgz#8f28f631929cc420a4238f75930090aba84d74b8"
+  integrity sha512-qwzpmq5wfyeKMBspRZmuYvTxu1dqN+IY0ThACHTRh6D58QjnVQNCD3Hq9d5eEDu0qyNcY22cJEWwzrzZaaoVmw==
 
 "@hapi/address@2.x.x":
   version "2.1.4"
