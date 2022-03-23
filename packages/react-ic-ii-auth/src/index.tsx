@@ -11,7 +11,7 @@ interface InternetIdentityContextState {
   identityProvider: string
   isAuthenticated: boolean
   identity: Identity | null
-  authenticate: () => void
+  authenticate: () => Promise<void>
   signout: () => void
 }
 
@@ -22,7 +22,7 @@ export const InternetIdentityContext =
     identityProvider: '',
     isAuthenticated: false,
     identity: null,
-    authenticate: () => null,
+    authenticate: () => new Promise(() => null),
     signout: () => null
   })
 
