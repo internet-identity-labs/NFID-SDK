@@ -1,6 +1,6 @@
 {
   "name": "@identity-labs/react-ic-ii-auth",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "React components to use DFINITYs Internet Identity Authentication",
   "author": "Philipp Litzenberger <philipp@bendcircular.com>",
   "license": "MIT",
