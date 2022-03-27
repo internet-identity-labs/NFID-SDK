@@ -6,6 +6,7 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@yarnpkg/plugin-workspace-tools": "3.1.1",
     "wsrun": "^5.2.4"
   },
   "scripts": {
