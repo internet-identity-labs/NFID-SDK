@@ -63,6 +63,8 @@
     "autoprefixer": "10.4.4",
     "babel-loader": "^8.2.4",
     "cssnano": "5.1.5",
+    "eslint-config-standard": "16.0.3",
+    "eslint-config-standard-react": "11.0.1",
     "husky": "^7.0.4",
     "identity-obj-proxy": "3.0.0",
     "postcss": "8.4.12",
