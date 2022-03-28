@@ -22,6 +22,8 @@
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
+    "@dfinity/agent": "^0.10.4",
+    "@identity-labs/react-ic-ii-auth": "0.0.16",
     "react": ">=16"
   },
   "husky": {
@@ -50,7 +52,9 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.17.8",
+    "@dfinity/agent": "^0.10.4",
     "@identity-labs/nfid-ui-kit-core": "0.0.1",
+    "@identity-labs/react-ic-ii-auth": "0.0.16",
     "@size-limit/preset-small-lib": "^7.0.8",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-info": "^5.3.21",
