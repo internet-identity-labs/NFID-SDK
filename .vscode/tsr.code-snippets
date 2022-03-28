@@ -1,0 +1,43 @@
+{
+  "Generate React Typescript Component with simple props": {
+    "prefix": "il-fcs",
+    "body": [
+      "import React from \"react\"",
+      "",
+      "interface ${1}Props {${2}}",
+      "",
+      "export const ${1:Component}: React.FC<${1}Props> = ({ children }) => {",
+      "  return <div>${1:Component}${0}</div>",
+      "}"
+    ],
+    "description": "Generate React Typescript Component with Props"
+  },
+  "Generate React Typescript Component with Props and Element types": {
+    "prefix": "il-fcui",
+    "body": [
+      "import clsx from \"clsx\"",
+      "import React from \"react\"",
+      "",
+      "import { ReactProps } from \"frontend/types\"",
+      "",
+      "interface ${1}Props extends ReactProps<HTMLDivElement>{${2}}",
+      "",
+      "export const ${1:Component}: React.FC<${1}Props> = ({",
+      "  children,",
+      "  className,",
+      "}) => {",
+      "  return <div className={clsx(\"\", className)}>${1}${0}</div>",
+      "}"
+    ],
+    "description": "Generate React Typescript Component with Props"
+  },
+  "Generate className with clsx format": {
+    "prefix": "il-className",
+    "body": ["className={clsx(\"${1}\", className)}"],
+    "description": "Generate className with clsx format"
+  },
+  "Generate React.useCallback": {
+    "prefix": "il-ucb",
+    "body": ["const $1 = React.useCallback(() => {$0}, [])"]
+  }
+}
