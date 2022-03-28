@@ -50,6 +50,7 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.17.8",
+    "@identity-labs/nfid-ui-kit-core": "0.0.1",
     "@size-limit/preset-small-lib": "^7.0.8",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-info": "^5.3.21",
@@ -63,6 +64,7 @@
     "babel-loader": "^8.2.4",
     "cssnano": "5.1.5",
     "husky": "^7.0.4",
+    "identity-obj-proxy": "3.0.0",
     "postcss": "8.4.12",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -73,5 +75,14 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",
     "typescript": "^4.6.3"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
+  },
+  "dependencies": {
+    "clsx": "1.1.1"
   }
 }

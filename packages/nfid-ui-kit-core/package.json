@@ -11,7 +11,7 @@
     "access": "public"
   },
   "peerDependencies": {
-    "tailwindcss": ">=3.0.0 || insiders"
+    "tailwindcss": ">=3.0.0"
   },
   "scripts": {
     "test": "echo implement me"
