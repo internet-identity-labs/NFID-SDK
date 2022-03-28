@@ -1,15 +1,15 @@
 const plugin = require("tailwindcss/plugin");
 
-const theme = require("./theme");
 const iosUtilities = require("./utils/ios");
-const buttonComponents = require("./button/index");
 
 module.exports = plugin(
-  function({ addUtilities, addComponents, e, prefix, config }) {
+  function ({ addUtilities, addComponents, theme, e, prefix, config }) {
     addUtilities(iosUtilities, ["responsive"]);
-    addComponents(buttonComponents);
+    addComponents([require("./button/index")(theme)]);
   },
   {
-    theme
+    theme: {
+      extend: require("./theme"),
+    },
   }
 );
