@@ -1,4 +1,4 @@
-module.exports = Button = (styles) => ({
+module.exports = (theme) => ({
   ".btn": {
     "@apply text-center text-sm font-bold rounded-md outline-none focus:ring-2 focus:ring-offset-[3px] focus:ring-black-base first-letter:capitalize hover:no-underline transition duration-75 py-[14px] px-5":
       {},
