@@ -1,6 +1,7 @@
 {
   "name": "nfid-sdk",
   "private": true,
+  "useWorkspaces": true,
   "workspaces": [
     "packages/*",
     "examples/*"

@@ -1,8 +1,7 @@
-import { InternetIdentityProvider } from "@identity-labs/react-ic-ii-auth"
-import React from "react"
-
 import { AuthButton } from "./AuthButton"
 import { ToggleMode } from "./ToggleMode"
+import { InternetIdentityProvider } from "@identity-labs/react-ic-ii-auth"
+import React from "react"
 
 // Note: This is just a basic example to get you started
 function Auth() {
@@ -11,8 +10,8 @@ function Auth() {
 
   const NFIDUrl = React.useMemo(() => {
     return !isIframeMode
-      ? import.meta.env.VITE_NFID_PROVIDER_URL
-      : import.meta.env.VITE_NFID_PROVIDER_IFRAME_URL
+      ? process.env.REACT_APP_NFID_PROVIDER_URL
+      : process.env.REACT_APP_NFID_PROVIDER_IFRAME_URL
   }, [isIframeMode])
 
   return (

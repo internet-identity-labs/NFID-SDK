@@ -1,7 +1,6 @@
+import logo from "./assets/logo-dark.svg"
 import { counter } from "canisters/counter"
 import React, { useEffect, useState } from "react"
-
-import logo from "./assets/logo-dark.svg"
 
 export function Intro() {
   const [count, setCount] = useState<string>()

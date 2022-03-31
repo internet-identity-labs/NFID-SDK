@@ -22,9 +22,10 @@
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
-    "@dfinity/agent": "^0.10.4",
-    "@identity-labs/react-ic-ii-auth": "0.0.16",
-    "react": ">=16"
+    "@dfinity/agent": ">=0.10.2",
+    "@identity-labs/react-ic-ii-auth": ">=0.0.16",
+    "react": ">=16",
+    "react-dom": ">=16"
   },
   "husky": {
     "hooks": {
@@ -75,8 +76,6 @@
     "husky": "^7.0.4",
     "identity-obj-proxy": "3.0.0",
     "postcss": "8.4.12",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
     "rollup-plugin-image-files": "1.4.2",
     "rollup-plugin-postcss": "4.0.2",
@@ -93,6 +92,8 @@
     }
   },
   "dependencies": {
+    "@dfinity/candid": "0.10.4",
+    "@dfinity/principal": "0.10.4",
     "clsx": "1.1.1",
     "qrcode": "1.5.0",
     "react-helmet": "6.1.0",

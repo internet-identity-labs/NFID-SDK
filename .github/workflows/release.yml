@@ -29,11 +29,12 @@ jobs:
         with:
           dfx-version: 0.9.2
         env:
-          DFX_IDENTITY_PEM: ${{ secrets.GH_MP_ADMIN_PEM }}
+          DFX_IDENTITY_PEM: ${{ secrets.PROD_GH_ACTION_DFX_IDENTITY_PEM }}
 
       - name: CREATE-IC-APP-REACT Demo | install & deploy
         run: |
-          cd examples/create-ic-app-react-demo && yarn
+          yarn
+          cd examples/create-ic-app-react-demo
 
           # install local to generate the types
           dfx start --clean --background
@@ -48,5 +49,5 @@ jobs:
 
         env:
           DFX_NETWORK: ic
-          VITE_NFID_PROVIDER_URL: https://${{secrets.PROD_CANISTER_ID_NFID_FRONTEND}}.ic0.app/authenticate/?applicationName=NFID-Demo
-          VITE_NFID_PROVIDER_IFRAME_URL: https://${{secrets.PROD_CANISTER_ID_NFID_FRONTEND}}.ic0.app/iframe-authenticate/?applicationName=NFID-Demo
+          REACT_APP_NFID_PROVIDER_URL: https://${{secrets.PROD_CANISTER_ID_NFID_FRONTEND}}.ic0.app/authenticate/?applicationName=NFID-Demo
+          REACT_APP_NFID_PROVIDER_IFRAME_URL: https://${{secrets.PROD_CANISTER_ID_NFID_FRONTEND}}.ic0.app/iframe-authenticate/?applicationName=NFID-Demo
