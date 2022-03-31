@@ -2,13 +2,17 @@
   "name": "nfid-sdk",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "examples/*"
   ],
   "devDependencies": {
+    "patch-package": "^6.4.7",
     "wsrun": "^5.2.4"
   },
   "scripts": {
     "ws": "yarn run wsrun",
-    "test": "yarn ws test"
+    "test": "yarn ws test",
+    "tunnel": "./scripts/tunnel.sh",
+    "postinstall": "patch-package"
   }
 }
