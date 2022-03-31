@@ -33,6 +33,27 @@
         "panel": "new",
         "group": "develop"
       }
+    },
+    {
+      "label": "DFX deploy demo",
+      "dependsOn": ["NFID DFX replica"],
+      "type": "shell",
+      "command": "cd examples/create-ic-app-react-demo && dfx deploy",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "group": "backend"
+      }
+    },
+    {
+      "label": "NFID Demo",
+      "type": "shell",
+      "command": "cd examples/create-ic-app-react-demo && yarn && yarn dev",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "group": "develop"
+      }
     }
   ]
 }

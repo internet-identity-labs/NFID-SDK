@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "profile": {
+      "main": "ic/profile/main.mo",
+      "type": "motoko"
+    },
+    "assets": {
+      "dependencies": ["profile"],
+      "ui": {
+        "entrypoint": "out/index.html"
+      },
+      "source": ["out/"],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": ""
+    }
+  },
+  "dfx": "0.9.2",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
