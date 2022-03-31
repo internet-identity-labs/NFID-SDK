@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "test": "jest --passWithNoTests",
     "serve": "vite preview"
   },
   "dependencies": {

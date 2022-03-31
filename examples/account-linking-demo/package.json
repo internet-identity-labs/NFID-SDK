@@ -23,7 +23,7 @@
     "start": "next start",
     "build": "next build && next export",
     "export": "next export",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "ic:deploy": "dfx deploy",
     "ic:start": "dfx start --background",
     "ic:start-clean": "dfx start --background --clean"
