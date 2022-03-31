@@ -22,6 +22,17 @@
         "panel": "new",
         "group": "develop"
       }
+    },
+    {
+      "label": "NFID DFX replica",
+      "type": "shell",
+      "command": "dfx start",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "group": "develop"
+      }
     }
   ]
 }
