@@ -2,6 +2,32 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "NFID Development Environment",
+      "type": "shell",
+      "dependsOn": [
+        "NFID Frontend",
+        "NFID Demo",
+        "NFID SDK REACT",
+        "NFID NGROK tunnel",
+        "NFID DFX replica"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "group": "develop"
+      }
+    },
+    {
+      "label": "NFID Frontend",
+      "type": "shell",
+      "command": "cd packages/nfid-fronten && yarn && yarn dev",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "group": "develop"
+      }
+    },
+    {
       "label": "NFID SDK REACT",
       "type": "shell",
       "command": "cd packages/nfid-sdk-react && yarn start",
@@ -17,6 +43,17 @@
       "type": "shell",
       "command": "cd packages/nfid-sdk-react && yarn storybook",
       "dependsOn": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "group": "develop"
+      }
+    },
+    {
+      "label": "NFID NGROK tunnel",
+      "type": "shell",
+      "command": "yarn tunnel",
+      "isBackground": true,
       "presentation": {
         "reveal": "always",
         "panel": "new",
