@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -55,6 +55,7 @@
     "@dfinity/agent": "^0.10.4",
     "@identity-labs/nfid-ui-kit-core": "0.0.1",
     "@identity-labs/react-ic-ii-auth": "0.0.16",
+    "@rollup/plugin-image": "^2.1.1",
     "@size-limit/preset-small-lib": "^7.0.8",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-info": "^5.3.21",
@@ -75,6 +76,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
+    "rollup-plugin-image-files": "1.4.2",
     "rollup-plugin-postcss": "4.0.2",
     "size-limit": "^7.0.8",
     "tailwindcss": "3.0.23",
