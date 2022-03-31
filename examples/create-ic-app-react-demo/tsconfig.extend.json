@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "canisters/counter": [".dfx/local/canisters/counter"]
+    }
+  }
+}

@@ -1,3 +1,4 @@
+const images = require('@rollup/plugin-image');
 const postcss = require('rollup-plugin-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
@@ -5,6 +6,7 @@ const cssnano = require('cssnano');
 module.exports = {
   rollup(config, options) {
     config.plugins.push(
+      images({ incude: ['**/*.png', '**/*.jpg', '**/*.webp'] }),
       postcss({
         plugins: [
           autoprefixer(),
@@ -12,9 +14,9 @@ module.exports = {
             preset: 'default',
           }),
         ],
-        inject: false,
-        // only write out CSS for the first bundle (avoids pointless extra files):
-        extract: !!options.writeMeta,
+        // inject: false,
+        // // only write out CSS for the first bundle (avoids pointless extra files):
+        // extract: !!options.writeMeta,
       })
     );
     return config;
