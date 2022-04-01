@@ -16,3 +16,4 @@ yarn-error.log
 dist/
 .dfx
 lerna-debug.log
+.npmrc

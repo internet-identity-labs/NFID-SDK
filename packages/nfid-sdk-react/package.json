@@ -1,5 +1,8 @@
 {
   "version": "0.0.0",
+  "name": "@internet-identity-labs/nfid-sdk-react",
+  "repository": "https://github.com/internet-identity-labs/NFID-SDK",
+  "author": "Philipp Litzenberger",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -38,8 +41,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@identity-labs/nfid-sdk-react",
-  "author": "Philipp Litzenberger",
   "module": "dist/tsdx-nfid-sdk-react.esm.js",
   "size-limit": [
     {
@@ -54,7 +55,7 @@
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@dfinity/agent": "^0.10.4",
-    "@identity-labs/nfid-ui-kit-core": "0.0.0",
+    "@identity-labs/nfid-ui-kit-core": "^0.0.0",
     "@identity-labs/react-ic-ii-auth": "0.0.16",
     "@rollup/plugin-image": "^2.1.1",
     "@size-limit/preset-small-lib": "^7.0.8",
