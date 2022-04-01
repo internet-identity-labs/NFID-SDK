@@ -1,6 +1,6 @@
 {
   "name": "create-ic-app-react-demo",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "dependencies": {
     "@dfinity/agent": "0.10.3",
@@ -9,7 +9,7 @@
     "@dfinity/candid": "0.10.3",
     "@dfinity/identity": "0.10.3",
     "@dfinity/principal": "0.10.3",
-    "@identity-labs/nfid-sdk-react": "0.0.1",
+    "@identity-labs/nfid-sdk-react": 0.0.0,
     "@identity-labs/react-ic-ii-auth": "0.0.16",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",

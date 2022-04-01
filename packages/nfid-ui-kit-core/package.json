@@ -1,7 +1,7 @@
 {
   "name": "@identity-labs/nfid-ui-kit-core",
   "packageManager": "yarn@3.2.0",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "A Tailwind CSS plugin for NFID applications",
   "main": "src/index.js",
   "files": [

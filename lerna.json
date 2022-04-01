@@ -1,0 +1,16 @@
+{
+  "packages": ["packages/nfid-sdk-react", "packages/nfid-ui-kit-core"],
+  "version": "independent",
+  "npmClient": "yarn",
+  "command": {
+    "publish": {
+      "ignoreChanges": ["ignored-file", "*.md"],
+      "message": "chore(release): publish",
+      "registry": "https://npm.pkg.github.com"
+    },
+    "bootstrap": {
+      "ignore": "component-*",
+      "npmClientArgs": ["--no-package-lock"]
+    }
+  }
+}
