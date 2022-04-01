@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import React from 'react';
 
-import { Button } from 'atoms/button';
-import { H5 } from 'atoms/typography';
+import { Button } from '../../../atoms/button';
+import { H5 } from '../../../atoms/typography';
 
 import { ModalCloseIcon } from '../closeIcon';
 
@@ -13,10 +13,7 @@ export interface ModalButtonProps {
 }
 
 export interface ModalAdvancedProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+  extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   onClose?: () => void;
   primaryButton?: ModalButtonProps;

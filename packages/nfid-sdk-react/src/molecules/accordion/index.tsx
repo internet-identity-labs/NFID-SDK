@@ -2,11 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { BiChevronDown, BiChevronRight } from 'react-icons/bi';
 
-interface AccordionProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   details: string | React.ReactNode;
 }

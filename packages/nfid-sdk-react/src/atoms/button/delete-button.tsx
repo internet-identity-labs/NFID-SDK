@@ -1,11 +1,7 @@
 import React from 'react';
 import { HiTrash } from 'react-icons/hi';
 
-interface DeleteButtonProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+interface DeleteButtonProps extends React.HTMLAttributes<HTMLDivElement> {
   disabled?: boolean;
   onClick?: () => void;
 }

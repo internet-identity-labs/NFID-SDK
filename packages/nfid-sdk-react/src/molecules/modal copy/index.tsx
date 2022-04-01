@@ -11,11 +11,7 @@ import { ModalWarningIcon } from './warningIcon';
 
 type ModalIconType = 'success' | 'error';
 
-interface ModalProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
   buttonText: string;
   title: string;
   description?: string;

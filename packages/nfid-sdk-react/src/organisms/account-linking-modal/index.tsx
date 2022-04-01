@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal } from '../../molecules/modal';
+import { Modal } from '../../molecules/modal/index-v1';
 
 interface AccountLinkingModalProps {}
 

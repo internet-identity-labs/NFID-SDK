@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Modal, ModalProps } from '.';
+import { Modal, ModalProps } from './index-v1';
 import { Button } from '../../atoms/button';
 
 const meta: Meta = {

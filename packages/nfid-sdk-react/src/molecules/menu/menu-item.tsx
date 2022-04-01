@@ -1,14 +1,10 @@
-import React from "react"
+import React from 'react';
 
-interface Props
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
-  icon?: React.ReactNode
-  title: string
-  subtitle?: string
-  onClick?: () => void
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
+  icon?: React.ReactNode;
+  title: string;
+  subtitle?: string;
+  onClick?: () => void;
 }
 
 export const MenuItem: React.FC<Props> = ({
@@ -28,5 +24,5 @@ export const MenuItem: React.FC<Props> = ({
         {subtitle && <span className="text-xs text-gray-400">{subtitle}</span>}
       </span>
     </div>
-  )
-}
+  );
+};

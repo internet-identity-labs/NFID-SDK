@@ -1,11 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
-interface ErrorIconProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {}
+interface ErrorIconProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export const ErrorIcon: React.FC<ErrorIconProps> = ({ className }) => {
   return (

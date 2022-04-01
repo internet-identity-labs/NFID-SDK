@@ -2,11 +2,7 @@ import React from 'react';
 
 import { H5 } from '../../atoms/typography';
 
-interface CardSubtitleProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {}
+interface CardSubtitleProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export const CardSubtitle: React.FC<CardSubtitleProps> = ({ children }) => {
   return (

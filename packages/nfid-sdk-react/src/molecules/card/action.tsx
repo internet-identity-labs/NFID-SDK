@@ -3,11 +3,7 @@ import React from 'react';
 
 import { Divider } from '../../atoms/divider';
 
-interface Props
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   divider?: boolean;
   bottom?: boolean;
 }

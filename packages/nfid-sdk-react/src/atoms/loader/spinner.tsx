@@ -1,11 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
-interface SpinnerProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {}
+interface SpinnerProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export const Spinner: React.FC<SpinnerProps> = ({ className }) => {
   return (

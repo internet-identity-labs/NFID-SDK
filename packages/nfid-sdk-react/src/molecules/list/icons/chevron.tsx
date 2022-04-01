@@ -1,11 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
-interface ListItemChevronProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+interface ListItemChevronProps extends React.HTMLAttributes<HTMLDivElement> {
   onClick?: () => void;
 }
 

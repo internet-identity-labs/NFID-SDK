@@ -1,11 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
-interface NFIDLogoIDProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {}
+interface NFIDLogoIDProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export const NFIDLogoID: React.FC<NFIDLogoIDProps> = ({ className }) => {
   return (

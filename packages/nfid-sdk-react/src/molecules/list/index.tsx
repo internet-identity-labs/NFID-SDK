@@ -15,11 +15,7 @@ interface ListCompoundProps {
   Items: React.FC;
 }
 
-interface Props
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactElement[] | JSX.Element[] | React.ReactNode;
 }
 

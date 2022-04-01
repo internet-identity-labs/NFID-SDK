@@ -1,11 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
-interface LogoTextProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {}
+interface LogoTextProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export const LogoText: React.FC<LogoTextProps> = ({ className }) => {
   return (

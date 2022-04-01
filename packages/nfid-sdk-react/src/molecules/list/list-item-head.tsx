@@ -1,11 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
-interface Props
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   description?: string;
 }

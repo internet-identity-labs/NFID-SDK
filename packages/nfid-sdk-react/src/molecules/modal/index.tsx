@@ -1,93 +1,62 @@
-import clsx from 'clsx';
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-export const Header: React.FC = ({ children }) => <div>{children}</div>;
+import { Button } from '../../atoms/button';
+import { H5 } from '../../atoms/typography';
+import { P } from '../../atoms/typography/paragraph';
 
-const useModalRoot = (id: string) => {
-  const modalRoot = React.useRef<HTMLDivElement | null>(null);
+import { NFIDGradientBar } from '../../atoms/gradient-bar';
+import { ModalCloseIcon } from './closeIcon';
+import { ModalSuccessIcon } from './successIcon';
+import { ModalWarningIcon } from './warningIcon';
 
-  React.useEffect(() => {
-    modalRoot.current = document.createElement('div');
-    modalRoot.current.id = `modal-root-${id}`;
-    document.body.appendChild(modalRoot.current);
-    return () => {
-      modalRoot.current && document.body.removeChild(modalRoot.current);
-    };
-  }, [id]);
-  return modalRoot;
-};
+type ModalIconType = 'success' | 'error';
 
-export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
-  onClose: () => void;
-  onModalMounted?: () => void;
-  id: string;
-  isVisible?: boolean;
+interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
+  buttonText: string;
+  title: string;
+  description?: string;
+  onClick?: () => void;
+  iconType?: ModalIconType;
 }
 
 export const Modal: React.FC<ModalProps> = ({
-  id,
-  children,
-  className,
-  isVisible,
-  onClose,
-  onModalMounted,
+  title,
+  buttonText,
+  description,
+  onClick,
+  iconType,
 }) => {
-  const [visible, setVisible] = React.useState(false);
-  const modalRoot = useModalRoot(id);
+  return (
+    <>
+      <div className="fixed inset-0 z-50 flex items-center justify-center mx-4 overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
+        <div className="relative w-full max-w-sm mx-auto my-6">
+          <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
+            <div className="relative flex-auto px-6 text-center">
+              <NFIDGradientBar />
 
-  React.useEffect(() => {
-    const val = setTimeout(() => setVisible(!!isVisible));
-    return () => clearTimeout(val);
-  }, [isVisible]);
+              {iconType === 'success' && (
+                <ModalSuccessIcon className="mx-auto" />
+              )}
+              {iconType === 'error' && <ModalWarningIcon className="mx-auto" />}
 
-  React.useEffect(() => {
-    const timeout = setTimeout(() => onModalMounted && onModalMounted());
-    return () => clearTimeout(timeout);
-  }, [onModalMounted]);
+              <H5 className="my-4">{title}</H5>
 
-  const escFunction = React.useCallback(
-    (event) => {
-      if (event.keyCode === 27) {
-        onClose();
-      }
-    },
-    [onClose]
-  );
+              <P className="mb-2">{description}</P>
+            </div>
 
-  React.useEffect(() => {
-    document.addEventListener('keydown', escFunction, false);
-
-    return () => {
-      document.removeEventListener('keydown', escFunction, false);
-    };
-  });
-
-  return modalRoot?.current
-    ? ReactDOM.createPortal(
-        <div
-          onClick={onClose}
-          className={clsx([
-            'transition ease-in-out delay-150 duration-300',
-            'z-50 top-0 right-0 bottom-0 left-0',
-            visible ? 'fixed bg-opacity-75 bg-gray-200' : 'bg-transparent',
-          ])}
-        >
-          <div
-            className={clsx([
-              'transition ease-in-out delay-150 duration-300',
-              'fixed top-[50%] right-[50%] bottom-[50%] left-[50%]',
-              'transform -translate-x-2/4 -translate-y-2/4',
-              'md:rounded-md drop-shadow-lg',
-              'min-w-min min-h-min bg-white',
-              visible ? 'scale-100' : 'scale-0',
-              className,
-            ])}
-          >
-            {children}
+            <div className="flex items-center justify-end p-6">
+              <Button secondary className="w-full" onClick={onClick}>
+                {buttonText}
+              </Button>
+            </div>
           </div>
-        </div>,
-        modalRoot.current
-      )
-    : null;
+
+          <div className="absolute top-5 right-5" onClick={onClick}>
+            <ModalCloseIcon />
+          </div>
+        </div>
+      </div>
+      <div className="fixed inset-0 z-40 opacity-30 bg-black-base"></div>
+    </>
+  );
 };

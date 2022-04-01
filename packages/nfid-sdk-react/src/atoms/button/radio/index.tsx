@@ -2,11 +2,7 @@ import React from 'react';
 
 import { Label } from '../../input/label';
 
-interface RadioButtonProps
-  extends React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  > {
+interface RadioButtonProps extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   text?: string;
   value?: string;

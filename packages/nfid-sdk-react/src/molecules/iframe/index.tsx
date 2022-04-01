@@ -4,11 +4,7 @@ import React, { useState } from 'react';
 import { IFrameContent } from './content';
 import { IFrameWrapper } from './wrapper';
 
-interface Props
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   src: string;
   onLoad?: () => void;
 }

@@ -1,14 +1,9 @@
-import clsx from "clsx"
-import React from "react"
+import clsx from 'clsx';
+import React from 'react';
 
-interface ModalWarningIconProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {}
+interface ModalWarningIconProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export const ModalWarningIcon: React.FC<ModalWarningIconProps> = ({
-  children,
   className,
 }) => {
   return (
@@ -17,7 +12,7 @@ export const ModalWarningIcon: React.FC<ModalWarningIconProps> = ({
       height="235"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={clsx("", className)}
+      className={clsx('', className)}
     >
       <g opacity="0.4" filter="url(#filter0_f_1179_5054)">
         <circle
@@ -151,5 +146,5 @@ export const ModalWarningIcon: React.FC<ModalWarningIconProps> = ({
         </clipPath>
       </defs>
     </svg>
-  )
-}
+  );
+};

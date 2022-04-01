@@ -20,7 +20,7 @@
     {
       "label": "NFID Frontend",
       "type": "shell",
-      "command": "cd packages/nfid-fronten && yarn && yarn dev",
+      "command": "cd packages/nfid-frontend && yarn && yarn dev",
       "presentation": {
         "reveal": "always",
         "panel": "new",

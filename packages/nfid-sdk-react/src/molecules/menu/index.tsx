@@ -5,11 +5,7 @@ import { ErrorIcon } from '../../atoms/input/icons/error';
 
 import { DropdownMenuChevron } from './icons/chevron';
 
-interface Props
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
   disabled?: boolean;
   errorText?: string;

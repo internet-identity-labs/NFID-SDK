@@ -2,10 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 
 interface DropdownMenuChevronProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {}
+  extends React.HTMLAttributes<HTMLDivElement> {}
 
 export const DropdownMenuChevron: React.FC<DropdownMenuChevronProps> = ({
   className,

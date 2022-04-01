@@ -1,11 +1,7 @@
 import clsx from 'clsx';
 import React, { useState } from 'react';
 
-interface IFrameContentProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+interface IFrameContentProps extends React.HTMLAttributes<HTMLDivElement> {
   onLoad?: () => void;
   src: string;
 }

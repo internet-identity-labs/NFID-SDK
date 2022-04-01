@@ -1,14 +1,9 @@
-import clsx from "clsx"
-import React from "react"
+import clsx from 'clsx';
+import React from 'react';
 
-interface ModalSuccessIconProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {}
+interface ModalSuccessIconProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export const ModalSuccessIcon: React.FC<ModalSuccessIconProps> = ({
-  children,
   className,
 }) => {
   return (
@@ -17,7 +12,7 @@ export const ModalSuccessIcon: React.FC<ModalSuccessIconProps> = ({
       width="235"
       height="235"
       fill="none"
-      className={clsx("", className)}
+      className={clsx('', className)}
     >
       <g filter="url(#filter0_f_1055_1100)" opacity="0.7">
         <circle
@@ -129,5 +124,5 @@ export const ModalSuccessIcon: React.FC<ModalSuccessIconProps> = ({
         </linearGradient>
       </defs>
     </svg>
-  )
-}
+  );
+};
