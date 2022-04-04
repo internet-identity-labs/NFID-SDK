@@ -40,6 +40,10 @@ jobs:
         env:
           DFX_IDENTITY_PEM: ${{ secrets.PROD_GH_ACTION_DFX_IDENTITY_PEM }}
 
+      - name: NFID SDK | build
+        working-directory: packages/nfid-sdk-react
+        run: yarn build
+
       - name: CREATE-IC-APP-REACT Demo | install & deploy
         run: |
           yarn
