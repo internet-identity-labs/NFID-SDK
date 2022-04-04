@@ -26,7 +26,7 @@
   },
   "scripts": {
     "dev": "craco start",
-    "build": "craco build",
+    "build": "node scripts/remove-local-dev-canister.js && craco build",
     "test": "jest --passWithNoTests",
     "eject": "craco eject"
   },

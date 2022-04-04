@@ -1,0 +1,201 @@
+type Error = text;
+type Token = text;
+
+type ConfigurationRequest = record {
+    lambda: principal;
+    token_ttl: nat64;
+    token_refresh_ttl: nat64;
+    key: blob;
+    whitelisted_phone_numbers: opt vec text;
+    heartbeat: nat32;
+    backup_canister_id: text;
+    whitelisted_canisters: vec principal;
+    env: opt text
+};
+
+type BoolHttpResponse = record {
+    data: opt bool;
+    error: opt Error;
+    status_code: nat16;
+};
+
+type Response = record {
+    error: opt Error;
+    status_code: nat16;
+};
+
+type EmptyHttpResponse = record {
+     data: opt text;
+     error: opt Error;
+     status_code: nat16;
+ };
+
+type LogLevel = variant {
+    ERROR;
+    INFO;
+};
+
+type Log = record {
+    log: text;
+    level: LogLevel;
+    timestamp: nat64;
+};
+
+type BasicEntity = record {
+    created_date: nat64;
+    modified_date: nat64;
+};
+
+ //  ----------------------ACCOUNT SECTION----------------------------
+
+type AccountResponse = record {
+    anchor: nat64;
+    principal_id: text;
+    name: opt text;
+    phone_number: opt text;
+    personas: vec PersonaResponse;
+    access_points: vec AccessPoint;
+};
+
+type HTTPAccountResponse = record {
+    data: opt AccountResponse;
+    error: opt Error;
+    status_code: nat16;
+};
+
+type HTTPAccountRequest = record {
+    anchor: nat64;
+};
+
+type HTTPAccountUpdateRequest = record {
+    name: opt text;
+};
+
+type Account = record {
+    anchor: nat64;
+    principal_id: text;
+    name: opt text;
+    phone_number: opt text;
+    personas: vec Persona;
+    access_points: vec AccessPoint;
+    basic_entity: BasicEntity;
+};
+
+ //  ----------------------PERSONA SECTION----------------------------
+
+type PersonaRequest = record {
+    persona_id: text;
+    domain: text;
+};
+
+type PersonaResponse = record {
+    persona_id: text;
+    domain: text;
+};
+
+type Persona = record {
+    persona_id: text;
+    domain: text;
+    basic_entity: BasicEntity;
+};
+
+type HTTPPersonasResponse = record {
+    data: opt vec PersonaResponse;
+    error: opt Error;
+    status_code: nat16;
+};
+
+
+ //  ----------------------APPLICATION SECTION----------------------------
+
+type Application = record {
+    name: text;
+    domain: text;
+    user_limit: nat16;
+};
+
+type HTTPApplicationResponse = record {
+    data: opt vec Application;
+    error: opt Error;
+    status_code: nat16;
+};
+
+
+ //  ----------------------PHONE SECTION----------------------------
+
+type TokenRequest = record {
+    phone_number: text;
+    token: text;
+    principal_id: text;
+};
+
+type ValidatePhoneRequest = record {
+    phone_number: text;
+    principal_id: text;
+};
+
+type PhoneNumberCredential = record {
+  phone_number: text;
+};
+
+type Credential = variant {
+    phone_number: PhoneNumberCredential;
+};
+
+type CredentialResponse = record {
+    data: opt vec Credential;
+    error: opt Error;
+    status_code: nat16;
+};
+
+//  ----------------------ACCESS POINT SECTION----------------------------
+
+type AccessPointRequest = record {
+    pub_key: blob;
+};
+
+type AccessPoint = record {
+    principal_id: text;
+};
+
+type HTTPAccessPointResponse = record {
+    data: opt vec AccessPoint;
+    error: opt Error;
+    status_code: nat16;
+};
+
+ //  ---------------------------------------------------------
+ //  ----------------------SERVICE----------------------------
+ //  ---------------------------------------------------------
+
+service : () -> {
+  configure: (ConfigurationRequest) -> ();
+
+  get_account: () -> (HTTPAccountResponse) query;
+  create_account: (HTTPAccountRequest) -> (HTTPAccountResponse);
+  remove_account: () -> (BoolHttpResponse);
+  update_account: (HTTPAccountUpdateRequest) -> (HTTPAccountResponse);
+
+  create_persona: (PersonaRequest) -> (HTTPAccountResponse);
+  read_personas: () -> (HTTPPersonasResponse) query;
+
+  validate_phone: (ValidatePhoneRequest) -> (Response);
+  post_token: (TokenRequest) -> (Response);
+  verify_token: (Token) -> (Response);
+  credentials: () -> (CredentialResponse);
+
+  create_application: (Application) -> (HTTPApplicationResponse);
+  delete_application: (text) -> (BoolHttpResponse);
+  read_applications: () -> (HTTPApplicationResponse) query;
+  is_over_the_application_limit: (text) -> (BoolHttpResponse) query;
+
+  get_logs: (nat64) -> (vec Log);
+  get_all_logs: () -> (vec Log);
+
+  create_access_point: (AccessPointRequest) -> (HTTPAccessPointResponse);
+  remove_access_point: (AccessPointRequest) -> (HTTPAccessPointResponse);
+  read_access_points: () -> (HTTPAccessPointResponse);
+
+  store_accounts: (vec Account) -> (BoolHttpResponse);
+  restore_accounts: (text) -> (BoolHttpResponse);
+}

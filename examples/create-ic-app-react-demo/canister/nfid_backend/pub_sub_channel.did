@@ -1,0 +1,17 @@
+type Topic = text;
+type Message = text;
+type Error = text;
+
+type MessageHttpResponse = record {
+    status_code: nat16;
+    body: opt vec Message;
+    error: opt Error;
+};
+
+service : () -> {
+  ping: () -> () query;
+  post_messages: (Topic, vec Message) -> (MessageHttpResponse);
+  get_messages: (Topic) -> (MessageHttpResponse);
+  create_topic: (Topic) -> (MessageHttpResponse);
+  delete_topic: (Topic) -> (MessageHttpResponse);
+}
