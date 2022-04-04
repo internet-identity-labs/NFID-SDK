@@ -3,5 +3,5 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require('@identity-labs/nfid-ui-kit-core')],
+  plugins: [require('@internet-identity-labs/nfid-ui-kit-core')],
 };

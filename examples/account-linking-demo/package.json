@@ -10,7 +10,7 @@
     "@dfinity/identity": "0.10.3",
     "@dfinity/principal": "0.10.3",
     "@identity-labs/react-ic-ii-auth": "0.0.16",
-    "@identity-labs/nfid-sdk-react": "link:../../../nfid-sdk-react",
+    "@internet-identity-labs/nfid-sdk-react": "0.0.1-alpha.0",
     "clsx": "1.1.1",
     "next": "12.0.7",
     "react": "link:../../node_modules/react",
