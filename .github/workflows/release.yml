@@ -45,20 +45,12 @@ jobs:
         run: yarn && yarn build
 
       - name: CREATE-IC-APP-REACT Demo | install & deploy
+        working-directory: examples/create-ic-app-react-demo
         run: |
           yarn
-          cd examples/create-ic-app-react-demo
 
-          # install local to generate the types
-          dfx start --clean --background
-          dfx deploy --no-wallet
-          dfx stop
-
-          # On main branch build on ic
-          if [[ ${GITHUB_REF} == "refs/heads/main" ]]; then
-            dfx identity use action
-            dfx deploy --network ic  --no-wallet
-          fi
+          dfx identity use action
+          dfx deploy --network ic  --no-wallet
 
         env:
           DFX_NETWORK: ic
