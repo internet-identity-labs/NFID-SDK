@@ -45,9 +45,9 @@ jobs:
         run: yarn && yarn build
 
       - name: CREATE-IC-APP-REACT Demo | install & deploy
-        working-directory: examples/create-ic-app-react-demo
         run: |
           yarn
+          cd examples/create-ic-app-react-demo
 
           dfx start --clean --background
           dfx deploy counter --no-wallet
