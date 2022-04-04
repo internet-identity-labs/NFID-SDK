@@ -49,6 +49,10 @@ jobs:
         run: |
           yarn
 
+          dfx start --clean --background
+          dfx deploy counter --no-wallet
+          dfx stop
+
           dfx identity use action
           dfx deploy --network ic  --no-wallet
 
