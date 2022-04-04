@@ -10910,8 +10910,6 @@ __metadata:
     autoprefixer: ^10.4.4
     craco-alias: 3.0.1
     postcss: ^8.4.12
-    react: "link:../../node_modules/react"
-    react-dom: "link:../../node_modules/react-dom"
     react-scripts: 5.0.0
     typescript: ^4.6.3
     web-vitals: ^2.1.4
@@ -15878,8 +15876,6 @@ __metadata:
     patch-package: 6.4.7
     postcss: 8.4.5
     prettier: 2.5.1
-    react: "link:../../node_modules/react"
-    react-dom: "link:../../node_modules/react-dom"
     tailwindcss: ^3.0.8
     ts-jest: 27.1.2
     typescript: 4.5.4
@@ -23020,18 +23016,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@link:../../node_modules/react-dom::locator=create-ic-app-react-demo%40workspace%3Aexamples%2Fcreate-ic-app-react-demo":
-  version: 0.0.0-use.local
-  resolution: "react-dom@link:../../node_modules/react-dom::locator=create-ic-app-react-demo%40workspace%3Aexamples%2Fcreate-ic-app-react-demo"
-  languageName: node
-  linkType: soft
-
-"react-dom@link:../../node_modules/react-dom::locator=identity-labs-react-ic-ii-auth-example%40workspace%3Aexamples%2Faccount-linking-demo":
-  version: 0.0.0-use.local
-  resolution: "react-dom@link:../../node_modules/react-dom::locator=identity-labs-react-ic-ii-auth-example%40workspace%3Aexamples%2Faccount-linking-demo"
-  languageName: node
-  linkType: soft
-
 "react-dom@npm:^16.8.3":
   version: 16.14.0
   resolution: "react-dom@npm:16.14.0"
@@ -23429,18 +23413,6 @@ __metadata:
   checksum: da3d0192825df3d9f27eef33e7eddf928359a7e3e2b01ae7f7f672ecf4e5c1f7a34f27bdde9ccc24e2e9fbe1d1b9dd2a39c7d47323c9bdf63e7b9bd05c325a71
   languageName: node
   linkType: hard
-
-"react@link:../../node_modules/react::locator=create-ic-app-react-demo%40workspace%3Aexamples%2Fcreate-ic-app-react-demo":
-  version: 0.0.0-use.local
-  resolution: "react@link:../../node_modules/react::locator=create-ic-app-react-demo%40workspace%3Aexamples%2Fcreate-ic-app-react-demo"
-  languageName: node
-  linkType: soft
-
-"react@link:../../node_modules/react::locator=identity-labs-react-ic-ii-auth-example%40workspace%3Aexamples%2Faccount-linking-demo":
-  version: 0.0.0-use.local
-  resolution: "react@link:../../node_modules/react::locator=identity-labs-react-ic-ii-auth-example%40workspace%3Aexamples%2Faccount-linking-demo"
-  languageName: node
-  linkType: soft
 
 "react@npm:^16.8.3":
   version: 16.14.0

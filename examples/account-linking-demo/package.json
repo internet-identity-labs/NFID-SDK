@@ -13,8 +13,6 @@
     "@internet-identity-labs/nfid-sdk-react": "0.0.1-alpha.0",
     "clsx": "1.1.1",
     "next": "12.0.7",
-    "react": "link:../../node_modules/react",
-    "react-dom": "link:../../node_modules/react-dom",
     "typescript": "4.5.4",
     "web-vitals": "^2.1.2"
   },
