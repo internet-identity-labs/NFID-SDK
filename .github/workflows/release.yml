@@ -42,7 +42,7 @@ jobs:
 
       - name: NFID SDK | build
         working-directory: packages/nfid-sdk-react
-        run: yarn build
+        run: yarn && yarn build
 
       - name: CREATE-IC-APP-REACT Demo | install & deploy
         run: |
