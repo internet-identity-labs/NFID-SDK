@@ -21,7 +21,7 @@ jobs:
 
   publish:
     needs: test
-    runs-on: ubuntu-lates:
+    runs-on: ubuntu-lates
     steps:
       - name: Set package registry
         run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.IL_GH_NPM_TOKEN }}
