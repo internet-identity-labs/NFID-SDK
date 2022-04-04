@@ -55,8 +55,8 @@
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@dfinity/agent": "^0.10.4",
-    "@internet-identity-labs/nfid-ui-kit-core": "^0.0.1-alpha.0",
     "@identity-labs/react-ic-ii-auth": "0.0.16",
+    "@internet-identity-labs/nfid-ui-kit-core": "^0.0.1-alpha.0",
     "@rollup/plugin-image": "^2.1.1",
     "@size-limit/preset-small-lib": "^7.0.8",
     "@storybook/addon-essentials": "^6.4.19",

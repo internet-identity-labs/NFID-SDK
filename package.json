@@ -16,5 +16,6 @@
     "test": "yarn ws test",
     "tunnel": "./scripts/tunnel.sh",
     "postinstall": "patch-package"
-  }
+  },
+  "packageManager": "yarn@3.2.0"
 }

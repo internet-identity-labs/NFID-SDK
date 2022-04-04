@@ -9,8 +9,8 @@
     "@dfinity/candid": "0.10.3",
     "@dfinity/identity": "0.10.3",
     "@dfinity/principal": "0.10.3",
-    "@internet-identity-labs/nfid-sdk-react": "0.0.1-alpha.0",
     "@identity-labs/react-ic-ii-auth": "0.0.16",
+    "@internet-identity-labs/nfid-sdk-react": "0.0.1-alpha.0",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
@@ -51,7 +51,7 @@
   "devDependencies": {
     "@craco/craco": "6.4.3",
     "autoprefixer": "^10.4.4",
-    "postcss": "^8.4.12",
-    "craco-alias": "3.0.1"
+    "craco-alias": "3.0.1",
+    "postcss": "^8.4.12"
   }
 }
