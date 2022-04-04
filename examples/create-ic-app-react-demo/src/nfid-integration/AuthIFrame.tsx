@@ -1,5 +1,5 @@
 import useClickOutside from "../hooks/useClickOutside"
-import { IFrame } from "@identity-labs/nfid-sdk-react"
+import { IFrame } from "@internet-identity-labs/nfid-sdk-react"
 import React from "react"
 
 interface IAuthFrame {
