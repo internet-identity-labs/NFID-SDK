@@ -21,9 +21,9 @@
     },
     "nfid_frontend": {
       "type": "assets",
-      "source": ["dist/"],
+      "source": ["canister/nfid_frontend/build"],
       "frontend": {
-        "entrypoint": "dist/index.html"
+        "entrypoint": "canister/nfid_frontend/build/index.html"
       }
     },
     "assets": {

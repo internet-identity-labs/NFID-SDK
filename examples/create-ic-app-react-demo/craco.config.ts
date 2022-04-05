@@ -65,6 +65,7 @@ const config = {
     {
       plugin: CracoAlias,
       options: {
+        // NOTE: required to include the generated files from .dfx folder
         unsafeAllowModulesOutsideOfSrc: true,
         source: "tsconfig",
         // baseUrl SHOULD be specified
