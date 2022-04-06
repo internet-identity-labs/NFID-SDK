@@ -11,7 +11,7 @@
 - [Composition![](#composition)](#composition)
 - [Use cases & limitations![](#use-cases-and-limitations)](#use-cases-and-limitations)
 - [Licensing![](#licensing)](#licensing)
-- [Contact us![](#contact)](#contact)
+- [Contact us![](#contact-us)](#contact-us)
 
 ---
 
@@ -88,7 +88,7 @@ The NFID-SDK is currently limited to integration with React applications only, a
 
 For more information on how to use the NFID-SDK, please refer to the [license](./LICENSE).
  
-## Contact us[![]()](#contact)
+## Contact us[![]()](#contact-us)
 
 > 💠 **For all of our latest updates, you can follow us on [Twitter](https://twitter.com/intent/follow?screen_name=IdentityMaxis)**
 
