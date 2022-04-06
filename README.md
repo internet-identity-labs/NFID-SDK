@@ -9,6 +9,7 @@
 - [Table of contents](#table-of-contents)
 - [Getting started![](#getting-started)](#getting-started)
 - [Composition![](#composition)](#composition)
+- [Examples![](#examples)](#examples)
 - [Use cases & limitations![](#use-cases-and-limitations)](#use-cases-and-limitations)
 - [Licensing![](#licensing)](#licensing)
 - [Contact us![](#contact-us)](#contact-us)
@@ -25,7 +26,7 @@ To get the **NFID-SDK** up and running with the [create-ic-app-react-demo](./exa
 
 Open a terminal on the root directory of the NFID-SDK, and run the following commands:
 
-```shell
+```bash
 # Step 1: install dependencies
 $ yarn
 
@@ -35,7 +36,7 @@ $ dfx start --clean --background
 
 On a new terminal window and run the `create-ic-app-react-demo` example:
 
-```shell
+```bash
 # Step 3: run the create-ic-app-react-demo example
 $ cd examples/create-ic-app-react-demo
 
@@ -45,25 +46,10 @@ $ yarn
 
 Once the dependencies are installed, you can deploy the example application to your local DFX environment with:
 
-```shell
+```bash
 # Step 5: deploy the example application
-$ dfx deploy --argument ‘(null)’
+$ dfx deploy --argument '(null)'
 ```
-
-<!-- <table>
-  <tr>
-    <td nowrap><strong>Supported OS</strong></td>
-    <td>Linux (list of <a href="./docs/POSIX.md#the-list-of-posix-api-used-in-areg-sdk-including-multicast-message-router" alt="list of POSX API">POSIX API</a>), Windows 8 and higher.</td>
-  </tr>
-  <tr>
-    <td nowrap><strong>Supported CPU</strong></td>
-    <td>x86, x86_64, arm and aarch64.</td>
-  </tr>
-  <tr>
-    <td nowrap><strong>Supported compilers</strong></td>
-    <td>Version C++17 GCC, g++, clang and MSVC.</td>
-  </tr>
-</table> -->
 
 ### Composition[![]()](#composition)
 Currently our *React* components are used to integrate NFID, and the UI utility library is used to provide a consistent look and feel across all of our sample applications.
@@ -71,6 +57,8 @@ Currently our *React* components are used to integrate NFID, and the UI utility 
 NFID-SDK consists of the following `packages/*`:
 1. [nfid-sdk-react](./packages/nfid-sdk-react/) - React component library with components that make use the UI kit and also provide a set of utilities to integrate with NFID conveniently.
 3. [nfid-ui-kit-core](./packages/nfid-ui-kit-core/) - UI utility library with NFID branding, and is used by other sample applications within NFID-SDK.
+
+### Examples[![]()](#examples)
 
 The NFID-SDK also provides a set of examples of how to integrate NFID into your application, which can be found under the `examples/*` directory, and consists of the following examples:
 1. [account-linking-demo](./examples/account-linking-demo/) - A sample application that demonstrates how to link your account to NFID
