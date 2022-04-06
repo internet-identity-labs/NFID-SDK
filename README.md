@@ -4,7 +4,7 @@
 
 ---
 
-## Table of contents[](#table-of-contents)
+### Table of contents[](#table-of-contents)
 - [Introduction![](#introduction)](#introduction)
 - [Table of contents](#table-of-contents)
 - [Getting started![](#getting-started)](#getting-started)
@@ -15,7 +15,7 @@
 
 ---
 
-## Getting started[![]()](#getting-started)
+### Getting started[![]()](#getting-started)
 > 💡 New to Internet Computer? Check out their [introduction](https://smartcontracts.org/docs/introduction/welcome.html) and start building awesome apps!
 
 Before getting started, you need to have **DFX** installed on your device. You can find more information and a step-by-step guide on how to set up your DFX [here](https://smartcontracts.org/docs/developers-guide/install-upgrade-remove.html). 
@@ -65,7 +65,7 @@ $ dfx deploy --argument ‘(null)’
   </tr>
 </table> -->
 
-## Composition[![]()](#composition)
+### Composition[![]()](#composition)
 Currently our *React* components are used to integrate NFID, and the UI utility library is used to provide a consistent look and feel across all of our sample applications.
 
 NFID-SDK consists of the following `packages/*`:
@@ -78,17 +78,17 @@ The NFID-SDK also provides a set of examples of how to integrate NFID into your 
 
 ---
 
-## Use cases and limitations[![]()](#use-cases-and-limitations)
+### Use cases and limitations[![]()](#use-cases-and-limitations)
 
 NFID-SDK can be used across a wide range of use cases, and it is designed to be easy to integrate into your existing application by providing the right set of libraries and components. 
 
 The NFID-SDK is currently limited to integration with React applications only, and the team is actively developing to expand and include other libraries and components for integration, such as Vue and Svelte.
 
-## Licensing[![]()](#licensing)
+### Licensing[![]()](#licensing)
 
 For more information on how to use the NFID-SDK, please refer to the [license](./LICENSE).
  
-## Contact us[![]()](#contact-us)
+### Contact us[![]()](#contact-us)
 
 > 💠 **For all of our latest updates, you can follow us on [Twitter](https://twitter.com/intent/follow?screen_name=IdentityMaxis)**
 
