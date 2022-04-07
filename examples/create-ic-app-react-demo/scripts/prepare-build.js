@@ -30,12 +30,20 @@ const getCanisterIds = () => {
 const canisterEnv = Object.entries(getCanisterIds()).reduce(
   (acc, [key, val]) => ({
     ...acc,
+    ...(key.includes("nfid_frontend") && isDev
+      ? {
+          "process.env.NFID_DOMAIN": JSON.stringify(
+            `http://${val.local}.localhost:8000`,
+          ),
+        }
+      : {}),
     [`process.env.${key.toUpperCase()}_CANISTER_ID`]: isDev
       ? JSON.stringify(val.local)
       : JSON.stringify(val[process.env["DFX_NETWORK"] || ""] || ""),
   }),
   {},
 )
+
 console.log(">> ", { canisterEnv })
 
 shell.exec("./scripts/replace-env.sh", {
@@ -68,5 +76,5 @@ if (process.env.FILTER_DEV_CANISTER === "true") {
     null,
     2,
   )
-  fs.writeFileSync(DFX_JSON_PATH, PROD_DFX_CONF)
+  fs.writeFileSync(`../${DFX_JSON_PATH}`, PROD_DFX_CONF)
 }
