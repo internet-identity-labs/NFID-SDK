@@ -40,8 +40,8 @@ NFID-SDK consists of the following `packages`:
 
 | Repository                                      | Description                                                                                                                               |                                                         |
 | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| [nfid-sdk-react](./packages/nfid-sdk-react)     | React component library with components that make use the UI kit and also provide a set of utilities to integrate with NFID conveniently. | [README](./examples/account-linking-demo/README.md)     |
-| [nfid-ui-kit-core](./packages/nfid-ui-kit-core) | UI utility library with NFID branding, and is used by other sample applications within NFID-SDK.                                          | [README](./examples/create-ic-app-react-demo/README.md) |
+| [nfid-sdk-react](./packages/nfid-sdk-react)     | React component library with components that make use the UI kit and also provide a set of utilities to integrate with NFID conveniently. | [README](./packages/nfid-sdk-react/README.md)     |
+| [nfid-ui-kit-core](./packages/nfid-ui-kit-core) | UI utility library with NFID branding, and is used by other sample applications within NFID-SDK.                                          | [README](./packages/nfid-sdk-react/README.md) |
 
 
 ### Examples[](#examples)
