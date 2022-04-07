@@ -26,7 +26,7 @@
         "entrypoint": "canister/nfid_frontend/build/index.html"
       }
     },
-    "assets": {
+    "demo_frontend": {
       "dependencies": ["counter"],
       "frontend": {
         "entrypoint": "build/index.html"
