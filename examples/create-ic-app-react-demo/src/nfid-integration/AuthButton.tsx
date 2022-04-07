@@ -3,6 +3,7 @@ import nfid from "../assets/nfid-logo.svg"
 import { AuthIFrame } from "./AuthIFrame"
 import { useInternetIdentity } from "@identity-labs/react-ic-ii-auth"
 import React from "react"
+import { counter } from "canisters/counter"
 
 const ProvidersLogos: { [key: string]: string } = {
   NFID: nfid,
@@ -24,6 +25,11 @@ export const AuthButton = ({ provider, reset, iframeMode }: IAuthButton) => {
     if (provider === "NFID" && iframeMode) setIsIframeOpened(true)
     else authenticate()
   }
+
+  const handleWhoami = React.useCallback(async () => {
+    const reponse = await counter.whoami()
+    console.log(">> ", { reponse })
+  }, [])
 
   const signOut = () => {
     signout()
@@ -56,6 +62,9 @@ export const AuthButton = ({ provider, reset, iframeMode }: IAuthButton) => {
           </span>
           <button onClick={signOut} className="auth-button">
             Sign out
+          </button>
+          <button onClick={handleWhoami} className="auth-button">
+            Call whoami
           </button>
         </div>
       )}

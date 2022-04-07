@@ -1,8 +1,30 @@
 {
   "canisters": {
     "counter": {
-      "main": "counter-canister/main.mo",
-      "type": "motoko"
+      "type": "motoko",
+      "main": "canister/counter/main.mo"
+    },
+    "internet_identity": {
+      "type": "custom",
+      "candid": "canister/internet_identity/internet_identity.did",
+      "wasm": "canister/internet_identity//internet_identity_dev.wasm"
+    },
+    "identity_manager": {
+      "type": "custom",
+      "candid": "canister/nfid_backend/identity_manager.did",
+      "wasm": "canister/nfid_backend/identity_manager.wasm"
+    },
+    "pub_sub_channel": {
+      "type": "custom",
+      "candid": "canister/nfid_backend/pub_sub_channel.did",
+      "wasm": "canister/nfid_backend/pub_sub_channel.wasm"
+    },
+    "nfid_frontend": {
+      "type": "assets",
+      "source": ["canister/nfid_frontend/build"],
+      "frontend": {
+        "entrypoint": "canister/nfid_frontend/build/index.html"
+      }
     },
     "assets": {
       "dependencies": ["counter"],

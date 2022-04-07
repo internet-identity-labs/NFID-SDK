@@ -57,6 +57,7 @@ jobs:
           dfx deploy --network ic  --no-wallet
 
         env:
+          FILTER_DEV_CANISTER: true
           DFX_NETWORK: ic
           REACT_APP_NFID_PROVIDER_URL: https://${{secrets.PROD_CANISTER_ID_NFID_FRONTEND}}.ic0.app/authenticate/?applicationName=NFID-Demo
           REACT_APP_NFID_PROVIDER_IFRAME_URL: https://${{secrets.PROD_CANISTER_ID_NFID_FRONTEND}}.ic0.app/iframe-authenticate/?applicationName=NFID-Demo
