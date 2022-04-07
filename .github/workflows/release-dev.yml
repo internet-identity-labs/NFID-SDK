@@ -19,14 +19,17 @@ jobs:
       - name: Deploy
         working-directory: examples/create-ic-app-react-demo
         run: |
+          node scripts/prepare-build.js
+
           dfx start --clean --background
-          dfx deploy --no-wallet
+          dfx deploy counter --no-wallet
           dfx stop
 
           dfx identity use action
           dfx deploy --network dev --no-wallet
 
         env:
+          FILTER_DEV_CANISTER: true
           DFX_NETWORK: dev
           REACT_APP_NFID_PROVIDER_URL: https://${{secrets.DEV_CANISTER_ID_NFID_FRONTEND}}.ic0.app/authenticate/?applicationName=NFID-Demo
           REACT_APP_NFID_PROVIDER_IFRAME_URL: https://${{secrets.DEV_CANISTER_ID_NFID_FRONTEND}}.ic0.app/iframe-authenticate/?applicationName=NFID-Demo

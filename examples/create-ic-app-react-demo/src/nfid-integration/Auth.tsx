@@ -26,17 +26,12 @@ function Auth() {
             authClientOptions={{
               maxTimeToLive: BigInt(Date.now() + 7 * 24 * 60 * 60 * 1e9),
               identityProvider: "https://identity.ic0.app/#authorize",
+              windowOpenerFeatures: `toolbar=0,location=0,menubar=0,width=400,height=600,left=${
+                window.screen.width / 2 - 200
+              }, top=${window.screen.height / 2 - 300}`,
               onSuccess: (principal) => {
                 setProvider("II")
               },
-              opener: () =>
-                window.open(
-                  "https://identity.ic0.app/#authorize".toString(),
-                  "idpWindow",
-                  `toolbar=0,location=0,menubar=0, width=400, height=600, left=${
-                    window.screen.width / 2 - 200
-                  }, top=${window.screen.height / 2 - 300}`,
-                ),
             }}
           >
             <AuthButton
@@ -51,17 +46,12 @@ function Auth() {
             authClientOptions={{
               maxTimeToLive: BigInt(Date.now() + 7 * 24 * 60 * 60 * 1e9),
               identityProvider: NFIDUrl as string,
+              windowOpenerFeatures: `toolbar=0,location=0,menubar=0,width=400,height=600,left=${
+                window.screen.width / 2 - 200
+              }, top=${window.screen.height / 2 - 300}`,
               onSuccess: (principal) => {
                 setProvider("NFID")
               },
-              opener: () =>
-                window.open(
-                  NFIDUrl as string,
-                  "idpWindow",
-                  `toolbar=0,location=0,menubar=0, width=400, height=600, left=${
-                    window.screen.width / 2 - 200
-                  }, top=${window.screen.height / 2 - 300}`,
-                ),
             }}
           >
             <AuthButton
