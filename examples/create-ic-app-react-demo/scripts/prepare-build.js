@@ -44,8 +44,6 @@ const canisterEnv = Object.entries(getCanisterIds()).reduce(
   {},
 )
 
-console.log(">> ", { canisterEnv })
-
 isDev &&
   shell.exec("./scripts/replace-env.sh", {
     env: BACKEND_CANISTER.reduce(
@@ -63,7 +61,6 @@ const LOCAL_CANISTER = [...BACKEND_CANISTER, "nfid_frontend"]
 
 if (process.env.FILTER_DEV_CANISTER === "true") {
   const DEV_DFX_CONF = require(`../${DFX_JSON_PATH}`)
-  console.log(">> ", { DEV_DFX_CONF })
 
   const PROD_DFX_CONF = JSON.stringify(
     {
