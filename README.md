@@ -1,3 +1,10 @@
+<img 
+  src="./nfid-docs/assets/images/NFID.png" 
+  alt="NFID" 
+  width="400"
+  style="background: white;padding:10px;border-radius:8px;"
+/>
+ 
 ## Introduction[](#introduction)
 
 **NFID-SDK** is an open source software development kit that contains libraries and examples for developers to integrate NFID into your applications. It can be used across a wide range of use cases, and it is designed to be easy to integrate into your existing application by providing the right set of libraries and components. 
