@@ -20,7 +20,7 @@ jobs:
         working-directory: examples/create-ic-app-react-demo
         run: |
           dfx start --clean --background
-          dfx deploy --no-wallet
+          dfx deploy canister --no-wallet
           dfx stop
 
           dfx identity use action
