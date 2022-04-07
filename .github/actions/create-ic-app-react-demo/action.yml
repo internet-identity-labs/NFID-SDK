@@ -10,9 +10,11 @@ runs:
         dfx-version: 0.9.3
 
     - name: Install dependencies
+      shell: bash
       run: yarn && yarn ws install
 
     - name: CREATE-IC-APP-REACT Demo | install & deploy
+      shell: bash
       working-directory: examples/create-ic-app-react-demo
       run: |
         node scripts/prepare-build.js
