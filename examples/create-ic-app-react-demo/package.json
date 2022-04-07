@@ -26,7 +26,7 @@
   },
   "scripts": {
     "dev": "craco start",
-    "build": "node scripts/prepare-build.js && craco build",
+    "build": "craco build",
     "test": "jest --passWithNoTests",
     "eject": "craco eject"
   },

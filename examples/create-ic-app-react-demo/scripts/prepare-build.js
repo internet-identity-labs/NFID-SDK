@@ -62,6 +62,7 @@ const LOCAL_CANISTER = [...BACKEND_CANISTER, "nfid_frontend"]
 
 if (process.env.FILTER_DEV_CANISTER === "true") {
   const DEV_DFX_CONF = require(`../${DFX_JSON_PATH}`)
+  console.log(">> ", { DEV_DFX_CONF })
 
   const PROD_DFX_CONF = JSON.stringify(
     {
@@ -76,5 +77,5 @@ if (process.env.FILTER_DEV_CANISTER === "true") {
     null,
     2,
   )
-  fs.writeFileSync(`../${DFX_JSON_PATH}`, PROD_DFX_CONF)
+  fs.writeFileSync(DFX_JSON_PATH, PROD_DFX_CONF)
 }
