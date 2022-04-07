@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: .github/actions/create-ic-app-react-demo
+      - uses: ./.github/actions/create-ic-app-react-demo
         with:
           network: dev
         env:
