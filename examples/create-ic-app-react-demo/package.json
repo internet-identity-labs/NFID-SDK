@@ -28,6 +28,7 @@
     "dev": "craco start",
     "build": "craco build",
     "test": "jest --passWithNoTests",
+    "deploy:local": "./scripts/deploy-canister.sh && dfx deploy --argument '(null)'",
     "eject": "craco eject"
   },
   "eslintConfig": {

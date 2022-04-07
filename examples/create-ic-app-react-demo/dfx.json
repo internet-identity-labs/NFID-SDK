@@ -7,7 +7,7 @@
     "internet_identity": {
       "type": "custom",
       "candid": "canister/internet_identity/internet_identity.did",
-      "wasm": "canister/internet_identity//internet_identity_dev.wasm"
+      "wasm": "canister/internet_identity/internet_identity_dev.wasm"
     },
     "identity_manager": {
       "type": "custom",
