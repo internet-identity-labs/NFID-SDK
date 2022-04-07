@@ -46,17 +46,18 @@ const canisterEnv = Object.entries(getCanisterIds()).reduce(
 
 console.log(">> ", { canisterEnv })
 
-shell.exec("./scripts/replace-env.sh", {
-  env: BACKEND_CANISTER.reduce(
-    (acc, key) => ({
-      ...acc,
-      [`${key.toUpperCase()}_CANISTER_ID`]: JSON.parse(
-        canisterEnv[`process.env.${key.toUpperCase()}_CANISTER_ID`],
-      ),
-    }),
-    {},
-  ),
-})
+isDev &&
+  shell.exec("./scripts/replace-env.sh", {
+    env: BACKEND_CANISTER.reduce(
+      (acc, key) => ({
+        ...acc,
+        [`${key.toUpperCase()}_CANISTER_ID`]: JSON.parse(
+          canisterEnv[`process.env.${key.toUpperCase()}_CANISTER_ID`],
+        ),
+      }),
+      {},
+    ),
+  })
 
 const LOCAL_CANISTER = [...BACKEND_CANISTER, "nfid_frontend"]
 
