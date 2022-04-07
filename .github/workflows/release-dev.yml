@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: yarn && yarn ws install
 
-      - name: Deploy
+      - name: CREATE-IC-APP-REACT Demo | install & deploy
         working-directory: examples/create-ic-app-react-demo
         run: |
           node scripts/prepare-build.js
