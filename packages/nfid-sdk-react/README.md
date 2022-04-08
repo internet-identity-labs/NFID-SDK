@@ -1,6 +1,15 @@
 ## NFID SDK React
 
-This package contains the React components which can be used within your React applications. It makes use of the UI kit ([nfid-ui-kit-core](../nfid-ui-kit-core/)) and also provide a set of utilities to integrate with NFID conveniently.
+This package contains the React components that can be used within your application. It uses the UI kit ([nfid-ui-kit-core](../nfid-ui-kit-core/)) and also provides a set of utilities to easily integrate with NFID. 
+
+#### Installation
+To properly integrate NFID to your application, you need to install not only `nfid-sdk-react`, but also `react-ic-ii-auth`. The `react-ic-ii-auth` combines the Internet Identity and NFID authentication as a wrapper package. 
+
+```shell
+$ yarn add nfid-sdk-react react-ic-ii-auth
+```
+
+For a deeper understanding of how to actually set up the NFID authentication, it's easier to refer to our [React example](../../examples/create-ic-app-react-demo/), where you can take the architecture from and migrate it to your own application.
 
 ### Getting started
 

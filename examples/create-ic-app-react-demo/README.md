@@ -1,49 +1,60 @@
 ## Create IC App React Demo
 
-A fully developed example application using the NFID integration with React, built on top of an existing application from the community.
+<p align="center">
+  <img width="600" alt="image" src="docs/images/preview_demo.png">
+</p>
 
-Before getting started, you need to have **DFX** installed on your device. You can find more information and a step-by-step guide on how to set up your DFX [here](https://smartcontracts.org/docs/developers-guide/install-upgrade-remove.html). 
+A fully developed application with NFID integrated using React, built on top of an existing application from the community.
 
-To get the **NFID-SDK** up and running with the [create-ic-app-react-demo](./examples/create-ic-app-react-demo/) example, the following steps are required: 
+## Getting started
 
-Open a terminal on the root directory of the NFID-SDK, and run the following commands:
+#### Dependencies
+
+Open a terminal on the top-level directory of the NFID-SDK, and run the following commands:
 
 ```bash
 # Step 1: install dependencies
 $ yarn
 
-# Step 2: run dfx 
+# Step 2: run dfx
 $ dfx start --clean --background
 ```
 
-On a new terminal window and run the `create-ic-app-react-demo` example:
+#### Deploying
 
 ```bash
-# Step 3: run the create-ic-app-react-demo example
+# navigate to the right example directory
 $ cd examples/create-ic-app-react-demo
+
+# Step 3: deploy canisters to local replica
+$ yarn deploy:local
 ```
-
-To complete the next step, you need an account on ngrok. You can find more information on how to set up ngrok [here](https://ngrok.com/docs/).
-
-Copy .env.template and rename it to .env and set the your ngrok variables accordingly:
-
-```diff
-# Step 4: set your variables (e.g: john)
-- REACT_APP_NFID_PROVIDER_IFRAME_URL=https://<YOUR_NAME>.eu.ngrok.io/
-- REACT_APP_NFID_PROVIDER_URL=https://<YOUR_NAME>.eu.ngrok.io/authenticate/?applicationName=NFID-Demo
-+ REACT_APP_NFID_PROVIDER_IFRAME_URL=https://john.eu.ngrok.io/
-+ REACT_APP_NFID_PROVIDER_URL=https://john.eu.ngrok.io/authenticate/?applicationName=NFID-Demo
-```
-
-You can deploy the example application to your local DFX environment using:
 
 ```bash
-# Step 5: deploy the example application
-$ dfx deploy --argument '(null)'
+# Step 4: serve nfid_frontend to port 9090 which is used by ngrok tunnel
+$ yarn serve:nfid-frontend
 ```
+
+You can now open `http://localhost:9090` in your browser and preview the nfid-frontend application.
+
+#### Ngrok
+
+In order to scan the QR Code with your mobile phone while your NFID frontend runs on localhost, it's required to setup a reverse proxy. Therefor you need to download and configure ngrok.
+You can find more details here on [how to set up ngrok](../../scripts/README.md).
+
+Once ngrok has been set up, you can run the demo with the following command:
+
+```bash
+# Step 5: run the demo front-end and browse localhost:3000
+$ yarn dev
+```
+
+#### Complete
+
+✨ That is it! The example is now successfully deployed and can be accessed through `localhost:3000`.
 
 ---
 
-### Inspired by
+#### Inspired by
 
 - [@MioQuispe](https://github.com/MioQuispe) - [original example application](https://github.com/MioQuispe/create-ic-app)

@@ -50,14 +50,34 @@
       }
     },
     {
-      "label": "NFID NGROK tunnel",
+      "label": "NFID Frontend tunnel (ngrok)",
       "type": "shell",
-      "command": "yarn tunnel",
+      "command": "./scripts/tunnel-to-nfid-frontend.sh",
       "isBackground": true,
       "presentation": {
         "reveal": "always",
         "panel": "new",
         "group": "develop"
+      }
+    },
+    {
+      "label": "CREATE IC APP REACT DEMO | Serve NFID Frontend static build",
+      "type": "shell",
+      "command": "cd examples/create-ic-app-react-demo && yarn serve:nfid-frontend",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "group": "CREATE IC APP REACT DEMO"
+      }
+    },
+    {
+      "label": "CREATE IC APP REACT DEMO | NFID Frontend tunnel (ngrok)",
+      "type": "shell",
+      "command": "./scripts/tunnel-to-create-ic-app-react-demo-nfid-frontend.sh",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "group": "CREATE IC APP REACT DEMO"
       }
     },
     {

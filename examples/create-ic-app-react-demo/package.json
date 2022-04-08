@@ -9,8 +9,8 @@
     "@dfinity/candid": "0.11.0",
     "@dfinity/identity": "0.11.0",
     "@dfinity/principal": "0.11.0",
-    "@internet-identity-labs/nfid-sdk-react": "0.0.1-alpha.0",
     "@identity-labs/react-ic-ii-auth": "0.0.16",
+    "@internet-identity-labs/nfid-sdk-react": "0.0.1-alpha.0",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
@@ -29,6 +29,7 @@
     "build": "craco build",
     "test": "jest --passWithNoTests",
     "deploy:local": "./scripts/deploy-canister.sh && node ./scripts/prepare-build.js && dfx deploy --argument '(null)'",
+    "serve:nfid-frontend": "serve -s canister/nfid_frontend/build -p 9090",
     "eject": "craco eject"
   },
   "eslintConfig": {
@@ -52,7 +53,8 @@
   "devDependencies": {
     "@craco/craco": "6.4.3",
     "autoprefixer": "^10.4.4",
+    "craco-alias": "3.0.1",
     "postcss": "^8.4.12",
-    "craco-alias": "3.0.1"
+    "serve": "13.0.2"
   }
 }

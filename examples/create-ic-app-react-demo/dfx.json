@@ -19,13 +19,6 @@
       "candid": "canister/nfid_backend/pub_sub_channel.did",
       "wasm": "canister/nfid_backend/pub_sub_channel.wasm"
     },
-    "nfid_frontend": {
-      "type": "assets",
-      "source": ["canister/nfid_frontend/build"],
-      "frontend": {
-        "entrypoint": "canister/nfid_frontend/build/index.html"
-      }
-    },
     "demo_frontend": {
       "dependencies": ["counter"],
       "frontend": {
