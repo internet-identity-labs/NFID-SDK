@@ -93,8 +93,8 @@
     }
   },
   "dependencies": {
-    "@dfinity/candid": "0.10.4",
-    "@dfinity/principal": "0.10.4",
+    "@dfinity/candid": "0.11.0",
+    "@dfinity/principal": "0.11.0",
     "clsx": "1.1.1",
     "qrcode": "1.5.0",
     "react-helmet": "6.1.0",
