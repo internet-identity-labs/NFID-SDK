@@ -44,7 +44,7 @@ The NFID-SDK also provides a set of examples of how to integrate NFID into your 
 
 | Repository                                                      | Description                                                                                                                 |
 | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| [create-ic-app-react-demo](./examples/create-ic-app-react-demo) | A fully developed application with NFID integrated using React, built on top of an existing application from the community. |
+| [create-ic-app-react-demo](./examples/create-ic-app-react-demo) | A fully developed application with NFID integrated using React, built on top of an existing application from the community, and integration instructions for your own application. |
 | [🚧 account-linking-demo](./examples/account-linking-demo)       | A sample application that demonstrates how to link your account to NFID.                                                    |
 
 
