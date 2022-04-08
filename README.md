@@ -29,9 +29,7 @@ A fully developed application with NFID integrated using React is available in t
 
 ---
 
-<!-- FIX README in create ic app, step 1 + broken link -->
-
- #### DFX
+### DFX
 
 We run on **DFX v0.9.3** so you will need to install this specific version. If you have an older version, run this command to install this specific version: 
 ```bash
