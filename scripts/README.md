@@ -1,6 +1,6 @@
 # Scrips
 
-This folder is meat to hold helper scripts to work with NFID SDK packages. Currently there are only two scripts for setting up http proxys with ngrok.
+This folder is meant to hold helper scripts to work with NFID SDK packages. Currently there are only two scripts for setting up http proxys with ngrok.
 
 ## HTTP Proxy to localhost ([ngrok])
 
