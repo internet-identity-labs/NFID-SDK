@@ -17,3 +17,4 @@ dist/
 .dfx
 lerna-debug.log
 .npmrc
+.env.local
