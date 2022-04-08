@@ -65,6 +65,9 @@ $ yarn dev
 
 ✨ That is it! The example is now successfully deployed and can be accessed through `localhost:3000`.
 
+#### Integrate NFID into your application
+Our react plugin can be found with documentation on [npm](https://www.npmjs.com/package/@identity-labs/react-ic-ii-auth) and you can follow along how it was done in this example [here](src/nfid-integration/Auth.tsx)
+
 ---
 
 #### Inspired by
