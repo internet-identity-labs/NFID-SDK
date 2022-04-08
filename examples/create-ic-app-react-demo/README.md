@@ -41,13 +41,23 @@ You can now open `http://localhost:9090` in your browser and preview the nfid-fr
 
 #### Ngrok
 
-In order to scan the QR Code with your mobile phone while your NFID frontend runs on localhost, it's required to setup a reverse proxy. Therefor you need to download and configure ngrok.
-You can find more details here on [how to set up ngrok](../../scripts/README.md).
+In order to scan the QR Code with your mobile phone while your NFID frontend runs on localhost, it's required to setup a reverse proxy. Therefore you need to [download](https://ngrok.com/download) the binary and place the binary `ngrok` within this (`NFID-SDK/examples/create-ic-app-react-demo/scripts`) folder.
+
+```bash
+# Step 5: start ngrok tunnel
+$ yarn tunnel
+```
+
+Copy the assigned domain from `ngrok` output:
+
+![running ngrok](./running-ngrok.png)
+
+and use it to replace `TUNNEL_DOMAIN` in `examples/create-ic-app-react-demo/.env` (copy it first from `.env.template`)
 
 Once ngrok has been set up, you can run the demo with the following command:
 
 ```bash
-# Step 5: run the demo front-end and browse localhost:3000
+# Step 6: run the demo front-end and browse localhost:3000
 $ yarn dev
 ```
 

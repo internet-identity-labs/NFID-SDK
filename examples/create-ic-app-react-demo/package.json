@@ -30,6 +30,7 @@
     "test": "jest --passWithNoTests",
     "deploy:local": "./scripts/deploy-canister.sh && node ./scripts/prepare-build.js && dfx deploy --argument '(null)'",
     "serve:nfid-frontend": "serve -s canister/nfid_frontend/build -p 9090",
+    "tunnel": "./scripts/tunnel-to-create-ic-app-react-demo-nfid-frontend.sh",
     "eject": "craco eject"
   },
   "eslintConfig": {

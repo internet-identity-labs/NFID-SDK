@@ -18,3 +18,4 @@ dist/
 lerna-debug.log
 .npmrc
 .env.local
+examples/create-ic-app-react-demo/scripts/ngrok
