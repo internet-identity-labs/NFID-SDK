@@ -38,14 +38,6 @@ DFX_VERSION=0.9.3 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
 
 A step-by-step guide on how to set up your DFX can be found [here](https://smartcontracts.org/docs/developers-guide/install-upgrade-remove.html). 
 
-### Packages[](#packages)
-NFID-SDK consists of the following `packages`:
-
-| Repository                                      | Description                                                                                      |
-| ----------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| [nfid-sdk-react](./packages/nfid-sdk-react)     | React component library to integrate with NFID into your application.                            |
-| [nfid-ui-kit-core](./packages/nfid-ui-kit-core) | UI utility library with NFID branding, and is used by other sample applications within NFID-SDK. |
-
 
 ### Examples[](#examples)
 The NFID-SDK also provides a set of examples of how to integrate NFID into your application, which can be found under the `examples/*` directory, and consists of the following examples:
@@ -54,6 +46,15 @@ The NFID-SDK also provides a set of examples of how to integrate NFID into your 
 | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | [create-ic-app-react-demo](./examples/create-ic-app-react-demo) | A fully developed application with NFID integrated using React, built on top of an existing application from the community. |
 | [🚧 account-linking-demo](./examples/account-linking-demo)       | A sample application that demonstrates how to link your account to NFID.                                                    |
+
+
+### Packages[](#packages)
+NFID-SDK consists of the following `packages`:
+
+| Repository                                      | Description                                                                                      |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| [nfid-sdk-react](./packages/nfid-sdk-react)     | React component library to integrate with NFID into your application.                            |
+| [nfid-ui-kit-core](./packages/nfid-ui-kit-core) | UI utility library with NFID branding, and is used by other sample applications within NFID-SDK. |
 
 
 ### Guidelines[](#guidelines)
