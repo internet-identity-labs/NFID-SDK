@@ -1,4 +1,4 @@
-# Scrips
+# Scripts
 
 This folder is meant to hold helper scripts to work with NFID SDK packages. Currently there are only two scripts for setting up http proxys with ngrok.
 
@@ -26,7 +26,7 @@ Tunnels to the nfid-frontend in development (`nfid-frontend` is currently only a
 
 **Setup environment**
 
-copy the `.env.local.template` to `.env.local` and replace the following variables:
+Copy the `.env.local.template` to `.env.local` and replace the following variables:
 
 1. `TUNNEL_PORT` should be `9090` when you're running the default config of `nfid-frontend`
 2. `TUNNEL_REGION` depends on your region. Defaults to `eu`.

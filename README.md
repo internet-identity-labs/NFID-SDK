@@ -1,9 +1,6 @@
-<img 
-  src="./nfid-docs/assets/images/NFID.png" 
-  alt="NFID" 
-  width="400"
-  style="background: white;padding:10px;border-radius:8px;"
-/>
+<p align="center">
+  <img width="600" alt="image" src="https://user-images.githubusercontent.com/33829677/162224559-f38581ec-fbd7-4ab0-a99a-5bf5332811b3.png">
+</p>
  
 ## Introduction[](#introduction)
 

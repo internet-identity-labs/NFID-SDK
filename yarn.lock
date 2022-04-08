@@ -1419,10 +1419,10 @@
   resolved "https://registry.yarnpkg.com/@cush/relative/-/relative-1.0.0.tgz#8cd1769bf9bde3bb27dac356b1bc94af40f6cc16"
   integrity sha512-RpfLEtTlyIxeNPGKcokS+p3BZII/Q3bYxryFRglh5H3A3T8q9fsLYm72VYAMEOOIBLEa8o93kFLiBDUWKrwXZA==
 
-"@dfinity/agent@0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@dfinity/agent/-/agent-0.11.0.tgz#97318a9a785b18f1f791c46375fb211a180b389a"
-  integrity sha512-4O2b5aYAqfjvkI4GF4Zm3cufdsa8DjHBWqvhnowlNynu5fpJgAXdHAclDcRiuaCY8xzaf9pCwER19h1+Yeux2Q==
+"@dfinity/agent@0.10.4", "@dfinity/agent@^0.10.4":
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/@dfinity/agent/-/agent-0.10.4.tgz#269406f1cb5524276c52ddf37e933abd75529063"
+  integrity sha512-/O1443GWkQ6GngrXos/ShAbnF9IgUlWclzaQn/qEsGJIey6S7tty+iOa5yZqOS1BtOTnDe+TYh8GeERZZn7vvg==
   dependencies:
     base64-arraybuffer "^0.2.0"
     bignumber.js "^9.0.0"
@@ -1443,41 +1443,20 @@
     js-sha256 "0.9.0"
     simple-cbor "^0.4.1"
 
-"@dfinity/agent@^0.10.4":
-  version "0.10.4"
-  resolved "https://registry.yarnpkg.com/@dfinity/agent/-/agent-0.10.4.tgz#269406f1cb5524276c52ddf37e933abd75529063"
-  integrity sha512-/O1443GWkQ6GngrXos/ShAbnF9IgUlWclzaQn/qEsGJIey6S7tty+iOa5yZqOS1BtOTnDe+TYh8GeERZZn7vvg==
-  dependencies:
-    base64-arraybuffer "^0.2.0"
-    bignumber.js "^9.0.0"
-    borc "^2.1.1"
-    js-sha256 "0.9.0"
-    simple-cbor "^0.4.1"
-
 "@dfinity/auth-client@0.10.4":
   version "0.10.4"
   resolved "https://registry.yarnpkg.com/@dfinity/auth-client/-/auth-client-0.10.4.tgz#4a6da3209686b4e392de4737f9d01a9461f6f0b4"
   integrity sha512-SHWamx9PcD3vl21rmRCnWr4wk6Iotyd9h0UZOLFdKL0AruZ9m9BD7nxRs9u7dJ+FuRwZRkWjONaDuNZemMlQ8w==
-
-"@dfinity/auth-client@0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@dfinity/auth-client/-/auth-client-0.11.0.tgz#fda9103576ae50da6244e227f505c04c881723f7"
-  integrity sha512-6ez+Hjt9WbHTgtY9CTeh09kwIVSuaJFPImkiJd6uGOFxv7trTgFFRwABsUJkiGm0dg4xjqDrk+gHYJW4h07Tnw==
 
 "@dfinity/authentication@0.10.4":
   version "0.10.4"
   resolved "https://registry.yarnpkg.com/@dfinity/authentication/-/authentication-0.10.4.tgz#64b770f1008224462b5f872fc1dba7ffa10ebab9"
   integrity sha512-IP1zepm9YnXATV6lXVMqObmETKuBtkDMbWW6rgUvEekulaxITTHJppgzdMD8E7Hh5SVajVHLJm14kDa3FXwMnA==
 
-"@dfinity/authentication@0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@dfinity/authentication/-/authentication-0.11.0.tgz#0a6bd5cf426bfd6eb1d8b042be073b82c9dc50ff"
-  integrity sha512-/7X548i8TPt2j2elYs2msgUkdrOIL0U0jAjk1HJ6/9+hq4KscvC+sKn+MpuE+socY9cF2rpgjywvK1WJ2e6u7Q==
-
-"@dfinity/candid@0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@dfinity/candid/-/candid-0.11.0.tgz#ac0514e1fbcd4d8bd0670c623de3a9243bd2387d"
-  integrity sha512-UFSKi4RGOr+H8l0Z19uo7yDfDJFoSNL8zNi2zVSW22J+f17c3y1wRAasY6g3FS/UlLl/b+32WXO6KxHt+K0/2g==
+"@dfinity/candid@0.10.4":
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/@dfinity/candid/-/candid-0.10.4.tgz#32f666f6a069d87b6f7007d7ad3c50ab307d8b76"
+  integrity sha512-Rd8uoo3jd4FLmGY9aBgTRdBCYVuG/Y7QmpDJB3eQvsU3WHhVZJWLMHcodnMIoy2bzqzCKeTdLkL565K7qx5H3Q==
 
 "@dfinity/candid@0.9.3":
   version "0.9.3"
@@ -1487,10 +1466,10 @@
     buffer "^6.0.3"
     buffer-pipe "^0.0.4"
 
-"@dfinity/identity@0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@dfinity/identity/-/identity-0.11.0.tgz#47284ae78a12047b4d25376a9a6e9888652b746b"
-  integrity sha512-lf316nHLxEIyTrShd6OCLFLP0dnmfcXEe+n+wbXbWsA+9MCBhO2V2RZ+Q1urghY4GiN6ewb4oK8lxOZNQjk6yg==
+"@dfinity/identity@0.10.4":
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/@dfinity/identity/-/identity-0.10.4.tgz#2474b73aa6c25887ff69472259c29705063f7e45"
+  integrity sha512-b4WsaD70Ts75JlJcf4+E04B140hQN5u/GnCvjhaHqN2++bwWO56Paxtv0UfAc58LMwJZj4iOyZoahnT56LhC9A==
   dependencies:
     "@types/webappsec-credential-management" "^0.6.2"
     borc "^2.1.1"
@@ -1508,10 +1487,10 @@
     buffer-pipe "0.0.4"
     tweetnacl "^1.0.1"
 
-"@dfinity/principal@0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@dfinity/principal/-/principal-0.11.0.tgz#d3e7f791dd8895f4f94ef36d0289dddea0b8fc80"
-  integrity sha512-yTKTaxjDP5EHgzzu8lmNnHhUUH5rQQ0L/qUA04VJHuSCb4OweEWKD9/qSPueWhdJJZ94MU3Pp56ORNK3Cs1qQA==
+"@dfinity/principal@0.10.4":
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/@dfinity/principal/-/principal-0.10.4.tgz#8f28f631929cc420a4238f75930090aba84d74b8"
+  integrity sha512-qwzpmq5wfyeKMBspRZmuYvTxu1dqN+IY0ThACHTRh6D58QjnVQNCD3Hq9d5eEDu0qyNcY22cJEWwzrzZaaoVmw==
 
 "@dfinity/principal@0.9.3":
   version "0.9.3"

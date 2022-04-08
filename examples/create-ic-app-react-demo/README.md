@@ -1,5 +1,9 @@
 ## Create IC App React Demo
 
+<p align="center">
+  <img width="600" alt="image" src="https://user-images.githubusercontent.com/33829677/162221079-f7bafc74-7d68-4bdd-aa18-5d92e564db4e.png">
+</p>
+
 A fully developed example application using the NFID integration with React, built on top of an existing application from the community.
 
 Before getting started, you need to have **DFX** installed on your device. You can find more information and a step-by-step guide on how to set up your DFX [here](https://smartcontracts.org/docs/developers-guide/install-upgrade-remove.html). 
@@ -23,24 +27,15 @@ On a new terminal window and run the `create-ic-app-react-demo` example:
 $ cd examples/create-ic-app-react-demo
 ```
 
-To complete the next step, you need an account on ngrok. You can find more information on how to set up ngrok [here](https://ngrok.com/docs/).
+### Deploying
+The next step is to open the `create-ic-app-react-demo` example in the browser. There are two approaches to accomplish this, either with **ngrok** or with your **local canisters**. 
 
-Copy .env.template and rename it to .env and set the your ngrok variables accordingly:
+#### Ngrok
+If you want to use ngrok, you can find more details here to set that up: [setting up with ngrok](../../scripts/README.md).
 
-```diff
-# Step 4: set your variables (e.g: john)
-- REACT_APP_NFID_PROVIDER_IFRAME_URL=https://<YOUR_NAME>.eu.ngrok.io/
-- REACT_APP_NFID_PROVIDER_URL=https://<YOUR_NAME>.eu.ngrok.io/authenticate/?applicationName=NFID-Demo
-+ REACT_APP_NFID_PROVIDER_IFRAME_URL=https://john.eu.ngrok.io/
-+ REACT_APP_NFID_PROVIDER_URL=https://john.eu.ngrok.io/authenticate/?applicationName=NFID-Demo
-```
+#### Finished
 
-You can deploy the example application to your local DFX environment using:
-
-```bash
-# Step 5: deploy the example application
-$ dfx deploy --argument '(null)'
-```
+✨ That is it! The example is now successfully deployed and can be accessed through your ngrok tunnel or your local canister.
 
 ---
 

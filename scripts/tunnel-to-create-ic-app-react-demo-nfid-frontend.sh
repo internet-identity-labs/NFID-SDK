@@ -1,6 +1,5 @@
 #!/bin/sh
 
-. .env.local
 NGROK=./scripts/ngrok
 
 if [ -f "$NGROK" ]; then
