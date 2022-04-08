@@ -6,13 +6,13 @@ This folder is meant to hold helper scripts to work with NFID SDK packages. Curr
 
 ### Setup ngrok
 
-In order to scan the QRCode with your mobile phone while your NFID frontend runs on localhost, it's required to setup a reverse proxy. Therefor you need to [download ngrok]. Place the binary `ngrok` within this (`scripts`) folder.
+In order to scan the QRCode with your mobile phone while your NFID frontend runs on localhost, it's required to setup a reverse proxy. Therefor you need to [download ngrok]. Place the binary `ngrok` within this (`NFID-SDK/scripts`) folder.
 
 ### Available scripts
 
 #### 1. `tunnel-to-create-ic-app-react-demo-nfid-frontend.sh`
 
-Tunnels to the prebuild nfid frontend for the demo application. To use the tunnel you need to execute the script: `./scripts/tunnel-to-create-ic-app-react-demo-nfid-frontend.sh`
+Tunnels to the prebuild nfid frontend for the demo application. To use the tunnel you need to execute the script: `./scripts/tunnel-to-create-ic-app-react-demo-nfid-frontend.sh` from the NFID-SDK folder
 
 Copy the assigned domain from `ngrok` output:
 
