@@ -12,14 +12,7 @@ In order to scan the QRCode with your mobile phone while your NFID frontend runs
 
 #### 1. `tunnel-to-create-ic-app-react-demo-nfid-frontend.sh`
 
-Tunnels to the prebuild nfid frontend for the demo application
-
-copy the `.env.local.template` to `.env.local` and replace the following variables:
-
-1. `TUNNEL_REGION` depends on your region. Defaults to `eu`.
-2. `TUNNEL_DOMAIN` Needs to be empty when you don't have a ngrok subscription
-
-To use the tunnel you need to execute the script: `./scripts/tunnel-to-create-ic-app-react-demo-nfid-frontend.sh`
+Tunnels to the prebuild nfid frontend for the demo application. To use the tunnel you need to execute the script: `./scripts/tunnel-to-create-ic-app-react-demo-nfid-frontend.sh`
 
 Copy the assigned domain from `ngrok` output:
 
