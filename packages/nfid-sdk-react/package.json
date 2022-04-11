@@ -3,6 +3,9 @@
   "name": "@internet-identity-labs/nfid-sdk-react",
   "repository": "https://github.com/internet-identity-labs/NFID-SDK",
   "author": "Philipp Litzenberger",
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
