@@ -9,7 +9,8 @@
   "description": "A Tailwind CSS plugin for NFID applications",
   "main": "src/index.js",
   "files": [
-    "src/*.js"
+    "src/*.js",
+    "src/**/*.js"
   ],
   "peerDependencies": {
     "tailwindcss": ">=3.0.0"
