@@ -1,0 +1,13 @@
+name: CI
+on: [pull_request, push, workflow_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Provision Linux
+        run: bash example/scripts/provision-linux.sh
+      - name: Install modules
+        run: yarn
+      - name: Run tests
+        run: yarn test

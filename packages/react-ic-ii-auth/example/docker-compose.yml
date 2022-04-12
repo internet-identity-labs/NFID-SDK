@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  dfx:
+    build: .
+    ports:
+      - 8000:8000
+
+    volumes:
+      - ./scripts:/scripts
