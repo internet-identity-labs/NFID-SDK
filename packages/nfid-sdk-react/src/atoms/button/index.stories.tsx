@@ -7,6 +7,7 @@ const meta: Meta = {
   title: 'Atoms/Button',
   component: Button,
   argTypes: {
+    onClick: { action: 'clicked' },
     children: {
       control: {
         type: 'text',
@@ -32,12 +33,10 @@ export const Icon = IconTemplate.bind({});
 
 Default.args = {
   children: 'Button',
+  primary: true,
 };
 
 Icon.args = {
   isActive: false,
   icon: true,
-  onClick: () => {
-    window.alert('Clicked!');
-  },
 };

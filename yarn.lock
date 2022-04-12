@@ -2043,17 +2043,10 @@
     gud "^1.0.0"
     warning "^4.0.3"
 
-"@internet-identity-labs/nfid-sdk-react@0.0.1-alpha.2":
-  version "0.0.1-alpha.2"
-  resolved "https://registry.yarnpkg.com/@internet-identity-labs/nfid-sdk-react/-/nfid-sdk-react-0.0.1-alpha.2.tgz#6800d0158c039e0b079303f0ee6261c3fa621fb3"
-  integrity sha512-iU1B+IlZIn6OIY4gRrduoyGkvcf0Uu5F/UUfP6yzWOhpchPpXWnaPYgo5SztpGhfsoguZtnC8RIWJY7TSgmm2Q==
-  dependencies:
-    "@dfinity/candid" "0.11.0"
-    "@dfinity/principal" "0.11.0"
-    clsx "1.1.1"
-    qrcode "1.5.0"
-    react-helmet "6.1.0"
-    react-icons "4.3.1"
+"@identity-labs/react-ic-ii-auth@0.0.16":
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/@identity-labs/react-ic-ii-auth/-/react-ic-ii-auth-0.0.16.tgz#d345d6aadc2f68e27c884158335f57c820f433f0"
+  integrity sha512-70pZbFfcJQKbGMe48LZcMpfvz8HtUzoUq7fnejXBU+OaVwKyicM3pg22FpjtPW4WhzGdV+D0r5wnIhWPDSTwDw==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
@@ -7163,7 +7156,7 @@ babel-loader@8.1.0:
     pify "^4.0.1"
     schema-utils "^2.6.5"
 
-babel-loader@^8.0.0, babel-loader@^8.2.3, babel-loader@^8.2.4:
+babel-loader@^8.0.0, babel-loader@^8.2.3:
   version "8.2.4"
   resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.2.4.tgz#95f5023c791b2e9e2ca6f67b0984f39c82ff384b"
   integrity sha512-8dytA3gcvPPPv4Grjhnt8b5IIiTcq/zeXOPk4iTYI0SVXcsmuGg7JtBRDp8S9X+gJfhQ8ektjXZlDu1Bb33U8A==

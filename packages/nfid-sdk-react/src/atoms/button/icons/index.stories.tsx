@@ -15,7 +15,12 @@ import { TabletIcon } from './tablet';
 import { TrashIcon } from './trash';
 
 const meta: Meta = {
-  title: 'Atoms/Button/Icons',
+  title: 'Atoms/Button/IconList',
+  argTypes: {
+    onClick: {
+      action: 'clicked',
+    },
+  },
 };
 
 export default meta;
@@ -23,27 +28,23 @@ export default meta;
 const Icons: Story = (args) => {
   return (
     <div className="flex gap-2 items-center">
-      <DesktopIcon className={args.className} />
-      <KeyIcon className={args.className} />
-      <LaptopIcon className={args.className} />
-      <MobileIcon className={args.className} />
-      <PencilIcon className={args.className} />
-      <TabletIcon className={args.className} />
-      <TrashIcon className={args.className} />
-      <ButtonChevronIcon className={args.className} />
-      <CopyIcon className={args.className} />
-      <DotsIcon className={args.className} />
-      <LogoutIcon className={args.className} />
-      <PlusIcon className={args.className} />
-      <RefreshIcon className={args.className} />
+      <DesktopIcon {...args} />
+      <KeyIcon {...args} />
+      <LaptopIcon {...args} />
+      <MobileIcon {...args} />
+      <PencilIcon {...args} />
+      <TabletIcon {...args} />
+      <TrashIcon {...args} />
+      <ButtonChevronIcon {...args} />
+      <CopyIcon {...args} />
+      <DotsIcon {...args} />
+      <LogoutIcon {...args} />
+      <PlusIcon {...args} />
+      <RefreshIcon {...args} />
     </div>
   );
 };
 
 export const Overview = Icons.bind({});
 
-Overview.args = {
-  onClick: () => {
-    window.alert('Clicked!');
-  },
-};
+Overview.args = {};
