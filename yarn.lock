@@ -1573,7 +1573,7 @@
   integrity sha512-70pZbFfcJQKbGMe48LZcMpfvz8HtUzoUq7fnejXBU+OaVwKyicM3pg22FpjtPW4WhzGdV+D0r5wnIhWPDSTwDw==
 
 "@internet-identity-labs/nfid-sdk-react@0.0.0":
-  version "0.0.1-alpha.0"
+  version "0.0.1-alpha.2"
   dependencies:
     "@dfinity/candid" "0.11.0"
     "@dfinity/principal" "0.11.0"
