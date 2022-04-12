@@ -8,7 +8,10 @@ interface DotsIconProps extends React.HTMLAttributes<HTMLDivElement> {
 export const DotsIcon: React.FC<DotsIconProps> = ({ className, onClick }) => {
   return (
     <div
-      className={clsx('text-gray-400 hover:text-black-hover p-1', className)}
+      className={clsx(
+        'text-gray-400 hover:text-black-hover p-1 cursor-pointer',
+        className
+      )}
       onClick={onClick}
     >
       <svg

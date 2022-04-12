@@ -1,17 +1,19 @@
 import clsx from 'clsx';
 import React from 'react';
 
-interface PlusIconProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface PlusIconProps extends React.HTMLAttributes<HTMLDivElement> {
+  onClick?: () => void;
+}
 
-export const PlusIcon: React.FC<PlusIconProps> = ({ className }) => {
+export const PlusIcon: React.FC<PlusIconProps> = ({ className, onClick }) => {
   return (
     <svg
       width="18"
       height="18"
       viewBox="0 0 18 18"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={clsx('', className)}
+      className={clsx('cursor-pointer', className)}
+      onClick={onClick}
     >
       <path
         d="M9 3.75V14.25"

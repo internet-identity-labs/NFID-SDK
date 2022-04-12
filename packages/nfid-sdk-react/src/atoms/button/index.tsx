@@ -15,6 +15,7 @@ export interface ButtonProps<T extends React.ElementType = 'button'>
   large?: boolean;
   disabled?: boolean;
   icon?: boolean;
+  isActive?: boolean;
   largeMax?: boolean;
   as?: T;
 }
@@ -33,6 +34,7 @@ export const Button = <T extends React.ElementType = 'button'>({
   stroke,
   error,
   as,
+  isActive,
   ...buttonProps
 }: ButtonProps<T> &
   Omit<React.ComponentPropsWithoutRef<T>, keyof ButtonProps<T>>) => {
@@ -53,6 +55,7 @@ export const Button = <T extends React.ElementType = 'button'>({
         largeMax && 'btn-large-max',
         disabled && 'btn-disabled',
         icon && 'btn-icon',
+        icon && isActive && 'btn-icon-active',
         block && 'btn-block',
         error && 'btn-error',
         primary && 'btn-primary',
@@ -64,3 +67,7 @@ export const Button = <T extends React.ElementType = 'button'>({
     </Component>
   );
 };
+
+// 'btn-icon hover:bg-blue-active transition focus:ring-blue-base ring-2 !ring-offset-0 border-2 border-blue-base !p-3',
+
+// 'btn-icon hover:bg-blue-active transition ring-transparent active:ring-blue-base/20 focus:ring-blue-base/20 border border-blue-base ring-2 !ring-offset-0 !p-3',

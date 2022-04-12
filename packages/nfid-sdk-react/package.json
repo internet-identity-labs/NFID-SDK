@@ -45,8 +45,7 @@
     "trailingComma": "es5"
   },
   "module": "dist/tsdx-nfid-sdk-react.esm.js",
-  "size-limit": [
-    {
+  "size-limit": [{
       "path": "dist/tsdx-nfid-sdk-react.cjs.production.min.js",
       "limit": "10 KB"
     },
