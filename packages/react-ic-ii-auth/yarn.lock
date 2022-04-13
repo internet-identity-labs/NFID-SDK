@@ -1135,9 +1135,9 @@
   version "0.10.2"
   resolved "https://registry.npmjs.org/@dfinity/authentication/-/authentication-0.10.2.tgz"
 
-"@dfinity/candid@0.10.3":
-  version "0.10.3"
-  resolved "https://registry.npmjs.org/@dfinity/candid/-/candid-0.10.3.tgz"
+"@dfinity/candid@0.10.4":
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/@dfinity/candid/-/candid-0.10.4.tgz#32f666f6a069d87b6f7007d7ad3c50ab307d8b76"
 
 "@dfinity/identity@0.10.2":
   version "0.10.2"
