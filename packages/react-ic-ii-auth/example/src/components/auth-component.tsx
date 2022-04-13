@@ -5,7 +5,7 @@ import React from 'react'
 import { useProfile } from 'src/ic-utils/profile'
 import { Button, LoadingButton } from 'src/ui-lib/atoms/button'
 import { InternetAuthButton } from 'src/ui-lib/molecules/login'
-import { useInternetIdentity } from '@identity-labs/react-ic-ii-auth'
+import { useInternetIdentity } from '@internet-identity-labs/react-ic-ii-auth'
 
 export const AuthComponent = () => {
   const [isLoading, setIsLoading] = React.useState(false)

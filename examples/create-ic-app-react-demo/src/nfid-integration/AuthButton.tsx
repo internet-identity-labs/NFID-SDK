@@ -1,7 +1,7 @@
 import ii from "../assets/dfinity.svg"
 import nfid from "../assets/nfid-logo.svg"
 import { AuthIFrame } from "./AuthIFrame"
-import { useInternetIdentity } from "@identity-labs/react-ic-ii-auth"
+import { useInternetIdentity } from "@internet-identity-labs/react-ic-ii-auth"
 import React from "react"
 import { counter } from "canisters/counter"
 
