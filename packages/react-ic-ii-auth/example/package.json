@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@identity-labs/react-ic-ii-auth": "link:..",
+    "@internet-identity-labs/react-ic-ii-auth": "link:..",
     "clsx": "1.1.1",
     "next": "11.1.3",
     "react": "link:../node_modules/react",

@@ -2,7 +2,7 @@
 
 > React components to use DFINITY Internet Identity Authentication
 
-[![NPM](https://img.shields.io/npm/v/@identity-labs/react-ic-ii-auth.svg)](https://www.npmjs.com/package/@identity-labs/react-ic-ii-auth) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@internet-identity-labs/react-ic-ii-auth.svg)](https://www.npmjs.com/package/@internet-identity-labs/react-ic-ii-auth) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Usage and limitations
 
@@ -16,7 +16,7 @@ we provide two samples on how to integrate II into your app. The first one and m
 ## Install within your own project
 
 ```bash
-npm install --save @identity-labs/react-ic-ii-auth
+npm install --save @internet-identity-labs/react-ic-ii-auth
 ```
 
 ### setup React IC II Auth to open auth flow within new tab
@@ -27,7 +27,7 @@ import React from 'react'
 import {
   InternetIdentityProvider,
   useInternetIdentity
-} from '@identity-labs/react-ic-ii-auth'
+} from '@internet-identity-labs/react-ic-ii-auth'
 
 const AuthButthon = () => {
   const { authenticate, signout, isAuthenticated, identity } = useInternetIdentity()
@@ -68,7 +68,7 @@ import {
   InternetIdentityProvider,
   useInternetIdentity,
   AuthIframe
-} from '@identity-labs/react-ic-ii-auth'
+} from '@internet-identity-labs/react-ic-ii-auth'
 
 const AuthButthon = () => {
   const [showModal, setShowModal] = React.useState(false)
