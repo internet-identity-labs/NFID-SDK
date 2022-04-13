@@ -1015,9 +1015,9 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@dfinity/agent@^0.10.4":
-  version "0.10.4"
-  resolved "https://registry.yarnpkg.com/@dfinity/agent/-/agent-0.10.4.tgz#269406f1cb5524276c52ddf37e933abd75529063"
+"@dfinity/agent@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@dfinity/agent/-/agent-0.11.0.tgz#97318a9a785b18f1f791c46375fb211a180b389a"
   dependencies:
     base64-arraybuffer "^0.2.0"
     bignumber.js "^9.0.0"
@@ -3400,7 +3400,7 @@ babel-jest@^25.5.1:
     graceful-fs "^4.2.4"
     slash "^3.0.0"
 
-babel-loader@^8.0.0, babel-loader@^8.2.4:
+babel-loader@^8.0.0:
   version "8.2.4"
   resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.2.4.tgz#95f5023c791b2e9e2ca6f67b0984f39c82ff384b"
   dependencies:
