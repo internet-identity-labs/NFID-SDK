@@ -9,33 +9,57 @@ on:
       - main
 
 jobs:
-  test:
+  changes:
+    runs-on: ubuntu-latest
+
+    outputs:
+      CREATE_IC_APP_REACT_DEMO: ${{ steps.filter.outputs.CREATE_IC_APP_REACT_DEMO }}
+      ACCOUNT_LINKING_DEMO: ${{ steps.filter.outputs.ACCOUNT_LINKING_DEMO }}
+      NFID_SDK_REACT: ${{ steps.filter.outputs.NFID_SDK_REACT }}
+      NFID_UI_KIT_CORE: ${{ steps.filter.outputs.NFID_UI_KIT_CORE }}
+      REACT_IC_II_AUTH: ${{ steps.filter.outputs.REACT_IC_II_AUTH }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            CREATE_IC_APP_REACT_DEMO:
+              - 'examples/create-ic-app-react-demo/**'
+            ACCOUNT_LINKING_DEMO:
+              - 'examples/account-linking-demo/**'
+            NFID_SDK_REACT:
+              - 'packages/nfid-sdk-react/**'
+            NFID_UI_KIT_CORE:
+              - 'packages/nfid-ui-kit-core/**'
+            REACT_IC_II_AUTH:
+              - 'packages/react-ic-ii-auth/**'
+
+  CREATE_IC_APP_REACT_DEMO:
+    needs: changes
+    if: ${{ needs.changes.outputs.CREATE_IC_APP_REACT_DEMO == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: aviate-labs/setup-dfx@v0.2.3
+
+      - name: Setup dfx
+        uses: aviate-labs/setup-dfx@v0.2.3
         with:
           dfx-version: 0.9.3
         env:
           DFX_IDENTITY_PEM: ${{ secrets.PROD_GH_ACTION_DFX_IDENTITY_PEM }}
-
-      - name: NFID SDK
+      - name: Running tests
+        working-directory: examples/create-ic-app-react-demo
         run: |
           yarn
-          yarn ws test
+          yarn test
 
-  # publish:
-  #   needs: test
-  #   runs-on: ubuntu-lates
-  #   steps:
-  #     - name: Set package registry
-  #       run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.IL_GH_NPM_TOKEN }}
-  #     - name: Publish to github npm registry
-  #       run: npm publish
-
-  deploy:
-    needs: test
-    if: github.ref == 'refs/heads/main'
+  DEPLOY_CREATE_IC_APP_REACT_DEMO:
+    needs:
+      - changes
+      - CREATE_IC_APP_REACT_DEMO
+    if: github.ref == 'refs/heads/main' && ${{ needs.changes.outputs.CREATE_IC_APP_REACT_DEMO == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -56,3 +80,42 @@ jobs:
           DFX_NETWORK: ic
           REACT_APP_NFID_PROVIDER_URL: https://${{secrets.PROD_CANISTER_ID_NFID_FRONTEND}}.ic0.app/authenticate/?applicationName=NFID-Demo
           REACT_APP_NFID_PROVIDER_IFRAME_URL: https://${{secrets.PROD_CANISTER_ID_NFID_FRONTEND}}.ic0.app/iframe-authenticate/?applicationName=NFID-Demo
+
+  NFID_SDK_REACT:
+    needs: changes
+    if: ${{ needs.changes.outputs.NFID_SDK_REACT == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Running tests
+        working-directory: packages/nfid-sdk-react
+        run: |
+          yarn
+          yarn test
+
+  NFID_UI_KIT_CORE:
+    needs: changes
+    if: ${{ needs.changes.outputs.NFID_UI_KIT_CORE == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Running tests
+        working-directory: packages/nfid-ui-kit-core
+        run: |
+          yarn
+          yarn test
+
+  REACT_IC_II_AUTH:
+    needs: changes
+    if: ${{ needs.changes.outputs.REACT_IC_II_AUTH == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Running tests
+        working-directory: packages/react-ic-ii-auth
+        run: |
+          yarn
+          yarn test
