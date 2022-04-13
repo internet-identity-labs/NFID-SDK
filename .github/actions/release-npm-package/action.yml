@@ -7,9 +7,6 @@ inputs:
   upgradeType:
     description: "Upgrade type (patch | minor | major)"
     default: "patch"
-  nodeVersion:
-    description: "Node version"
-    default: "14.x"
   accessType:
     description: "NPM access type"
     default: "public"
@@ -40,13 +37,6 @@ runs:
     - name: Create new version
       shell: bash
       run: yarn version --${{ inputs.upgradeType }}
-
-    - name: Setup Node
-      shell: bash
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ inputs.nodeVersion }}
-        registry-url: ${{ inputs.registry }}
 
     - name: Update tags
       shell: bash
