@@ -1,0 +1,59 @@
+inputs:
+  package:
+    description: "Path to Package"
+  registry:
+    description: "NPM registry"
+    default: "https://registry.npmjs.org"
+  upgradeType:
+    description: "Upgrade type (patch | minor | major)"
+    default: "patch"
+  nodeVersion:
+    description: "Node version"
+    default: "14.x"
+  accessType:
+    description: "NPM access type"
+    default: "public"
+  gitUserName:
+    description: "Git user name used for tags"
+    default: "iil-github-bot"
+  gitUserEmail:
+    description: "Git user email used for tags"
+    default: "iil-github-bot@indentitylabs.ooo"
+runs:
+  using: "composite"
+  steps:
+    - name: Install and test
+      shell: bash
+      working-directory: ${{ inputs.package }}
+      run: yarn && yarn test
+
+    - name: Git configuration
+      shell: bash
+      run: |
+        git config user.email "${{ inputs.gitUserEmail }}"
+        git config user.name "{{ inputs.gitUserName }}"
+
+    - name: Configure Yarn
+      shell: bash
+      run: yarn config set version-git-message "ci(${{ inputs.package }}) Increment npm package version v%s"
+
+    - name: Create new version
+      shell: bash
+      run: yarn version --${{ inputs.upgradeType }}
+
+    - name: Setup Node
+      shell: bash
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ inputs.nodeVersion }}
+        registry-url: ${{ inputs.registry }}
+
+    - name: Update tags
+      shell: bash
+      run: |
+        git push
+        git push --tags
+
+    - name: Publish package on NPM 📦
+      shell: bash
+      run: npm publish --access ${{ inputs.registry }}
