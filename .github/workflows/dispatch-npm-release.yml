@@ -2,7 +2,7 @@ name: Dispatch NPM release
 
 on:
   workflow_dispatch:
-    input:
+    inputs:
       package:
         type: choice
         description: "Package to release"
@@ -20,12 +20,14 @@ on:
           - major
 
 jobs:
-  steps:
-    - uses: actions/checkout@v2
-    - name: NPM RELEASE
-      uses: ./.github/actions/release-npm-package
-      with:
-        package: ${{ github.event.inputs.package }}
-        upgradeType: ${{ github.event.inputs.package }}
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN }}
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: NPM RELEASE
+        uses: ./.github/actions/release-npm-package
+        with:
+          package: ${{ github.event.inputs.package }}
+          upgradeType: ${{ github.event.inputs.package }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN }}
