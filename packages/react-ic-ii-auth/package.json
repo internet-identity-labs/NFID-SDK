@@ -52,7 +52,7 @@
     "@dfinity/principal": "0.10.4",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "^12.1.0",
-    "@testing-library/user-event": "^13.2.1",
+    "@testing-library/user-event": "^14.1.0",
     "@types/jest": "^27.0.2",
     "@types/node": "^17.0.23",
     "@types/react": "^17.0.24",
