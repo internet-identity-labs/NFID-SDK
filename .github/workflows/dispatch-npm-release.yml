@@ -35,6 +35,6 @@ jobs:
         uses: ./.github/actions/release-npm-package
         with:
           package: ${{ github.event.inputs.package }}
-          upgradeType: ${{ github.event.inputs.package }}
+          upgradeType: ${{ github.event.inputs.level }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN }}

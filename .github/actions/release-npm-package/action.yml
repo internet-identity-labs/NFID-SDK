@@ -27,32 +27,37 @@ runs:
   using: "composite"
   steps:
     - name: Install and test
-      shell: bash
       working-directory: ${{inputs.packageBasePath}}${{ inputs.package }}
+      shell: bash
       run: yarn
 
     - name: Git configuration
+      working-directory: ${{inputs.packageBasePath}}${{ inputs.package }}
       shell: bash
       run: |
         git config user.email "${{ inputs.gitUserEmail }}"
         git config user.name "${{ inputs.gitUserName }}"
 
     - name: Configure Yarn
+      working-directory: ${{inputs.packageBasePath}}${{ inputs.package }}
       shell: bash
       run: |
         yarn config set version-git-message "ci(${{ inputs.package }}) Increment npm package version v%s"
         yarn config set version-tag-prefix "${{ inputs.namespace }}/${{ inputs.package }}"
 
     - name: Create new version
+      working-directory: ${{inputs.packageBasePath}}${{ inputs.package }}
       shell: bash
       run: yarn version --${{ inputs.upgradeType }}
 
     - name: Update tags
+      working-directory: ${{inputs.packageBasePath}}${{ inputs.package }}
       shell: bash
       run: |
         git push
         git push --tags
 
     - name: Publish package on NPM 📦
+      working-directory: ${{inputs.packageBasePath}}${{ inputs.package }}
       shell: bash
       run: npm publish --access ${{ inputs.registry }}
