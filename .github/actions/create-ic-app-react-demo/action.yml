@@ -8,16 +8,16 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: aviate-labs/setup-dfx@v0.2.3
-      with:
-        dfx-version: ${{ inputs.dfxVersion }}
-
     - name: Install dependencies
       working-directory: examples/create-ic-app-react-demo
       shell: bash
       run: yarn
 
     - name: CREATE-IC-APP-REACT Demo | install & deploy
+      uses: aviate-labs/setup-dfx@v0.2.3
+      with:
+        dfx-version: ${{ inputs.dfxVersion }}
+
       shell: bash
       working-directory: examples/create-ic-app-react-demo
       run: |
