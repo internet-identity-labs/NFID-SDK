@@ -6,8 +6,9 @@ runs:
   using: "composite"
   steps:
     - name: Install dependencies
+      working-directory: examples/create-ic-app-react-demo
       shell: bash
-      run: yarn && yarn ws install
+      run: yarn
 
     - name: CREATE-IC-APP-REACT Demo | install & deploy
       shell: bash
