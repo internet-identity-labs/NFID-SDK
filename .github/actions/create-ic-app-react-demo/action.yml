@@ -12,12 +12,6 @@ runs:
       with:
         dfx-version: ${{ inputs.dfxVersion }}
 
-    - name: Debug dfx
-      shell: bash
-      run: |
-        ls -la /home/runner/.config/dfx/identity/
-        ls -la /home/runner/.config/dfx/identity/action/
-
     - name: Install dependencies
       working-directory: examples/create-ic-app-react-demo
       shell: bash
