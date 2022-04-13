@@ -1,4 +1,5 @@
-name: NPM react-ic-ii-auth
+name: Dispatch NPM release
+
 on:
   workflow_dispatch:
     input:
