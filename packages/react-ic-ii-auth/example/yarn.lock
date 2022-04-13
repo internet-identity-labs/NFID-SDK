@@ -418,7 +418,8 @@
   integrity sha512-gfta+H8aziZsm8pZa0vj04KO6biEiisppNgA1kbJvFrrWu9Vm7eaUEy76DIxsuTaWvti5fkJVhllWc6ZTE+Mdw==
 
 "@identity-labs/react-ic-ii-auth@link:..":
-  version "0.0.16"
+  version "0.0.0"
+  uid ""
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
@@ -862,6 +863,7 @@
 
 "@types/node@link:../node_modules/@types/node":
   version "0.0.0"
+  uid ""
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -887,6 +889,7 @@
 
 "@types/react-dom@link:../node_modules/@types/react-dom":
   version "0.0.0"
+  uid ""
 
 "@types/react@*":
   version "17.0.40"
@@ -897,8 +900,13 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
+"@types/react@^17":
+  version "0.0.0"
+  uid ""
+
 "@types/react@link:../node_modules/@types/react":
   version "0.0.0"
+  uid ""
 
 "@types/scheduler@*":
   version "0.16.2"
@@ -3201,7 +3209,7 @@ jest@27.4.7:
     import-local "^3.0.2"
     jest-cli "^27.4.7"
 
-js-tokens@^4.0.0:
+"js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
@@ -3357,6 +3365,13 @@ lodash@^4.17.15, lodash@^4.17.21, lodash@^4.7.0:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
+
+loose-envify@^1.1.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
+  integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
+  dependencies:
+    js-tokens "^3.0.0 || ^4.0.0"
 
 lru-cache@^6.0.0:
   version "6.0.0"
@@ -4099,6 +4114,7 @@ raw-body@2.4.1:
 
 "react-dom@link:../node_modules/react-dom":
   version "0.0.0"
+  uid ""
 
 react-is@17.0.2, react-is@^17.0.1:
   version "17.0.2"
@@ -4112,6 +4128,7 @@ react-refresh@0.8.3:
 
 "react@link:../node_modules/react":
   version "0.0.0"
+  uid ""
 
 readable-stream@^2.0.2, readable-stream@^2.3.3, readable-stream@^2.3.6:
   version "2.3.7"
@@ -4270,6 +4287,14 @@ saxes@^5.0.1:
   integrity sha512-5LBh1Tls8c9xgGjw3QrMwETmTMVk0oFgvrFSvWx62llR2hcEInrKNZ2GZCCuuy2lvWrdl5jhbpeqc5hRYKFOcw==
   dependencies:
     xmlchars "^2.2.0"
+
+scheduler@^0.20.2:
+  version "0.20.2"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.20.2.tgz#4baee39436e34aa93b4874bddcbf0fe8b8b50e91"
+  integrity sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
 
 semver@7.x, semver@^7.3.2:
   version "7.3.5"
@@ -4814,6 +4839,7 @@ typedarray-to-buffer@^3.1.5:
 
 "typescript@link:../node_modules/typescript":
   version "0.0.0"
+  uid ""
 
 unbox-primitive@^1.0.1:
   version "1.0.1"
