@@ -43,12 +43,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup dfx
-        uses: aviate-labs/setup-dfx@v0.2.3
-        with:
-          dfx-version: 0.9.3
-        env:
-          DFX_IDENTITY_PEM: ${{ secrets.PROD_GH_ACTION_DFX_IDENTITY_PEM }}
       - name: Running tests
         working-directory: examples/create-ic-app-react-demo
         run: |
@@ -59,7 +53,7 @@ jobs:
     needs:
       - changes
       - CREATE_IC_APP_REACT_DEMO
-    if: github.ref == 'refs/heads/main' && ${{ needs.changes.outputs.CREATE_IC_APP_REACT_DEMO == 'true' }}
+    if: github.ref == 'refs/heads/main' && needs.changes.outputs.CREATE_IC_APP_REACT_DEMO == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

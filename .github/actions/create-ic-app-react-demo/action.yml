@@ -13,11 +13,11 @@ runs:
       shell: bash
       run: yarn
 
-    - name: CREATE-IC-APP-REACT Demo | install & deploy
-      uses: aviate-labs/setup-dfx@v0.2.3
+    - uses: aviate-labs/setup-dfx@v0.2.3
       with:
         dfx-version: ${{ inputs.dfxVersion }}
 
+    - name: CREATE-IC-APP-REACT Demo | install & deploy
       shell: bash
       working-directory: examples/create-ic-app-react-demo
       run: |
