@@ -1,11 +1,13 @@
-import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Modal, ModalProps } from './index-v1';
+import React from 'react';
 import { Button } from '../../atoms/button';
+import { ModalAdvanced, ModalAdvancedProps } from './advanced';
+import { Modal, ModalProps } from './index-v1';
 
 const meta: Meta = {
   title: 'Molecules/Modal',
   component: Modal,
+  subcomponents: { ModalAdvanced },
   argTypes: {
     children: {
       control: {
@@ -30,12 +32,58 @@ const Template: Story<ModalProps> = ({ isVisible, ...args }) => {
   );
 };
 
-// By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
-// https://storybook.js.org/docs/react/workflows/unit-testing
+const AdvancedModal: Story<ModalAdvancedProps> = ({ ...args }) => {
+  const [visible, setVisible] = React.useState(false);
+
+  const toggleVisibility = React.useCallback(
+    () => setVisible((prev) => !prev),
+    [setVisible]
+  );
+
+  return (
+    <>
+      <Button text onClick={() => setVisible(true)}>
+        Open Advanced Modal
+      </Button>
+
+      {visible && (
+        <ModalAdvanced
+          {...args}
+          title={'Delete access point'}
+          onClose={toggleVisibility}
+          children={
+            <div>
+              Do you really want to delete access point? This process cannot be
+              undone.
+            </div>
+          }
+          primaryButton={{
+            type: 'error',
+            text: 'Delete',
+            onClick: toggleVisibility,
+          }}
+          secondaryButton={{
+            type: 'secondary',
+            text: 'Cancel',
+            onClick: toggleVisibility,
+          }}
+        />
+      )}
+    </>
+  );
+};
+
 export const Default = Template.bind({});
+export const Advanced = AdvancedModal.bind({});
 
 Default.args = {
   children: 'Button',
   onClose: () => {},
   id: 'default-modal',
+};
+
+Advanced.args = {
+  id: 'advanced-modal',
+  title: 'Delete access point',
+  large: false,
 };
