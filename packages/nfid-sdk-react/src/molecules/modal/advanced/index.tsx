@@ -1,15 +1,13 @@
 import clsx from 'clsx';
 import React from 'react';
-
 import { Button } from '../../../atoms/button';
 import { H5 } from '../../../atoms/typography';
-
 import { ModalCloseIcon } from '../closeIcon';
 
 export interface ModalButtonProps {
   text: string;
   onClick: () => void;
-  type?: 'primary' | 'secondary' | 'error';
+  type: 'primary' | 'secondary' | 'error';
 }
 
 export interface ModalAdvancedProps
@@ -18,6 +16,7 @@ export interface ModalAdvancedProps
   onClose?: () => void;
   primaryButton?: ModalButtonProps;
   secondaryButton?: ModalButtonProps;
+  large?: boolean;
 }
 
 export const ModalAdvanced: React.FC<ModalAdvancedProps> = ({
@@ -27,11 +26,17 @@ export const ModalAdvanced: React.FC<ModalAdvancedProps> = ({
   onClose,
   primaryButton,
   secondaryButton,
+  large,
 }) => {
   return (
     <>
       <div className="fixed inset-0 z-50 flex items-center justify-center mx-4 overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
-        <div className="relative w-full max-w-sm mx-auto my-6 md:max-w-lg">
+        <div
+          className={clsx(
+            'relative w-full mx-auto my-6',
+            large ? 'max-w-sm md:max-w-lg' : 'max-w-sm'
+          )}
+        >
           <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
             <div className="relative flex-auto px-6 ">
               <H5 className="my-4">{title}</H5>
