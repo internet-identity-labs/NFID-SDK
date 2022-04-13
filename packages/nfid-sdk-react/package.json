@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1-alpha.3",
+  "version": "0.0.1-alpha.4",
   "name": "@internet-identity-labs/nfid-sdk-react",
   "repository": "https://github.com/internet-identity-labs/NFID-SDK",
   "author": "Philipp Litzenberger",
@@ -45,7 +45,8 @@
     "trailingComma": "es5"
   },
   "module": "dist/tsdx-nfid-sdk-react.esm.js",
-  "size-limit": [{
+  "size-limit": [
+    {
       "path": "dist/tsdx-nfid-sdk-react.cjs.production.min.js",
       "limit": "10 KB"
     },
