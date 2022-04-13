@@ -2,9 +2,22 @@ inputs:
   network:
     description: "Deployment target (e.g ic)"
     default: "ic"
+  dfxVersion:
+    description: "DFX version"
+    default: "0.9.3"
 runs:
   using: "composite"
   steps:
+    - uses: aviate-labs/setup-dfx@v0.2.3
+        with:
+          dfx-version: ${{ inputs.dfxVersion }}
+
+    - name: Debug dfx
+      shell: bash
+      run: |
+        ls -la /home/runner/.config/dfx/identity/
+        ls -la /home/runner/.config/dfx/identity/action/
+
     - name: Install dependencies
       working-directory: examples/create-ic-app-react-demo
       shell: bash
@@ -16,7 +29,7 @@ runs:
       run: |
         node scripts/prepare-build.js
 
-        dfx start --clean --background
+        dfx start --background
         dfx deploy counter --no-wallet
         dfx stop
 
