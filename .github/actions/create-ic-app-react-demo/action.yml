@@ -9,8 +9,8 @@ runs:
   using: "composite"
   steps:
     - uses: aviate-labs/setup-dfx@v0.2.3
-        with:
-          dfx-version: ${{ inputs.dfxVersion }}
+      with:
+        dfx-version: ${{ inputs.dfxVersion }}
 
     - name: Debug dfx
       shell: bash
