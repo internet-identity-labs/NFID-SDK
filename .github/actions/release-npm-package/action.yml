@@ -43,7 +43,7 @@ runs:
       shell: bash
       run: |
         yarn config set version-git-message "ci(${{ inputs.package }}) Increment npm package version v%s"
-        yarn config set version-tag-prefix "${{ inputs.namespace }}/${{ inputs.package }}"
+        yarn config set version-tag-prefix "${{ inputs.namespace }}/${{ inputs.package }}@"
 
     - name: Create new version
       working-directory: ${{inputs.packageBasePath}}${{ inputs.package }}
