@@ -44,7 +44,7 @@
     "react-dom": ">=16.8.1"
   },
   "devDependencies": {
-    "@dfinity/agent": "0.10.2",
+    "@dfinity/agent": "0.10.3",
     "@dfinity/auth-client": "0.10.2",
     "@dfinity/authentication": "0.10.2",
     "@dfinity/candid": "0.10.3",
