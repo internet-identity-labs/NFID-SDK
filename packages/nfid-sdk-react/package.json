@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "name": "@internet-identity-labs/nfid-sdk-react",
   "repository": "https://github.com/internet-identity-labs/NFID-SDK",
   "author": "Philipp Litzenberger",
@@ -45,8 +45,7 @@
     "trailingComma": "es5"
   },
   "module": "dist/tsdx-nfid-sdk-react.esm.js",
-  "size-limit": [
-    {
+  "size-limit": [{
       "path": "dist/tsdx-nfid-sdk-react.cjs.production.min.js",
       "limit": "10 KB"
     },
@@ -73,7 +72,6 @@
     "@types/react-dom": "^17.0.14",
     "@types/react-helmet": "6.1.5",
     "autoprefixer": "10.4.4",
-    "babel-loader": "^8.2.4",
     "cssnano": "5.1.5",
     "eslint-config-standard": "16.0.3",
     "eslint-config-standard-react": "11.0.1",

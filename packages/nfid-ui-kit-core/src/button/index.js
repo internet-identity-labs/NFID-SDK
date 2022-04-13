@@ -24,7 +24,11 @@ module.exports = (theme) => ({
     "@apply cursor-not-allowed opacity-20 pointer-events-none": {},
   },
   ".btn-icon": {
-    "@apply flex items-center justify-center space-x-4": {},
+    "@apply hover:bg-blue-active transition ring-transparent active:ring-blue-base/20 focus:ring-blue-base/20 ring-2 !ring-offset-0 !p-2 border border-transparent active:border-blue-base":
+      {},
+  },
+  ".btn-icon-active": {
+    "@apply !border-blue-base bg-blue-active": {},
   },
   ".btn-block": {
     "@apply w-full": {},
