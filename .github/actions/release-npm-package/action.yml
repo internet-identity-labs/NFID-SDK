@@ -1,4 +1,11 @@
 inputs:
+  namespace:
+    description: "Package namespace"
+    default: "@internet-identity-labs"
+  packageBasePath:
+    description: "Package base path"
+    default: "packages/"
+
   package:
     description: "Path to Package"
   registry:
@@ -21,18 +28,20 @@ runs:
   steps:
     - name: Install and test
       shell: bash
-      working-directory: ${{ inputs.package }}
-      run: yarn && yarn test
+      working-directory: ${{inputs.packageBasePath}}${{ inputs.package }}
+      run: yarn
 
     - name: Git configuration
       shell: bash
       run: |
         git config user.email "${{ inputs.gitUserEmail }}"
-        git config user.name "{{ inputs.gitUserName }}"
+        git config user.name "${{ inputs.gitUserName }}"
 
     - name: Configure Yarn
       shell: bash
-      run: yarn config set version-git-message "ci(${{ inputs.package }}) Increment npm package version v%s"
+      run: |
+        yarn config set version-git-message "ci(${{ inputs.package }}) Increment npm package version v%s"
+        yarn config set version-tag-prefix "${{ inputs.namespace }}/${{ inputs.package }}"
 
     - name: Create new version
       shell: bash
