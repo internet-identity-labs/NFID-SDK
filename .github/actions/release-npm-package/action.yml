@@ -5,15 +5,17 @@ inputs:
   packageBasePath:
     description: "Package base path"
     default: "packages/"
-
   package:
     description: "Path to Package"
   registry:
     description: "NPM registry"
     default: "https://registry.npmjs.org"
   upgradeType:
-    description: "Upgrade type (patch | minor | major)"
+    description: "Upgrade type (prepatch | patch | preminor | minor | premajor | major)"
     default: "patch"
+  preId:
+    description: "Upgrade preid in case of pre* (alpha | beta)"
+    default: "alpha"
   accessType:
     description: "NPM access type"
     default: "public"
@@ -23,41 +25,61 @@ inputs:
   gitUserEmail:
     description: "Git user email used for tags"
     default: "iil-github-bot@indentitylabs.ooo"
+  authToken:
+    description: "NPM auth token"
+
 runs:
   using: "composite"
   steps:
-    - name: Install and test
-      working-directory: ${{inputs.packageBasePath}}${{ inputs.package }}
-      shell: bash
-      run: yarn
-
     - name: Git configuration
-      working-directory: ${{inputs.packageBasePath}}${{ inputs.package }}
+      working-directory: ${{ inputs.packageBasePath }}${{ inputs.package }}
       shell: bash
       run: |
         git config user.email "${{ inputs.gitUserEmail }}"
         git config user.name "${{ inputs.gitUserName }}"
 
     - name: Configure Yarn
-      working-directory: ${{inputs.packageBasePath}}${{ inputs.package }}
+      working-directory: ${{ inputs.packageBasePath }}${{ inputs.package }}
       shell: bash
       run: |
         yarn config set version-git-message "ci(${{ inputs.package }}) Increment npm package version v%s"
         yarn config set version-tag-prefix "${{ inputs.namespace }}/${{ inputs.package }}@"
 
     - name: Create new version
-      working-directory: ${{inputs.packageBasePath}}${{ inputs.package }}
+      working-directory: ${{ inputs.packageBasePath }}${{ inputs.package }}
       shell: bash
-      run: yarn version --${{ inputs.upgradeType }}
+      run: |
+
+        if [[ ${{ inputs.upgradeType }} == "pre"* ]]; then
+          yarn version --${{ inputs.upgradeType}} --preid ${{ inputs.preid }}
+        else
+          yarn version --${{ inputs.upgradeType }}
+        fi
 
     - name: Update tags
-      working-directory: ${{inputs.packageBasePath}}${{ inputs.package }}
+      working-directory: ${{ inputs.packageBasePath }}${{ inputs.package }}
       shell: bash
       run: |
         git push
         git push --tags
 
-    - name: Publish package on NPM 📦
-      working-directory: ${{inputs.packageBasePath}}${{ inputs.package }}
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14.x
+        registry-url: https://registry.npmjs.org/
+
+    - name: Install and test
+      working-directory: ${{ inputs.packageBasePath }}${{ inputs.package }}
       shell: bash
-      run: npm publish --access ${{ inputs.registry }}
+      run: yarn
+
+    - name: Install dependencies and build 🔧
+      working-directory: ${{ inputs.packageBasePath }}${{ inputs.package }}
+      shell: bash
+      run: yarn build
+
+    - name: Publish package on NPM 📦
+      working-directory: ${{ inputs.packageBasePath }}${{ inputs.package }}
+      shell: bash
+      run: npm publish --access ${{ inputs.accessType }}

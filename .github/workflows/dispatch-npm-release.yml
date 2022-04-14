@@ -15,26 +15,63 @@ on:
         type: choice
         description: Select the release update level
         options:
+          - prerelease
+          - prepatch
           - patch
+          - preminor
           - minor
+          - premajor
           - major
+      preid:
+        type: choice
+        description: Select the release update level
+        options:
+          - alpha
+          - beta
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14.x
-          registry-url: https://registry.npmjs.org
+      - name: 🔧 Git
+        run: |
+          git config user.email "github@indentitylabs.ooo"
+          git config user.name "Github InternetIdentityLabs"
 
-      - name: NPM RELEASE
-        uses: ./.github/actions/release-npm-package
+      - name: 🔧 Node
+        uses: actions/setup-node@v1
         with:
-          package: ${{ github.event.inputs.package }}
-          upgradeType: ${{ github.event.inputs.level }}
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+
+      - name: 🔧 Yarn
+        run: |
+          yarn config set version-git-message "chore(${{ github.event.inputs.package }}): new release v%s"
+          yarn config set version-tag-prefix "@internet-identity-labs/${{ github.event.inputs.package }}@"
+
+      - name: 🤖 Install and build
+        working-directory: packages/${{ github.event.inputs.package }}
+        run: yarn
+
+      - name: 🤖 Increment package version
+        working-directory: packages/${{ github.event.inputs.package }}
+        run: |
+          if [[ ${{ github.event.inputs.level }} == "pre"* ]]; then
+            yarn version --${{ github.event.inputs.level }} --preid ${{ github.event.inputs.preid }}
+          else
+            yarn version --${{ github.event.inputs.level }}
+          fi
+
+      - name: 📦 Publish package on NPM
+        working-directory: packages/${{ github.event.inputs.package }}
+        run: yarn publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.IL_GH_NPM_TOKEN }}
+
+      - name: 🎉 Push tags
+        run: |
+          git push
+          git push --tags
