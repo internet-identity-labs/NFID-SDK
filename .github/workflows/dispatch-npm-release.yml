@@ -24,7 +24,7 @@ on:
           - major
       preid:
         type: choice
-        description: Select the release update level
+        description: Select pre-id (alpha | beta)
         options:
           - alpha
           - beta
