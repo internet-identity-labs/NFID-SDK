@@ -73,7 +73,7 @@
     {
       "label": "CREATE IC APP REACT DEMO | NFID Frontend tunnel (ngrok)",
       "type": "shell",
-      "command": "./scripts/tunnel-to-create-ic-app-react-demo-nfid-frontend.sh",
+      "command": "./examples/create-ic-app-react-demo/scripts/tunnel-to-create-ic-app-react-demo-nfid-frontend.sh",
       "presentation": {
         "reveal": "always",
         "panel": "new",
