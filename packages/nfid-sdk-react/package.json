@@ -62,7 +62,7 @@
     "@internet-identity-labs/react-ic-ii-auth": "0.0.17",
     "@rollup/plugin-image": "^2.1.1",
     "@size-limit/preset-small-lib": "^7.0.8",
-    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-info": "^5.3.21",
     "@storybook/addon-links": "^6.4.22",
     "@storybook/addon-postcss": "2.0.0",
