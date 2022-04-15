@@ -1,6 +1,6 @@
 {
   "name": "@internet-identity-labs/react-ic-ii-auth",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "React components to use DFINITYs Internet Identity and NFID Authentication",
   "author": "Philipp Litzenberger <philipp@identitylabs.ooo>",
   "license": "MIT",
