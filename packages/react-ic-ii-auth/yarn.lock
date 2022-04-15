@@ -1117,9 +1117,9 @@
   version "10.1.0"
   resolved "https://registry.npmjs.org/@csstools/normalize.css/-/normalize.css-10.1.0.tgz"
 
-"@dfinity/agent@0.10.2":
-  version "0.10.2"
-  resolved "https://registry.npmjs.org/@dfinity/agent/-/agent-0.10.2.tgz"
+"@dfinity/agent@0.10.4":
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/@dfinity/agent/-/agent-0.10.4.tgz#269406f1cb5524276c52ddf37e933abd75529063"
   dependencies:
     base64-arraybuffer "^0.2.0"
     bignumber.js "^9.0.0"
