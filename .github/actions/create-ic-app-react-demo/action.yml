@@ -8,6 +8,10 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Setup mono repo
+      shell: bash
+      run: yarn
+
     - name: Install dependencies
       working-directory: examples/create-ic-app-react-demo
       shell: bash
