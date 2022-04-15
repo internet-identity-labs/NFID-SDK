@@ -1144,9 +1144,9 @@
   version "0.0.1-alpha.3"
   resolved "https://registry.yarnpkg.com/@internet-identity-labs/nfid-ui-kit-core/-/nfid-ui-kit-core-0.0.1-alpha.3.tgz#73633af2cbd3d7915b86c9ef4f6ba16f0e7b616e"
 
-"@internet-identity-labs/react-ic-ii-auth@0.0.17":
-  version "0.0.17"
-  resolved "https://registry.yarnpkg.com/@internet-identity-labs/react-ic-ii-auth/-/react-ic-ii-auth-0.0.17.tgz#e936c2dcce3933cc5efc594962c6d944b7e4c6ad"
+"@internet-identity-labs/react-ic-ii-auth@0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@internet-identity-labs/react-ic-ii-auth/-/react-ic-ii-auth-0.0.19.tgz#e0c4f860954803b9b8343b101984909ae1ad0b53"
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
