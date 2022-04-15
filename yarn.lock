@@ -2037,6 +2037,11 @@
   resolved "https://registry.yarnpkg.com/@internet-identity-labs/react-ic-ii-auth/-/react-ic-ii-auth-0.0.17.tgz#e936c2dcce3933cc5efc594962c6d944b7e4c6ad"
   integrity sha512-p/fSMlbJaBCp55TupySU6dUtt9FhpwE8gNkiIgn2pXE0pugKZyT63/dfIX5MXAk9JJquILmjSQCxhJMI2b76KQ==
 
+"@internet-identity-labs/react-ic-ii-auth@0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@internet-identity-labs/react-ic-ii-auth/-/react-ic-ii-auth-0.0.19.tgz#e0c4f860954803b9b8343b101984909ae1ad0b53"
+  integrity sha512-lJVf5xAFcz7+uMvse9e8K3U/iWpSr1X3qVEoj7KlxHMmySqBDxlFMJg8VBFuxr6s8dsmQd3jNWPmnp/uq8Xb5Q==
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -4003,23 +4008,6 @@
     "@storybook/components" "6.4.19"
     "@storybook/core-events" "6.4.19"
     "@storybook/theming" "6.4.19"
-    core-js "^3.8.2"
-    global "^4.4.0"
-    memoizerific "^1.11.3"
-    prop-types "^15.7.2"
-    regenerator-runtime "^0.13.7"
-
-"@storybook/addon-viewport@6.4.22":
-  version "6.4.22"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-6.4.22.tgz#381a2fc4764fe0851889994a5ba36c3121300c11"
-  integrity sha512-6jk0z49LemeTblez5u2bYXYr6U+xIdLbywe3G283+PZCBbEDE6eNYy2d2HDL+LbCLbezJBLYPHPalElphjJIcw==
-  dependencies:
-    "@storybook/addons" "6.4.22"
-    "@storybook/api" "6.4.22"
-    "@storybook/client-logger" "6.4.22"
-    "@storybook/components" "6.4.22"
-    "@storybook/core-events" "6.4.22"
-    "@storybook/theming" "6.4.22"
     core-js "^3.8.2"
     global "^4.4.0"
     memoizerific "^1.11.3"
