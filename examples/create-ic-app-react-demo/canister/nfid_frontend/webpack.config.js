@@ -31,6 +31,10 @@ const canisterEnv = Object.entries(canister_ids).reduce(
 module.exports = {
   mode: "development",
   entry: path.resolve(__dirname, "index.ts"),
+  output: {
+    path: path.resolve(__dirname, "./build/"),
+    publicPath: "/",
+  },
   module: {
     rules: [
       {
