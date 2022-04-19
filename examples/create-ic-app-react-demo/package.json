@@ -29,7 +29,7 @@
     "build": "craco build",
     "test": "jest --passWithNoTests",
     "deploy:local": "./scripts/deploy-canister.sh && node ./scripts/prepare-build.js && dfx deploy --argument '(null)'",
-    "serve:nfid-frontend": "serve -s canister/nfid_frontend/build -p 9090",
+    "serve:nfid-frontend": "webpack serve --config ./canister/nfid_frontend/webpack.config.js",
     "tunnel": "./scripts/tunnel-to-create-ic-app-react-demo-nfid-frontend.sh",
     "eject": "craco eject"
   },
@@ -56,6 +56,10 @@
     "autoprefixer": "^10.4.4",
     "craco-alias": "3.0.1",
     "postcss": "^8.4.12",
-    "serve": "13.0.2"
+    "serve": "13.0.2",
+    "html-webpack-plugin": "5.5.0",
+    "webpack": "5.72.0",
+    "webpack-cli": "4.9.2",
+    "webpack-dev-server": "4.8.1"
   }
 }
