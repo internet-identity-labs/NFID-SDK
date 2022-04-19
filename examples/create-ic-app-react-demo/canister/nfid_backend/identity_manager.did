@@ -5,11 +5,11 @@ type ConfigurationRequest = record {
     lambda: principal;
     token_ttl: nat64;
     token_refresh_ttl: nat64;
-    key: blob;
     whitelisted_phone_numbers: opt vec text;
-    heartbeat: nat32;
-    backup_canister_id: text;
-    whitelisted_canisters: vec principal;
+    heartbeat: opt nat32;
+    backup_canister_id: opt text;
+    ii_canister_id: opt principal;
+    whitelisted_canisters: opt vec principal;
     env: opt text
 };
 
