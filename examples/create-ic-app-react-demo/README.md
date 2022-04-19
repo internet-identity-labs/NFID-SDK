@@ -13,16 +13,20 @@ A fully developed application with NFID integrated using React, built on top of 
 Open a terminal on the top-level directory of the NFID-SDK, and run the following commands:
 
 ```bash
-# Step 1: install dependencies
+# Step 1: install dependencies (within NFID-SDK root folder)
 $ yarn
 
-# Step 2: run dfx
-$ dfx start --clean --background
 ```
 
 #### Deploying
 
 ```bash
+# navigate to the right example directory
+$ cd examples/create-ic-app-react-demo
+
+# Step 2: run dfx
+$ dfx start --clean --background
+
 # Step 3: deploy canisters to local replica
 # Hint: if you've restarted dfx, remove .dfx folder or you'll get the error below
 # Error: The replica returned an HTTP Error: Http Error: status 404 Not Found, content type "", content: Requested canister does not exist
@@ -50,6 +54,8 @@ Copy the assigned domain from `ngrok` output:
 ![running ngrok](./running-ngrok.png)
 
 and use it to replace `TUNNEL_DOMAIN` in `examples/create-ic-app-react-demo/.env` (copy it first from `.env.template`)
+
+#### Demo Frontend
 
 Once ngrok has been set up, you can run the demo with the following command:
 
