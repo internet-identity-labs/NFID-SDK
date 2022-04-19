@@ -1,6 +1,4 @@
 #!/bin/sh
 
-dfx deploy counter --no-wallet
-dfx deploy internet_identity --no-wallet
-dfx deploy identity_manager --no-wallet
-dfx deploy pub_sub_channel --no-wallet
+dfx deploy --no-wallet --argument '(null)'
+dfx canister call identity_manager configure '(record {lambda = principal "sculj-2sjuf-dxqlm-dcv5y-hin5x-zfyvr-tzngf-bt5b5-dwhcc-zbsqf-rae"; token_ttl = 60;  token_refresh_ttl = 60; env = opt "test"})'
