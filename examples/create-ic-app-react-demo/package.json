@@ -21,7 +21,7 @@
     "test": "jest --passWithNoTests",
     "deploy:local": "./scripts/deploy-canister.sh",
     "serve:nfid-frontend": "webpack serve --config ./canister/nfid_frontend/webpack.config.js",
-    "tunnel": "./scripts/tunnel-to-create-ic-app-react-demo-nfid-frontend.sh",
+    "tunnel": "./scripts/ngrok-tunnel.sh",
     "eject": "craco eject"
   },
   "eslintConfig": {
