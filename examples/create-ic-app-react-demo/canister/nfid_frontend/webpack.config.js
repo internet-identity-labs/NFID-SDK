@@ -3,6 +3,10 @@ const webpack = require("webpack")
 const path = require("path")
 const fs = require("fs")
 
+const dfxJson = require("../.././dfx.json")
+
+const DFX_PORT = dfxJson.networks.local.bind.split(":")[1]
+
 var canister_ids
 try {
   canister_ids = JSON.parse(
@@ -44,6 +48,19 @@ module.exports = {
     allowedHosts: [".ngrok.io"],
     historyApiFallback: true,
     static: [path.resolve(__dirname, "build")],
+    proxy: {
+      fs: {
+        allow: ["."],
+      },
+      proxy: {
+        // This proxies all http requests made to /api to our running dfx instance
+        "/api": {
+          target: `http://127.0.0.1:${DFX_PORT}`,
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, "/api"),
+        },
+      },
+    },
   },
   plugins: [
     new webpack.DefinePlugin({
