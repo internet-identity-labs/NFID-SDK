@@ -64,7 +64,6 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      IC_HOST: JSON.stringify("http://localhost:8000"),
       II_ENV: JSON.stringify("development"),
       FRONTEND_MODE: JSON.stringify("development"),
       ...canisterEnv,
