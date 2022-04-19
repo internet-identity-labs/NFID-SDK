@@ -19,7 +19,7 @@
     "dev": "craco start",
     "build": "craco build",
     "test": "jest --passWithNoTests",
-    "deploy:local": "./scripts/deploy-canister.sh && node ./scripts/prepare-build.js && dfx deploy --argument '(null)'",
+    "deploy:local": "./scripts/deploy-canister.sh && dfx deploy --argument '(null)'",
     "serve:nfid-frontend": "webpack serve --config ./canister/nfid_frontend/webpack.config.js",
     "tunnel": "./scripts/tunnel-to-create-ic-app-react-demo-nfid-frontend.sh",
     "eject": "craco eject"

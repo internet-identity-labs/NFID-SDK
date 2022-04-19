@@ -23,9 +23,6 @@ $ dfx start --clean --background
 #### Deploying
 
 ```bash
-# navigate to the right example directory
-$ cd examples/create-ic-app-react-demo
-
 # Step 3: deploy canisters to local replica
 # Hint: if you've restarted dfx, remove .dfx folder or you'll get the error below
 # Error: The replica returned an HTTP Error: Http Error: status 404 Not Found, content type "", content: Requested canister does not exist

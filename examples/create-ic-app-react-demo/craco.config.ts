@@ -83,13 +83,9 @@ const config = {
       fs: {
         allow: ["."],
       },
-      proxy: {
-        // This proxies all http requests made to /api to our running dfx instance
-        "/api": {
-          target: `http://127.0.0.1:${DFX_PORT}`,
-          changeOrigin: true,
-          rewrite: (path: string) => path.replace(/^\/api/, "/api"),
-        },
+      // This proxies all http requests made to /api to our running dfx instance
+      "/api": {
+        target: `http://0.0.0.0:${DFX_PORT}`,
       },
     },
   },
