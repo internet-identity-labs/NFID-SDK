@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 import { BiChevronDown, BiChevronRight } from 'react-icons/bi';
+import arrow from "./arrow.svg"
 
 export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
@@ -17,7 +18,7 @@ export const Accordion: React.FC<AccordionProps> = ({
   return (
     <div className={clsx('', className)}>
       <div
-        className={clsx('w-full flex items-start py-3')}
+        className={clsx("w-full flex items-start pt-[10px] pb-[15px] sm:py-5")}
         onClick={() => !expanded && setExpanded(!expanded)}
       >
         <div
@@ -33,14 +34,28 @@ export const Accordion: React.FC<AccordionProps> = ({
 
         <div className="flex-1">
           <div
-            className="font-medium cursor-pointer"
+            className="font-bold cursor-pointer tracking-[0.01em] text-xl leading-[26px] hover:text-[#525457]"
             onClick={() => setExpanded(!expanded)}
           >
             {title}
           </div>
-          <div hidden={!expanded}>{details}</div>
+          <div
+            className="mt-[18px] mb-[5px] text-base text-l sm:tracking-[0.01em] sm:text-lg sm:leading-[26px] sm:mt-5"
+            hidden={!expanded}
+          >
+            {details}
+          </div>
+        </div>
+        <div
+          className={clsx(
+            "ml-2 cursor-pointer lg:mx-4 transition-all",
+            expanded && "rotate-180",
+          )}
+          onClick={() => setExpanded(!expanded)}
+        >
+          <img src={arrow} alt="arrow" className="" />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
