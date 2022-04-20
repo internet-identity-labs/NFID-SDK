@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import clsx from "clsx"
 import React from "react"
 // @ts-ignore
 import { Fade } from "react-reveal"
+=======
+import clsx from 'clsx';
+import React from 'react';
+import { BiChevronDown, BiChevronRight } from 'react-icons/bi';
+import arrow from "./arrow.svg"
+>>>>>>> b46aeb4ee655cf49e3d68ba7ee55312ff2d286c8
 
 import arrow from "./arrow.svg"
 
@@ -34,14 +41,12 @@ export const Accordion: React.FC<AccordionProps> = ({
           >
             {title}
           </div>
-          <Fade>
-            <div
-              className="mt-[18px] mb-[5px] text-base text-l sm:tracking-[0.01em] sm:text-lg sm:leading-[26px] sm:mt-5"
-              hidden={!expanded}
-            >
-              {details}
-            </div>
-          </Fade>
+          <div
+            className="mt-[18px] mb-[5px] text-base text-l sm:tracking-[0.01em] sm:text-lg sm:leading-[26px] sm:mt-5"
+            hidden={!expanded}
+          >
+            {details}
+          </div>
         </div>
         <div
           className={clsx(
