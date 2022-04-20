@@ -4,7 +4,7 @@
   "description": "React components to use DFINITYs Internet Identity and NFID Authentication",
   "author": "Philipp Litzenberger <philipp@identitylabs.ooo>",
   "license": "MIT",
-  "repository": "internet-identity-labs/NFID-SDK",
+  "repository": "https://github.com/internet-identity-labs/NFID-SDK",
   "homepage": "https://github.com/internet-identity-labs/NFID-SDK/tree/main/packages/react-ic-ii-auth",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
