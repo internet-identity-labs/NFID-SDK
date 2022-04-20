@@ -4,10 +4,7 @@ import React from 'react';
 import { Button, ButtonProps } from '..';
 
 interface ButtonMenuProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+  extends React.HTMLAttributes<HTMLDivElement> {
   children: (toggle: () => void) => React.ReactNode;
   buttonProps?: ButtonProps;
   buttonElement?: React.ReactElement | string;
