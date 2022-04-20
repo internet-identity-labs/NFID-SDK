@@ -1,16 +1,5 @@
-<<<<<<< HEAD
-import clsx from "clsx"
-import React from "react"
-// @ts-ignore
-import { Fade } from "react-reveal"
-=======
 import clsx from 'clsx';
 import React from 'react';
-import { BiChevronDown, BiChevronRight } from 'react-icons/bi';
-import arrow from "./arrow.svg"
->>>>>>> b46aeb4ee655cf49e3d68ba7ee55312ff2d286c8
-
-import arrow from "./arrow.svg"
 
 interface AccordionProps
   extends React.DetailedHTMLProps<
