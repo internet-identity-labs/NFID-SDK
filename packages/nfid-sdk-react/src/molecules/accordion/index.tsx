@@ -1,10 +1,17 @@
-import clsx from 'clsx';
-import React from 'react';
-import { BiChevronDown, BiChevronRight } from 'react-icons/bi';
+import clsx from "clsx"
+import React from "react"
+// @ts-ignore
+import { Fade } from "react-reveal"
 
-export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
-  title: string;
-  details: string | React.ReactNode;
+import arrow from "./arrow.svg"
+
+interface AccordionProps
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  > {
+  title: string
+  details: string | React.ReactNode
 }
 
 export const Accordion: React.FC<AccordionProps> = ({
@@ -12,35 +19,42 @@ export const Accordion: React.FC<AccordionProps> = ({
   title,
   details,
 }) => {
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = React.useState(false)
 
   return (
-    <div className={clsx('', className)}>
+    <div className={clsx("", className)}>
       <div
-        className={clsx('w-full flex items-start py-3')}
+        className={clsx("w-full flex items-start pt-[10px] pb-[15px] sm:py-5")}
         onClick={() => !expanded && setExpanded(!expanded)}
       >
-        <div
-          className="mr-2 cursor-pointer lg:mx-4"
-          onClick={() => setExpanded(!expanded)}
-        >
-          {expanded ? (
-            <BiChevronDown className="w-5 h-5 text-gray-500 hover:text-gray-700 mt-0.5" />
-          ) : (
-            <BiChevronRight className="w-5 h-5 text-gray-500 hover:text-gray-700 mt-0.5" />
-          )}
-        </div>
-
         <div className="flex-1">
           <div
-            className="font-medium cursor-pointer"
+            className="font-bold cursor-pointer tracking-[0.01em] text-xl leading-[26px] hover:text-[#525457]"
             onClick={() => setExpanded(!expanded)}
           >
             {title}
           </div>
-          <div hidden={!expanded}>{details}</div>
+          <Fade>
+            <div
+              className="mt-[18px] mb-[5px] text-base text-l sm:tracking-[0.01em] sm:text-lg sm:leading-[26px] sm:mt-5"
+              hidden={!expanded}
+            >
+              {details}
+            </div>
+          </Fade>
+        </div>
+        <div
+          className={clsx(
+            "ml-2 cursor-pointer lg:mx-4 transition-all",
+            expanded && "rotate-180",
+          )}
+          onClick={() => setExpanded(!expanded)}
+        >
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.34564 12L15 18.6543L21.6543 12" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
