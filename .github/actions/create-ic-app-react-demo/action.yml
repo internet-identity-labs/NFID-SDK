@@ -25,6 +25,7 @@ runs:
       shell: bash
       working-directory: examples/create-ic-app-react-demo
       run: |
+        node scripts/prepare-build.js
 
         dfx start --background
         dfx deploy counter --no-wallet
