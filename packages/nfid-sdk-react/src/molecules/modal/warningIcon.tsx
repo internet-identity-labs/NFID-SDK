@@ -48,16 +48,16 @@ export const ModalWarningIcon: React.FC<ModalWarningIconProps> = ({
         <path
           d="M119 117.4V137"
           stroke="#FF9900"
-          stroke-width="10"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M119 152.6H119.038"
           stroke="#FF9900"
-          stroke-width="10"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>
