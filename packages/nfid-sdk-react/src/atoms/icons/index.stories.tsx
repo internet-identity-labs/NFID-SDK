@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
-import { H1, H2 } from '../typography';
+import { CalendarIcon } from './calendar';
 import { ButtonChevronIcon } from './chevron';
 import { CopyIcon } from './copy';
 import { DesktopIcon } from './desktop';
@@ -8,6 +8,7 @@ import { DotsIcon } from './dots';
 import { KeyIcon } from './key';
 import { LaptopIcon } from './laptop';
 import { LogoutIcon } from './logout';
+import { MapPinIcon } from './map-pin';
 import { MobileIcon } from './mobile';
 import { PencilIcon } from './pencil';
 import { PlusIcon } from './plus';
@@ -16,7 +17,7 @@ import { TabletIcon } from './tablet';
 import { TrashIcon } from './trash';
 
 const meta: Meta = {
-  title: 'Atoms/Button/IconList',
+  title: 'Atoms/Icons',
   argTypes: {
     onClick: {
       action: 'clicked',
@@ -27,7 +28,6 @@ const meta: Meta = {
 export default meta;
 
 const Icons: Story = (args) => {
-  const [activeIcon, setActiveIcon] = React.useState<string | null>(null);
   return (
     <div>
       <div className="mb-2 font-bold">DeviceIcons:</div>
@@ -48,6 +48,11 @@ const Icons: Story = (args) => {
         <LogoutIcon {...args} />
         <PlusIcon {...args} />
         <RefreshIcon {...args} />
+      </div>
+      <div className="mt-4 mb-2 font-bold">Other:</div>
+      <div className="flex items-center gap-2">
+        <CalendarIcon {...args} />
+        <MapPinIcon {...args} />
       </div>
     </div>
   );

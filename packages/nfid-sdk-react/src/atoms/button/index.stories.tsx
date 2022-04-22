@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 import { Button, ButtonProps } from '../..';
-import { DesktopIcon } from './icons/desktop';
+import { DesktopIcon } from '../icons/desktop';
 
 const meta: Meta = {
   title: 'Atoms/Button',
@@ -29,12 +29,12 @@ const IconTemplate: Story = (args) => (
   </Button>
 );
 export const Default = DefaultTemplate.bind({});
-export const Icon = IconTemplate.bind({});
-
 Default.args = {
   children: 'Button',
   primary: true,
 };
+
+export const Icon = IconTemplate.bind({});
 
 Icon.args = {
   isActive: false,
