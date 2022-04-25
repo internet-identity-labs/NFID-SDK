@@ -3,11 +3,7 @@ import React from 'react';
 
 import { ListItemChevron } from './icons/chevron';
 
-interface Props
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLLIElement>,
-    HTMLLIElement
-  > {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   subtitle?: string | React.ReactNode;
   src?: string;
@@ -25,10 +21,10 @@ export const ListItem: React.FC<Props> = ({
   onClick,
 }) => {
   return (
-    <li
+    <div
       onClick={onClick}
       className={clsx(
-        'flex flex-row hover:bg-gray-200 hover:rounded transition-colors duration-100',
+        'relative flex flex-row hover:bg-gray-200 hover:rounded transition-colors duration-100',
         className
       )}
     >
@@ -66,10 +62,9 @@ export const ListItem: React.FC<Props> = ({
               </button>
             )}
           </div>
-
-          <div className="absolute left-0 w-full border-b -bottom-3"></div>
         </div>
+        <div className="absolute bottom-0 left-0 w-full border-b"></div>
       </div>
-    </li>
+    </div>
   );
 };
