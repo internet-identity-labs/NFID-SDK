@@ -1,0 +1,21 @@
+{
+    "issueLinkingConfig": {
+        "issue": "sc-(\\d+)",
+        "url": "https://app.shortcut.com/the-internet-portal/story/$1"
+    },
+    "pullRequestConfig": {
+        "provider": "github",
+        "hostRootUrl": "https://github.com",
+        "sourceRemote": "origin",
+        "sourceOwner": "internet-identity-labs",
+        "sourceRepo": "NFID-SDK",
+        "destRemote": "origin",
+        "destOwner": "internet-identity-labs",
+        "destRepo": "NFID-SDK",
+        "destProjectId": "",
+        "destBranch": "main",
+        "custom": null
+    },
+    "showRemoteBranches": true,
+    "exportedAt": 1650954264203
+}
