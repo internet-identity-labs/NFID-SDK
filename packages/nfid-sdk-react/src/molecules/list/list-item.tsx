@@ -24,11 +24,11 @@ export const ListItem: React.FC<Props> = ({
     <div
       onClick={onClick}
       className={clsx(
-        'relative flex flex-row hover:bg-gray-200 hover:rounded transition-colors duration-100',
+        'relative flex flex-row hover:bg-gray-200 hover:rounded transition-colors duration-100 -mx-3 mt-2',
         className
       )}
     >
-      <div className="flex flex-wrap items-center flex-1 p-3 cursor-pointer select-none sm:p-4">
+      <div className="flex flex-wrap items-center flex-1 px-3 py-2 cursor-pointer select-none peer">
         {src && (
           <img
             alt={title}
@@ -46,14 +46,14 @@ export const ListItem: React.FC<Props> = ({
         )}
 
         <div className="relative flex items-center flex-1">
-          <div className="flex-1 flex-shrink pl-1">
+          <div className="flex-1 flex-shrink">
             <div className="text-gray-700">{title}</div>
             {subtitle && (
               <div className="my-1 text-sm text-gray-400">{subtitle}</div>
             )}
           </div>
 
-          <div className="px-1 md:px-4">
+          <div className="pl-1 md:pl-4">
             {action ? (
               action
             ) : (
@@ -63,7 +63,7 @@ export const ListItem: React.FC<Props> = ({
             )}
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 w-full border-b"></div>
+        <div className="absolute left-0 w-full border-b -bottom-1"></div>
       </div>
     </div>
   );
