@@ -62,8 +62,8 @@ export const ListItem: React.FC<Props> = ({
               </button>
             )}
           </div>
-          <div className="absolute left-0 w-full border-b -bottom-3"></div>
         </div>
+        <div className="absolute left-0 w-full mx-3 border-b -bottom-1"></div>
       </div>
     </div>
   );
