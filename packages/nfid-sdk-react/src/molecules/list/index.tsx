@@ -36,7 +36,7 @@ export const List: React.FC<Props> & ListCompoundProps = ({
   return (
     <Card className={className}>
       {header}
-      <ul className="flex flex-col">{items}</ul>
+      <div className="flex flex-col">{items}</div>
     </Card>
   );
 };
