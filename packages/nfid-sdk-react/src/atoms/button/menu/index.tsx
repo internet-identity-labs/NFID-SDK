@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Button, ButtonProps } from '..';
 
-interface ButtonMenuProps
+export interface ButtonMenuProps
   extends React.HTMLAttributes<HTMLDivElement> {
   children: (toggle: () => void) => React.ReactNode;
   buttonProps?: ButtonProps;
@@ -45,7 +45,7 @@ export const ButtonMenu: React.FC<ButtonMenuProps> = ({
         {...buttonProps}
         onClick={(e) => handleMenuToggle(e)}
         className={clsx(
-          'relative !p-1 z-30 transition-all duration-1000',
+          'relative !p-1 z-30 transition-all duration-500',
           toggleMenu ? 'rotate-180' : 'rotate-0',
           className
         )}
@@ -62,8 +62,8 @@ export const ButtonMenu: React.FC<ButtonMenuProps> = ({
 
       <div
         className={clsx(
-          'z-10 h-screen text-base list-none bg-white shadow-md rounded absolute right-0 top-0',
-          toggleMenu ? 'block' : 'hidden',
+          'z-10 h-screen text-base list-none bg-white shadow-md rounded absolute right-0 top-0 transition-transform ease-in duration-500',
+          toggleMenu ? 'translate-x-0' : 'translate-x-full',
           className
         )}
       >
