@@ -19,12 +19,12 @@ export const Accordion: React.FC<AccordionProps> = ({ title, details }) => {
   }
 
   return (
-    <div className="flex flex-col font-inter">
+    <div className="flex flex-col border-b border-gray-200 font-inter">
       <button
-        className="py-6 box-border appearance-none cursor-pointer focus:outline-none flex items-center justify-between"
+        className="box-border flex items-center justify-between py-6 appearance-none cursor-pointer focus:outline-none"
         onClick={toggleAccordion}
       >
-        <p className="inline-block font-bold text-xl">{title}</p>
+        <p className="inline-block text-xl font-bold">{title}</p>
         <svg
           width='30'
           height='30'
@@ -45,7 +45,7 @@ export const Accordion: React.FC<AccordionProps> = ({ title, details }) => {
       <div
         ref={contentSpace}
         style={{ maxHeight: `${height}` }}
-        className="overflow-auto transition-max-height duration-700 ease-in-out"
+        className="overflow-auto duration-700 ease-in-out transition-max-height"
       >
         <div className="pb-10 text-lg tracking-[0.01em] leading-[26px]">{details}</div>
       </div>

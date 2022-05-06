@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb069c4c-67ce-4903-9baf-124b42f174e6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/molecules/accordion/index.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/molecules/accordion/index.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/molecules/accordion/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/molecules/accordion/index.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="cb069c4c-67ce-4903-9baf-124b42f174e6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +35,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651833519545</updated>
-      <workItem from="1651833521159" duration="504000" />
+      <workItem from="1651833521159" duration="608000" />
     </task>
     <servers />
   </component>
