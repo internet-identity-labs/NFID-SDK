@@ -1,19 +1,19 @@
-import clsx from 'clsx';
-import React, { ReactElement } from 'react';
+import { ErrorIcon } from './icons/error'
+import { Label } from './label'
+import clsx from 'clsx'
+import React, { ReactElement } from 'react'
 
-import { ErrorIcon } from './icons/error';
-import { Label } from './label';
-
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  prependedText?: string;
-  placeholder?: string;
-  type?: string;
-  icon?: ReactElement;
-  errorText?: string;
-  helperText?: string;
-  labelText?: string;
-  pin?: boolean;
-  small?: boolean;
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  prependedText?: string
+  placeholder?: string
+  type?: string
+  icon?: ReactElement
+  errorText?: string
+  helperText?: string
+  labelText?: string
+  pin?: boolean
+  small?: boolean
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
@@ -39,7 +39,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {labelText && <Label>{labelText}</Label>}
         <div className={clsx('flex relative', small && 'md:max-w-[340px]')}>
           {icon && (
-            <div className="flex-shrink-0 absolute left-[10px] top-[12px] z-10">
+            <div className='flex-shrink-0 absolute left-[10px] top-[12px] z-10'>
               {icon}
             </div>
           )}
@@ -61,7 +61,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           />
 
           {errorText && (
-            <span className="absolute right-3 top-[14px]">
+            <span className='absolute right-3 top-[50%] translate-y-[-50%]'>
               <ErrorIcon />
             </span>
           )}
@@ -76,6 +76,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           {errorText ?? helperText}
         </div>
       </div>
-    );
+    )
   }
-);
+)
