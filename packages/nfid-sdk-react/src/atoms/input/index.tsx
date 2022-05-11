@@ -61,7 +61,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           />
 
           {errorText && (
-            <span className='absolute right-3 top-[50%] translate-y-[-50%]'>
+            <span className='absolute -translate-y-1/2 right-3 top-1/2'>
               <ErrorIcon />
             </span>
           )}
