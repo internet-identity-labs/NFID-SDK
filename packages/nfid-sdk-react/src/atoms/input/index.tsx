@@ -3,8 +3,7 @@ import { Label } from './label'
 import clsx from 'clsx'
 import React, { ReactElement } from 'react'
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends React.InputHTMLAttributes<HTMLDivElement> {
   prependedText?: string
   placeholder?: string
   type?: string
