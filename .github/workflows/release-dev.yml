@@ -38,5 +38,5 @@ jobs:
           dfx stop
 
           dfx identity use action
-          dfx deploy --network dev --no-wallet
+          dfx deploy --network ic --no-wallet
 

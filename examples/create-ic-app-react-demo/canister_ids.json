@@ -1,6 +1,10 @@
 {
   "demo_frontend": {
     "ic": "hvn26-aiaaa-aaaak-aaa2a-cai",
+    "dev": "hvn26-aiaaa-aaaak-aaa2a-cai"
+  },
+  "demo_frontend_development": {
+    "ic": "wzkxy-vyaaa-aaaaj-qab3q-cai",
     "dev": "wzkxy-vyaaa-aaaaj-qab3q-cai"
   },
   "counter": {
