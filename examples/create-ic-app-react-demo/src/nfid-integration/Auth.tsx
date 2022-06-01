@@ -1,25 +1,15 @@
 import { AuthButton } from "./AuthButton"
-import { ToggleMode } from "./ToggleMode"
 import { InternetIdentityProvider } from "@internet-identity-labs/react-ic-ii-auth"
 import React from "react"
+
+const NFIDUrl = process.env.REACT_APP_NFID_PROVIDER_URL;
 
 // Note: This is just a basic example to get you started
 function Auth() {
   const [provider, setProvider] = React.useState<"II" | "NFID" | null>(null)
-  const [isIframeMode, setIsIframeMode] = React.useState(false)
-
-  const NFIDUrl = React.useMemo(() => {
-    return !isIframeMode
-      ? process.env.REACT_APP_NFID_PROVIDER_URL
-      : process.env.REACT_APP_NFID_PROVIDER_IFRAME_URL
-  }, [isIframeMode])
 
   return (
     <div>
-      <ToggleMode
-        isIframeMode={isIframeMode}
-        setIsIframeMode={setIsIframeMode}
-      />
       <div className="auth-section">
         {!provider || provider === "II" ? (
           <InternetIdentityProvider
@@ -35,7 +25,6 @@ function Auth() {
             }}
           >
             <AuthButton
-              iframeMode={false}
               reset={() => setProvider(null)}
               provider="II"
             />
@@ -55,7 +44,6 @@ function Auth() {
             }}
           >
             <AuthButton
-              iframeMode={isIframeMode}
               reset={() => setProvider(null)}
               provider="NFID"
             />

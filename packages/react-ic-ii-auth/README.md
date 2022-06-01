@@ -6,11 +6,6 @@
 
 ## Usage and limitations
 
-we provide two samples on how to integrate II into your app. The first one and most commonly used is, open II within a new browser tab. The second one is open II within an iFrame. This is our preferred integration. But there are some limitations to it:
-
-1. Safari currently prevents the iFrame to load properly because of an issue with the boundary nodes (out of our control).
-2. First time authentication doesn't work as the iFrame fails to trigger the secure device selection (No further information so far).
-
 **we ship an example with this repo [check the example/README.md](./example/README.md) to run this locally**
 
 ## Install within your own project
@@ -36,74 +31,6 @@ const AuthButthon = () => {
     <button onClick={isAuthenticated ? authenticate : signout}>
       {isAuthenticated ? 'Logout' : 'Login'}
     </button>
-  )
-}
-
-const App = () => {
-  return (
-    <InternetIdentityProvider
-      authClientOptions={{
-        onSuccess: (identity) => console.log(
-          ">> initialize your actors with", {identity}
-        )
-        // NOTE: Overwrite identityProvider in dev mode
-        // defaults to "https://identity.ic0.app/#authorize"
-        identityProvider: `http://${process.env.II_CANISTER_ID}.localhost:8000/#authorize`
-      }}
-    >
-      <AuthButthon />
-    </InternetIdentityProvider>
-  )
-}
-
-export default App
-```
-
-### open II within iFrame
-
-```tsx
-import React from 'react'
-
-import {
-  InternetIdentityProvider,
-  useInternetIdentity,
-  AuthIframe
-} from '@internet-identity-labs/react-ic-ii-auth'
-
-const AuthButthon = () => {
-  const [showModal, setShowModal] = React.useState(false)
-  const { authenticate, isAuthenticated, identity, identityProvider } = useInternetIdentity()
-
-  // THE IFRAME CURRENTLY IS NOT SUPPORTED ON SAFARI
-  const isSafari = navigator.userAgent.match(/(Safari)/)
-
-  console.log('>> initialize your actors with', { identity })
-
-  const handleAuthButtonClick = React.useCallback(() => {
-    setShowModal(true)
-  }, [])
-
-  const handleAuth = React.useCallback(async () => {
-    try {
-      await authenticate()
-    } catch (e) {
-      console.error(e)
-      setShowModal(false)
-    }
-  }, [authenticate])
-
-  return (
-    <>
-    <button onClick={isSafari ? handleAuth : authenticate}>
-      {isAuthenticated ? 'Logout' : 'Login'}
-    </button>
-    {/* THE IFRAME CURRENTLY IS NOT SUPPORTED ON SAFARI */}
-    {!isSafari && showModal && (
-      <div className="yourModalClass">
-        <AuthIframe src={identityProvider} onLoad={handleAuth} />
-      </div>
-    )}
-    </>
   )
 }
 

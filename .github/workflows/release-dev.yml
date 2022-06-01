@@ -15,5 +15,4 @@ jobs:
           DFX_IDENTITY_PEM: ${{ secrets.PROD_GH_ACTION_DFX_IDENTITY_PEM }}
           FILTER_DEV_CANISTER: true
           DFX_NETWORK: dev
-          REACT_APP_NFID_PROVIDER_URL: https://${{secrets.DEV_CANISTER_ID_NFID_FRONTEND}}.ic0.app/authenticate/?applicationName=NFID-Demo
-          REACT_APP_NFID_PROVIDER_IFRAME_URL: https://${{secrets.DEV_CANISTER_ID_NFID_FRONTEND}}.ic0.app/iframe-authenticate/?applicationName=NFID-Demo
+          REACT_APP_NFID_PROVIDER_URL: https://nfid.dev/authenticate/?applicationName=NFID-Demo

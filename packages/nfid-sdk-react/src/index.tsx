@@ -43,8 +43,6 @@ export * from './molecules/card/action';
 export * from './molecules/card/body';
 export * from './molecules/card/subtitle';
 export * from './molecules/card/title';
-export * from './molecules/iframe';
-export * from './molecules/iframe/wrapper';
 export * from './molecules/list';
 export * from './molecules/list/list-item-head';
 export * from './molecules/list/list-item';

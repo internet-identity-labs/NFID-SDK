@@ -97,10 +97,6 @@ button {
     background: rgb(164, 165, 255)
   }
 
-  .iframe {
-    width: 430px !important
-  }
-
   @media screen and (max-width: 500px) {
     .auth-section {
       top: 50px;
@@ -109,9 +105,5 @@ button {
     }
     .auth-button {
       padding: 0 0.5em;
-    }
-    .iframe {
-      width: 90% !important;
-      margin-right: 5%;
     }
   }
