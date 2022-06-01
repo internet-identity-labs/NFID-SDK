@@ -14,8 +14,6 @@ jobs:
 
       - name: Deploy Demo (DEV)
         shell: bash
-        with:
-          network: dev
         env:
           DFX_IDENTITY_PEM: ${{ secrets.PROD_GH_ACTION_DFX_IDENTITY_PEM }}
           FILTER_DEV_CANISTER: true
@@ -31,5 +29,5 @@ jobs:
           dfx stop
 
           dfx identity use action
-          dfx deploy --network ${{ inputs.network }} --no-wallet
+          dfx deploy --network dev --no-wallet
 
