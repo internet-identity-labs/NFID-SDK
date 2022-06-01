@@ -19,7 +19,7 @@ jobs:
 
       - uses: aviate-labs/setup-dfx@v0.2.3
         with:
-          dfx-version: ${{ inputs.dfxVersion }}
+          dfx-version: 0.9.3
 
       - name: Deploy Demo (DEV)
         shell: bash
