@@ -1,5 +1,5 @@
 import logo from "./assets/logo-dark.svg"
-import { counter } from "canisters/counter"
+import { counter } from "./declarations/counter"
 import React, { useEffect, useState } from "react"
 
 export function Intro() {
