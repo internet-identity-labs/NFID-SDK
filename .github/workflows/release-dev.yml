@@ -7,8 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: CREATE IC APP REACT DEMO | DEPLOY
-        uses: ./.github/actions/create-ic-app-react-demo
+
+      - uses: aviate-labs/setup-dfx@v0.2.3
+        with:
+          dfx-version: ${{ inputs.dfxVersion }}
+
+      - name: Deploy Demo (DEV)
+        shell: bash
         with:
           network: dev
         env:
@@ -17,3 +22,14 @@ jobs:
           DFX_NETWORK: dev
           REACT_APP_NFID_PROVIDER_URL: https://${{secrets.DEV_CANISTER_ID_NFID_FRONTEND}}.ic0.app/authenticate/?applicationName=NFID-Demo
           REACT_APP_NFID_PROVIDER_IFRAME_URL: https://${{secrets.DEV_CANISTER_ID_NFID_FRONTEND}}.ic0.app/iframe-authenticate/?applicationName=NFID-Demo
+        working-directory: examples/create-ic-app-react-demo
+        run: |
+          node scripts/prepare-build.js
+
+          dfx start --background
+          dfx deploy counter --no-wallet
+          dfx stop
+
+          dfx identity use action
+          dfx deploy --network ${{ inputs.network }} --no-wallet
+
