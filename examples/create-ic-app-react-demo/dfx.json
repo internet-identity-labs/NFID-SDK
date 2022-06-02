@@ -25,13 +25,6 @@
       "frontend": {
         "entrypoint": "canister/nfid_frontend/build/index.html"
       }
-    },
-    "demo_frontend_development": {
-      "type": "assets",
-      "source": ["canister/nfid_frontend/build"],
-      "frontend": {
-        "entrypoint": "canister/nfid_frontend/build/index.html"
-      }
     }
   },
   "defaults": {
