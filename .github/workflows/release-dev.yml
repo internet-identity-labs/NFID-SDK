@@ -7,12 +7,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: CREATE IC APP REACT DEMO | DEPLOY
-        uses: ./.github/actions/create-ic-app-react-demo
+      
+      - name: Setup mono repo
+        shell: bash
+        run: yarn
+
+      - name: Install dependencies
+        working-directory: examples/create-ic-app-react-demo
+        shell: bash
+        run: yarn
+
+      - uses: aviate-labs/setup-dfx@v0.2.3
         with:
-          network: dev
+          dfx-version: 0.9.3
         env:
           DFX_IDENTITY_PEM: ${{ secrets.PROD_GH_ACTION_DFX_IDENTITY_PEM }}
-          FILTER_DEV_CANISTER: true
-          DFX_NETWORK: dev
+
+      - name: Deploy Demo (DEV)
+        shell: bash
+        env:
+          DFX_IDENTITY_PEM: ${{ secrets.PROD_GH_ACTION_DFX_IDENTITY_PEM }}
           REACT_APP_NFID_PROVIDER_URL: https://nfid.dev/authenticate/?applicationName=NFID-Demo
+        working-directory: examples/create-ic-app-react-demo
+        run: |
+          dfx identity use action
+          dfx deploy --network dev demo_frontend --no-wallet

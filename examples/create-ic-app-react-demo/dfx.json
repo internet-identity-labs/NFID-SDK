@@ -19,13 +19,13 @@
       "candid": "canister/nfid_backend/pub_sub_channel.did",
       "wasm": "canister/nfid_backend/pub_sub_channel.wasm"
     },
-    "nfid_frontend": {
+    "demo_frontend": {
       "dependencies": ["counter"],
+      "type": "assets",
+      "source": ["build"],
       "frontend": {
         "entrypoint": "build/index.html"
-      },
-      "source": ["build/"],
-      "type": "assets"
+      }
     }
   },
   "defaults": {

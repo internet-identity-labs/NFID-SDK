@@ -2,7 +2,7 @@ import ii from "../assets/dfinity.svg"
 import nfid from "../assets/nfid-logo.svg"
 import { useInternetIdentity } from "@internet-identity-labs/react-ic-ii-auth"
 import React from "react"
-import { counter } from "canisters/counter"
+import { counter } from "../declarations/counter"
 
 const ProvidersLogos: { [key: string]: string } = {
   NFID: nfid,
