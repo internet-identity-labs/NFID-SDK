@@ -20,6 +20,7 @@
       "wasm": "canister/nfid_backend/pub_sub_channel.wasm"
     },
     "demo_frontend": {
+      "dependencies": ["counter"],
       "type": "assets",
       "source": ["build"],
       "frontend": {

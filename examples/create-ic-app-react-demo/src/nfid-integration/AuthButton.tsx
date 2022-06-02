@@ -1,6 +1,5 @@
 import ii from "../assets/dfinity.svg"
 import nfid from "../assets/nfid-logo.svg"
-import { AuthIFrame } from "./AuthIFrame"
 import { useInternetIdentity } from "@internet-identity-labs/react-ic-ii-auth"
 import React from "react"
 import { counter } from "../declarations/counter"
@@ -13,18 +12,10 @@ const ProvidersLogos: { [key: string]: string } = {
 interface IAuthButton {
   provider: string
   reset: () => void
-  iframeMode: boolean
 }
 
-export const AuthButton = ({ provider, reset, iframeMode }: IAuthButton) => {
-  const { signout, authenticate, isAuthenticated, identity, identityProvider } =
-    useInternetIdentity()
-  const [isIframeOpened, setIsIframeOpened] = React.useState(false)
-
-  const signIn = () => {
-    if (provider === "NFID" && iframeMode) setIsIframeOpened(true)
-    else authenticate()
-  }
+export const AuthButton = ({ provider, reset }: IAuthButton) => {
+  const { signout, authenticate, isAuthenticated, identity } = useInternetIdentity()
 
   const handleWhoami = React.useCallback(async () => {
     const reponse = await counter.whoami()
@@ -36,21 +27,10 @@ export const AuthButton = ({ provider, reset, iframeMode }: IAuthButton) => {
     reset()
   }
 
-  React.useEffect(() => {
-    if (iframeMode) setIsIframeOpened(true)
-  }, [iframeMode])
-
   return (
     <div>
-      {!isAuthenticated && isIframeOpened && (
-        <AuthIFrame
-          identityProvider={identityProvider}
-          handler={authenticate}
-          onClose={() => setIsIframeOpened(false)}
-        />
-      )}
       {!isAuthenticated ? (
-        <button onClick={signIn} className="auth-button">
+        <button onClick={authenticate} className="auth-button">
           Sign in with
           <img src={ProvidersLogos[provider]} alt="" />
         </button>

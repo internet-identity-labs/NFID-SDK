@@ -7,7 +7,6 @@ interface LoaderProps {
   isLoading: boolean;
   fullscreen?: boolean;
   imageClasses?: string;
-  iframe?: boolean;
 }
 
 export const ImageOnlyLoader: React.FC<
@@ -36,14 +35,12 @@ export const Loader: React.FC<LoaderProps> = ({
   isLoading,
   fullscreen = true,
   imageClasses,
-  iframe,
 }) =>
   isLoading && fullscreen ? (
     <div className="fixed top-0 bottom-0 left-0 right-0 z-50 w-full h-full">
       <div
         className={clsx(
-          'absolute w-full h-full top-0 right-0 bottom-0 left-0 bg-gray-900 opacity-[75%] pointer-events-none select-none',
-          iframe && 'rounded-lg'
+          'absolute w-full h-full top-0 right-0 bottom-0 left-0 bg-gray-900 opacity-[75%] pointer-events-none select-none'
         )}
       />
       <img

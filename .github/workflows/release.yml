@@ -78,7 +78,6 @@ jobs:
         env:
           DFX_IDENTITY_PEM: ${{ secrets.PROD_GH_ACTION_DFX_IDENTITY_PEM }}
           REACT_APP_NFID_PROVIDER_URL: https://${{secrets.PROD_CANISTER_ID_NFID_FRONTEND}}.ic0.app/authenticate/?applicationName=NFID-Demo
-          REACT_APP_NFID_PROVIDER_IFRAME_URL: https://${{secrets.PROD_CANISTER_ID_NFID_FRONTEND}}.ic0.app/iframe-authenticate/?applicationName=NFID-Demo
         working-directory: examples/create-ic-app-react-demo
         run: |
           dfx identity use action

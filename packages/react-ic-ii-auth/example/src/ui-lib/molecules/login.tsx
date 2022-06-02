@@ -2,7 +2,6 @@ import React from 'react'
 import { Button } from 'src/ui-lib/atoms/button'
 import { useInternetIdentity } from '@internet-identity-labs/react-ic-ii-auth'
 import { Modal } from 'src/ui-lib/molecules/modal'
-import { InternetIdentityIframe } from './internet-identity-auth'
 
 import { ModalHeader } from './modal/header'
 
@@ -46,10 +45,6 @@ export const InternetAuthButton: React.FC<InternetAuthProps> = ({
           onClose={() => setShowModal(false)}
         >
           <ModalHeader onClose={() => setShowModal(false)} />
-          <InternetIdentityIframe
-            internetIdentityProvider={identityProvider}
-            onLoad={handleAuthentication}
-          />
         </Modal>
       )}
     </>

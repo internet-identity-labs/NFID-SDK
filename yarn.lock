@@ -2032,6 +2032,18 @@
     gud "^1.0.0"
     warning "^4.0.3"
 
+"@internet-identity-labs/nfid-sdk-react@0.0.1-alpha.5":
+  version "0.0.1-alpha.5"
+  resolved "https://registry.yarnpkg.com/@internet-identity-labs/nfid-sdk-react/-/nfid-sdk-react-0.0.1-alpha.5.tgz#9834b531b24a85ac2b59eb0259b5dd5f6a34b783"
+  integrity sha512-cu6UgaGRLleWF9MNNG7Ss4tdzBWaKMsFgaORm2IU2iOI5GLg6R4vvPZdkWRoO999Vtw9m9NmC48hcbW25iOQPg==
+  dependencies:
+    "@dfinity/candid" "0.11.0"
+    "@dfinity/principal" "0.11.0"
+    clsx "1.1.1"
+    qrcode "1.5.0"
+    react-helmet "6.1.0"
+    react-icons "4.3.1"
+
 "@internet-identity-labs/react-ic-ii-auth@0.0.17":
   version "0.0.17"
   resolved "https://registry.yarnpkg.com/@internet-identity-labs/react-ic-ii-auth/-/react-ic-ii-auth-0.0.17.tgz#e936c2dcce3933cc5efc594962c6d944b7e4c6ad"
