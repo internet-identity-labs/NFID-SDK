@@ -27,14 +27,10 @@ jobs:
         shell: bash
         env:
           DFX_IDENTITY_PEM: ${{ secrets.PROD_GH_ACTION_DFX_IDENTITY_PEM }}
-          FILTER_DEV_CANISTER: true
-          DFX_NETWORK: dev
           REACT_APP_NFID_PROVIDER_URL: https://${{secrets.DEV_CANISTER_ID_NFID_FRONTEND}}.ic0.app/authenticate/?applicationName=NFID-Demo
           REACT_APP_NFID_PROVIDER_IFRAME_URL: https://${{secrets.DEV_CANISTER_ID_NFID_FRONTEND}}.ic0.app/iframe-authenticate/?applicationName=NFID-Demo
         working-directory: examples/create-ic-app-react-demo
         run: |
-          node scripts/prepare-build.js
-
           dfx identity use action
           dfx deploy --network dev demo_frontend --no-wallet
 
