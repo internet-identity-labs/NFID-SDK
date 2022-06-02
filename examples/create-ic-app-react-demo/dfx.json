@@ -21,9 +21,9 @@
     },
     "demo_frontend": {
       "type": "assets",
-      "source": ["canister/nfid_frontend/build"],
+      "source": ["build"],
       "frontend": {
-        "entrypoint": "canister/nfid_frontend/build/index.html"
+        "entrypoint": "build/index.html"
       }
     }
   },
