@@ -36,5 +36,5 @@ jobs:
           node scripts/prepare-build.js
 
           dfx identity use action
-          dfx deploy --network ic --no-wallet
+          dfx deploy --network ic demo_frontend_development --no-wallet
 
