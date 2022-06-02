@@ -18,6 +18,13 @@
       "type": "custom",
       "candid": "canister/nfid_backend/pub_sub_channel.did",
       "wasm": "canister/nfid_backend/pub_sub_channel.wasm"
+    },
+    "demo_frontend": {
+      "type": "assets",
+      "source": ["build"],
+      "frontend": {
+        "entrypoint": "build/index.html"
+      }
     }
   },
   "defaults": {
