@@ -27,5 +27,9 @@ runs:
       run: |
         node scripts/prepare-build.js
 
+        dfx start --background
+        dfx deploy counter --no-wallet
+        dfx stop
+
         dfx identity use action
         dfx deploy --network ${{ inputs.network }} --no-wallet

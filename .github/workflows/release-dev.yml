@@ -20,6 +20,8 @@ jobs:
       - uses: aviate-labs/setup-dfx@v0.2.3
         with:
           dfx-version: 0.9.3
+        env:
+          DFX_IDENTITY_PEM: ${{ secrets.PROD_GH_ACTION_DFX_IDENTITY_PEM }}
 
       - name: Deploy Demo (DEV)
         shell: bash
@@ -32,10 +34,6 @@ jobs:
         working-directory: examples/create-ic-app-react-demo
         run: |
           node scripts/prepare-build.js
-
-          dfx start --background
-          dfx deploy counter --no-wallet
-          dfx stop
 
           dfx identity use action
           dfx deploy --network ic --no-wallet
