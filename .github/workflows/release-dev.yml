@@ -31,7 +31,6 @@ jobs:
           DFX_NETWORK: dev
           REACT_APP_NFID_PROVIDER_URL: https://${{secrets.DEV_CANISTER_ID_NFID_FRONTEND}}.ic0.app/authenticate/?applicationName=NFID-Demo
           REACT_APP_NFID_PROVIDER_IFRAME_URL: https://${{secrets.DEV_CANISTER_ID_NFID_FRONTEND}}.ic0.app/iframe-authenticate/?applicationName=NFID-Demo
-          FRONTEND_MODE: development
         working-directory: examples/create-ic-app-react-demo
         run: |
           node scripts/prepare-build.js
