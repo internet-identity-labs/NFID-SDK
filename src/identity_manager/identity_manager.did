@@ -1,0 +1,369 @@
+type Error = text;
+type Token = text;
+
+type ConfigurationRequest = record {
+    lambda: opt principal;
+    token_ttl: opt nat64;
+    token_refresh_ttl: opt nat64;
+    whitelisted_phone_numbers: opt vec text;
+    heartbeat: opt nat32;
+    backup_canister_id: opt text;
+    ii_canister_id: opt principal;
+    whitelisted_canisters: opt vec principal;
+    env: opt text;
+    git_branch: opt text;
+    commit_hash: opt text;
+};
+
+type ConfigurationResponse = record {
+    lambda: opt principal;
+    token_ttl: opt nat64;
+    token_refresh_ttl: opt nat64;
+    whitelisted_phone_numbers: opt vec text;
+    heartbeat: opt nat32;
+    backup_canister_id: opt text;
+    ii_canister_id: opt principal;
+    whitelisted_canisters: opt vec principal;
+    env: opt text;
+    git_branch: opt text;
+    commit_hash: opt text;
+};
+
+type BoolHttpResponse = record {
+    data: opt bool;
+    error: opt Error;
+    status_code: nat16;
+};
+
+type StringHttpResponse = record {
+    data: opt text;
+    error: opt Error;
+    status_code: nat16;
+};
+
+type Response = record {
+    error: opt Error;
+    status_code: nat16;
+};
+
+type EmptyHttpResponse = record {
+     data: opt text;
+     error: opt Error;
+     status_code: nat16;
+ };
+
+type BasicEntity = record {
+    created_date: nat64;
+    modified_date: nat64;
+};
+
+ //  ----------------------ACCOUNT SECTION----------------------------
+
+type AccountResponse = record {
+    anchor: nat64;
+    principal_id: text;
+    name: opt text;
+    phone_number: opt text;
+    personas: vec PersonaResponse;
+    access_points: vec AccessPointResponse;
+};
+
+type HTTPAccountResponse = record {
+    data: opt AccountResponse;
+    error: opt Error;
+    status_code: nat16;
+};
+
+type HTTPAnchorsResponse = record {
+    data: opt vec nat64;
+    error: opt Error;
+    status_code: nat16;
+};
+
+type HTTPAccountRequest = record {
+    anchor: nat64;
+};
+
+type HTTPAccountUpdateRequest = record {
+    name: opt text;
+};
+
+type Account = record {
+    anchor: nat64;
+    principal_id: text;
+    name: opt text;
+    phone_number: opt text;
+    personas: vec PersonaResponse;
+    access_points: vec AccessPointRequest;
+    basic_entity: BasicEntity;
+};
+
+ //  ----------------------PERSONA SECTION----------------------------
+
+type PersonaRequest = record {
+    persona_id: text;
+    domain: text;
+    persona_name: text;
+};
+
+type PersonaResponse = record {
+    persona_id: text;
+    domain: text;
+    persona_name: text;
+};
+
+type Persona = record {
+    persona_id: text;
+    domain: text;
+    basic_entity: BasicEntity;
+    persona_name: text;
+};
+
+type HTTPPersonasResponse = record {
+    data: opt vec PersonaResponse;
+    error: opt Error;
+    status_code: nat16;
+};
+
+
+ //  ----------------------APPLICATION SECTION----------------------------
+
+type Application = record {
+    name: text;
+    domain: text;
+    user_limit: nat16;
+};
+
+type HTTPApplicationResponse = record {
+    data: opt vec Application;
+    error: opt Error;
+    status_code: nat16;
+};
+
+
+ //  ----------------------PHONE SECTION----------------------------
+
+type TokenRequest = record {
+    phone_number_encrypted: text;
+    phone_number_hash: text;
+    token: text;
+    principal_id: text;
+};
+
+type ValidatePhoneRequest = record {
+    phone_number_hash: text;
+    principal_id: text;
+};
+
+type PhoneNumberCredential = record {
+  phone_number: text;
+};
+
+type Credential = variant {
+    phone_number: PhoneNumberCredential;
+};
+
+type CredentialResponse = record {
+    data: opt vec Credential;
+    error: opt Error;
+    status_code: nat16;
+};
+
+//  ----------------------ACCESS POINT SECTION----------------------------
+
+type AccessPointRequest = record {
+    pub_key: blob;
+    icon: text;
+    device: text;
+    browser: text;
+};
+
+type AccessPointRemoveRequest = record {
+    pub_key: blob;
+};
+
+type AccessPointResponse = record {
+    principal_id: text;
+    icon: text;
+    device: text;
+    browser: text;
+    last_used: nat64;
+};
+
+type HTTPAccessPointResponse = record {
+    data: opt vec AccessPointResponse;
+    error: opt Error;
+    status_code: nat16;
+};
+
+
+ //  ---------------------------------------------------------
+ //  ----------------------THIRD PARTY LIBRARIES--------------
+ //  ---------------------------------------------------------
+
+//  ----------------------CANISTER GEEK SECTION----------------------------
+
+type UpdateCallsAggregatedData = vec nat64;
+
+type NumericEntity =
+ record {
+   avg: nat64;
+   first: nat64;
+   last: nat64;
+   max: nat64;
+   min: nat64;
+ };
+
+type Nanos = nat64;
+
+type MetricsGranularity =
+ variant {
+   daily;
+   hourly;
+ };
+
+type LogMessagesData =
+ record {
+   message: text;
+   timeNanos: Nanos;
+ };
+
+type HourlyMetricsData =
+ record {
+   canisterCycles: CanisterCyclesAggregatedData;
+   canisterHeapMemorySize: CanisterHeapMemoryAggregatedData;
+   canisterMemorySize: CanisterMemoryAggregatedData;
+   timeMillis: int;
+   updateCalls: UpdateCallsAggregatedData;
+ };
+
+type GetMetricsParameters =
+ record {
+   dateFromMillis: nat;
+   dateToMillis: nat;
+   granularity: MetricsGranularity;
+ };
+
+type GetLogMessagesParameters =
+ record {
+   count: nat32;
+   filter: opt GetLogMessagesFilter;
+   fromTimeNanos: opt Nanos;
+ };
+
+type GetLogMessagesFilter =
+ record {
+   analyzeCount: nat32;
+   messageContains: opt text;
+   messageRegex: opt text;
+ };
+
+type GetLatestLogMessagesParameters =
+ record {
+   count: nat32;
+   filter: opt GetLogMessagesFilter;
+   upToTimeNanos: opt Nanos;
+ };
+
+type DailyMetricsData =
+ record {
+   canisterCycles: NumericEntity;
+   canisterHeapMemorySize: NumericEntity;
+   canisterMemorySize: NumericEntity;
+   timeMillis: int;
+   updateCalls: nat64;
+ };
+
+type CanisterMetricsData =
+ variant {
+   daily: vec DailyMetricsData;
+   hourly: vec HourlyMetricsData;
+ };
+
+type CanisterMetrics = record {data: CanisterMetricsData;};
+
+type CanisterMemoryAggregatedData = vec nat64;
+
+type CanisterLogResponse =
+ variant {
+   messages: CanisterLogMessages;
+   messagesInfo: CanisterLogMessagesInfo;
+ };
+
+type CanisterLogRequest =
+ variant {
+   getLatestMessages: GetLatestLogMessagesParameters;
+   getMessages: GetLogMessagesParameters;
+   getMessagesInfo;
+ };
+
+type CanisterLogMessagesInfo =
+ record {
+   count: nat32;
+   features: vec opt CanisterLogFeature;
+   firstTimeNanos: opt Nanos;
+   lastTimeNanos: opt Nanos;
+ };
+
+type CanisterLogMessages =
+ record {
+   data: vec LogMessagesData;
+   lastAnalyzedMessageTimeNanos: opt Nanos;
+ };
+
+type CanisterLogFeature =
+ variant {
+   filterMessageByContains;
+   filterMessageByRegex;
+ };
+
+type CanisterHeapMemoryAggregatedData = vec nat64;
+
+type CanisterCyclesAggregatedData = vec nat64;
+
+
+ //  ---------------------------------------------------------
+ //  ----------------------SERVICE----------------------------
+ //  ---------------------------------------------------------
+
+service : () -> {
+  configure: (ConfigurationRequest) -> ();
+  get_config: () -> (ConfigurationResponse);
+  sync_recovery_phrases: () -> ();
+  anchors: () -> (HTTPAnchorsResponse) query;
+
+  get_account: () -> (HTTPAccountResponse) query;
+  recover_account: (nat64) -> (HTTPAccountResponse);
+  get_account_by_anchor: (nat64) -> (HTTPAccountResponse) query;
+  create_account: (HTTPAccountRequest) -> (HTTPAccountResponse);
+  remove_account: () -> (BoolHttpResponse);
+  update_account: (HTTPAccountUpdateRequest) -> (HTTPAccountResponse);
+
+  create_persona: (PersonaRequest) -> (HTTPAccountResponse);
+  read_personas: () -> (HTTPPersonasResponse) query;
+
+  validate_phone: (ValidatePhoneRequest) -> (Response);
+  post_token: (TokenRequest) -> (Response);
+  verify_token: (Token) -> (Response);
+  credentials: () -> (CredentialResponse);
+
+  create_application: (Application) -> (HTTPApplicationResponse);
+  delete_application: (text) -> (BoolHttpResponse);
+  read_applications: () -> (HTTPApplicationResponse) query;
+  is_over_the_application_limit: (text) -> (BoolHttpResponse) query;
+
+  create_access_point: (AccessPointRequest) -> (HTTPAccessPointResponse);
+  update_access_point: (AccessPointRequest) -> (HTTPAccessPointResponse);
+  remove_access_point: (AccessPointRemoveRequest) -> (HTTPAccessPointResponse);
+  read_access_points: () -> (HTTPAccessPointResponse) query;
+  use_access_point: () -> (HTTPAccessPointResponse);
+
+  store_accounts: (vec Account) -> (BoolHttpResponse);
+  restore_accounts: (text) -> (BoolHttpResponse);
+
+  certify_phone_number_sha2: (text, text) -> (StringHttpResponse) query;
+
+  getCanisterMetrics: (GetMetricsParameters) -> (opt CanisterMetrics) query;
+  getCanisterLog: (opt CanisterLogRequest) -> (opt CanisterLogResponse) query;
+  collectCanisterMetrics: () -> ();
+}
