@@ -121,7 +121,7 @@ yarn nfid:tunnel
 
 Copy the assigned domain from `ngrok` output:
 
-![running ngrok](./running-ngrok.png)
+![running ngrok](./nfid-docs/assets/images/running-ngrok.png)
 
 and use it to replace `TUNNEL_DOMAIN` in `examples/create-ic-app-react-demo/.env` (copy it first from `.env.template`)
 
