@@ -1,5 +1,22 @@
 {
-  "dfx": "0.9.3",
+  "canisters": {
+    "internet_identity": {
+      "type": "custom",
+      "candid": "build/internet_identity/internet_identity.did",
+      "wasm": "build/internet_identity/internet_identity.wasm",
+      "build": "curl -sSL https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm -o build/internet_identity/internet_identity.wasm"
+    },
+    "identity_manager": {
+      "type": "custom",
+      "candid": "build/identity_manager/identity_manager.did",
+      "wasm": "build/identity_manager/identity_manager.wasm"
+    },
+    "pub_sub_channel": {
+      "type": "custom",
+      "candid": "build/pub_sub_channel/pub_sub_channel.did",
+      "wasm": "build/pub_sub_channel/pub_sub_channel.wasm"
+    }
+  },
   "networks": {
     "local": {
       "bind": "127.0.0.1:8000",
