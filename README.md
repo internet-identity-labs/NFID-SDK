@@ -107,13 +107,11 @@ yarn nfid:start
 
 ### Setup ngrok
 
-To scan our `QRCode` from the landing page with your mobile phone, while your NFID frontend runs on localhost, you need to setup ngrok as local reverso proxy:
+To scan our `QRCode` from the landing page with your mobile phone, while your NFID frontend runs on localhost, we run [ngrok](https://www.npmjs.com/package/ngrok) as local reverse proxy:
 
 <p align="center">
   <img width="600" alt="image" src="./nfid-docs/assets/images/nfid-qrcode.png">
 </p>
-
-Therefore you need to [download ngrok](https://ngrok.com/download) and place the binary `ngrok` within this (`NFID-SDK/scrips`) folder.
 
 ```bash
 yarn nfid:tunnel
