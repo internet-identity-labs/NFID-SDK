@@ -23,7 +23,7 @@
     "tunnel": "./scripts/tunnel.sh",
     "postinstall": "patch-package && cd packages/nfid-sdk-react && yarn",
     "nfid:setup": "./scripts/nfid-setup.sh",
-    "nfid:start": "webpack serve --config ./src/nfid/webpack.config.js",
+    "nfid:start": "webpack serve --config ./build/nfid/webpack.config.js",
     "nfid:tunnel": "./scripts/tunnel-to-nfid-frontend.sh"
   }
 }
