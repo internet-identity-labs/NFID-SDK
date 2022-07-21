@@ -7,17 +7,20 @@
     "internet_identity": {
       "type": "custom",
       "candid": "canister/internet_identity/internet_identity.did",
-      "wasm": "canister/internet_identity/internet_identity_dev.wasm"
+      "wasm": "canister/internet_identity/internet_identity_dev.wasm",
+      "build": "echo use prebuild wasm"
     },
     "identity_manager": {
       "type": "custom",
       "candid": "canister/nfid_backend/identity_manager.did",
-      "wasm": "canister/nfid_backend/identity_manager.wasm"
+      "wasm": "canister/nfid_backend/identity_manager.wasm",
+      "build": "echo use prebuild wasm"
     },
     "pub_sub_channel": {
       "type": "custom",
       "candid": "canister/nfid_backend/pub_sub_channel.did",
-      "wasm": "canister/nfid_backend/pub_sub_channel.wasm"
+      "wasm": "canister/nfid_backend/pub_sub_channel.wasm",
+      "build": "echo use prebuild wasm"
     },
     "demo_frontend": {
       "dependencies": ["counter"],
