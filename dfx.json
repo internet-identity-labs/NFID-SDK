@@ -9,12 +9,14 @@
     "identity_manager": {
       "type": "custom",
       "candid": "build/identity_manager/identity_manager.did",
-      "wasm": "build/identity_manager/identity_manager.wasm"
+      "wasm": "build/identity_manager/identity_manager.wasm",
+      "build": "echo use prebuild wasm"
     },
     "pub_sub_channel": {
       "type": "custom",
       "candid": "build/pub_sub_channel/pub_sub_channel.did",
-      "wasm": "build/pub_sub_channel/pub_sub_channel.wasm"
+      "wasm": "build/pub_sub_channel/pub_sub_channel.wasm",
+      "build": "echo use prebuild wasm"
     }
   },
   "networks": {

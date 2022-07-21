@@ -3,7 +3,7 @@ const webpack = require("webpack")
 const path = require("path")
 const fs = require("fs")
 
-const dfxJson = require("../.././dfx.json")
+const dfxJson = require("../../dfx.json")
 
 const DFX_PORT = dfxJson.networks.local.bind.split(":")[1]
 

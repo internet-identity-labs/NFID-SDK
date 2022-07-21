@@ -12,3 +12,7 @@ declare const USERGEEK_API_KEY: string;
 (window as any).PUB_SUB_CHANNEL_CANISTER_ID = PUB_SUB_CHANNEL_CANISTER_ID;
 (window as any).USERGEEK_API_KEY = "";
 (window as any).IM_ADDITION_CANISTER_ID = "5yjgb-gyaaa-aaaao-aabwa-cai";
+(window as any).VERIFIER_CANISTER_ID = "5yjgb-gyaaa-aaaao-aabwa-cai";
+(window as any).SENTRY_RELEASE = "NFID-SDK";
+(window as any).GOOGLE_CLIENT_ID =
+  "339872286671-87oou3adnvl7hst9gd90r9k7j6enl7vk.apps.googleusercontent.com";

@@ -1,23 +1,23 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const webpack = require("webpack")
-const path = require("path")
-const fs = require("fs")
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
+const path = require("path");
+const fs = require("fs");
 
-const dfxJson = require("../.././dfx.json")
+const dfxJson = require("../../dfx.json");
 
-const DFX_PORT = dfxJson.networks.local.bind.split(":")[1]
+const DFX_PORT = dfxJson.networks.local.bind.split(":")[1];
 
-var canister_ids
+var canister_ids;
 try {
   canister_ids = JSON.parse(
     fs
       .readFileSync(
-        path.resolve(__dirname, "../../.dfx/local/canister_ids.json"),
+        path.resolve(__dirname, "../../.dfx/local/canister_ids.json")
       )
-      .toString(),
-  )
+      .toString()
+  );
 } catch (e) {
-  console.error("\n⚠️  Before starting the dev server run: dfx deploy\n\n")
+  console.error("\n⚠️  Before starting the dev server run: dfx deploy\n\n");
 }
 
 const canisterEnv = Object.entries(canister_ids).reduce(
@@ -25,8 +25,8 @@ const canisterEnv = Object.entries(canister_ids).reduce(
     ...acc,
     [`${key.toUpperCase()}_CANISTER_ID`]: JSON.stringify(val.local),
   }),
-  {},
-)
+  {}
+);
 
 module.exports = {
   mode: "development",
@@ -74,4 +74,4 @@ module.exports = {
       template: path.resolve(__dirname, "build/index.html"),
     }),
   ],
-}
+};

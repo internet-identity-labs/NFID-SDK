@@ -20,7 +20,28 @@
     {
       "label": "NFID Frontend",
       "type": "shell",
-      "command": "cd packages/nfid-frontend && yarn && yarn dev",
+      "command": "yarn nfid:start",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "group": "develop"
+      }
+    },
+    {
+      "label": "NFID Frontend tunnel (ngrok)",
+      "type": "shell",
+      "command": "yarn nfid:tunnel",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "group": "develop"
+      }
+    },
+    {
+      "label": "NFID Demo",
+      "type": "shell",
+      "command": "cd examples/create-ic-app-react-demo && yarn && yarn dev",
       "presentation": {
         "reveal": "always",
         "panel": "new",
@@ -50,37 +71,6 @@
       }
     },
     {
-      "label": "NFID Frontend tunnel (ngrok)",
-      "type": "shell",
-      "command": "./scripts/tunnel-to-nfid-frontend.sh",
-      "isBackground": true,
-      "presentation": {
-        "reveal": "always",
-        "panel": "new",
-        "group": "develop"
-      }
-    },
-    {
-      "label": "CREATE IC APP REACT DEMO | Serve NFID Frontend static build",
-      "type": "shell",
-      "command": "cd examples/create-ic-app-react-demo && yarn serve:nfid-frontend",
-      "presentation": {
-        "reveal": "always",
-        "panel": "new",
-        "group": "CREATE IC APP REACT DEMO"
-      }
-    },
-    {
-      "label": "CREATE IC APP REACT DEMO | NFID Frontend tunnel (ngrok)",
-      "type": "shell",
-      "command": "./examples/create-ic-app-react-demo/scripts/ngrok-tunnel.sh",
-      "presentation": {
-        "reveal": "always",
-        "panel": "new",
-        "group": "CREATE IC APP REACT DEMO"
-      }
-    },
-    {
       "label": "NFID DFX replica",
       "type": "shell",
       "command": "dfx start",
@@ -100,16 +90,6 @@
         "reveal": "always",
         "panel": "new",
         "group": "backend"
-      }
-    },
-    {
-      "label": "NFID Demo",
-      "type": "shell",
-      "command": "cd examples/create-ic-app-react-demo && yarn && yarn dev",
-      "presentation": {
-        "reveal": "always",
-        "panel": "new",
-        "group": "develop"
       }
     }
   ]
