@@ -26,6 +26,8 @@ If you want to integrate NFID into your React application, we offer certain **pa
 
 We have also prepared some **examples** to show how we use these packages. This will ensure that you get a clear picture of what exactly is needed to fully integrate NFID.
 
+> 💡 Pre-requisite! - Download and install 'latest' node version
+
 A fully developed application with NFID integrated using React is available in the [`create-ic-app-react-demo`](#examples) example
 
 > 💡 New to Internet Computer? Check out the [introduction](https://smartcontracts.org/docs/introduction/welcome.html) and get started!
@@ -38,7 +40,7 @@ To run the `NFID` stack locally we need to clone this repository first:
 git clone git@github.com:internet-identity-labs/NFID-SDK.git
 ```
 
-and run `yarn` to setup the repository dependencies:
+change directory to NFID-SDK 'main' branch and run `yarn` to setup the repository dependencies:
 
 ```
 yarn
@@ -57,7 +59,7 @@ dfx --version
 which will return something like this:
 
 ```
-dfx 0.10.0
+dfx 0.11.0
 ```
 
 ### Setup NFID
