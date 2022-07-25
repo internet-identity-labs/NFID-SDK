@@ -2,7 +2,7 @@ import { AuthButton } from "./AuthButton"
 import { InternetIdentityProvider } from "@internet-identity-labs/react-ic-ii-auth"
 import React from "react"
 
-const NFIDUrl = process.env.REACT_APP_NFID_PROVIDER_URL;
+const NFIDUrl = process.env.REACT_APP_NFID_PROVIDER_URL
 
 // Note: This is just a basic example to get you started
 function Auth() {
@@ -15,7 +15,8 @@ function Auth() {
           <InternetIdentityProvider
             authClientOptions={{
               maxTimeToLive: BigInt(Date.now() + 7 * 24 * 60 * 60 * 1e9),
-              identityProvider: "https://identity.ic0.app/#authorize",
+              identityProvider:
+                "https://wookt-ayaaa-aaaaj-addwq-cai.ic0.app/#authorize",
               windowOpenerFeatures: `toolbar=0,location=0,menubar=0,width=400,height=600,left=${
                 window.screen.width / 2 - 200
               }, top=${window.screen.height / 2 - 300}`,
@@ -24,10 +25,7 @@ function Auth() {
               },
             }}
           >
-            <AuthButton
-              reset={() => setProvider(null)}
-              provider="II"
-            />
+            <AuthButton reset={() => setProvider(null)} provider="II" />
           </InternetIdentityProvider>
         ) : null}
         {!provider || provider === "NFID" ? (
@@ -43,10 +41,7 @@ function Auth() {
               },
             }}
           >
-            <AuthButton
-              reset={() => setProvider(null)}
-              provider="NFID"
-            />
+            <AuthButton reset={() => setProvider(null)} provider="NFID" />
           </InternetIdentityProvider>
         ) : null}
       </div>
