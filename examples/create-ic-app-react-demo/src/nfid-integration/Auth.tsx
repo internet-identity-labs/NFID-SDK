@@ -43,35 +43,7 @@ function Auth() {
               },
             }}
           >
-            <AuthButton
-              reset={() => setProvider(null)}
-              provider="NFID"
-              label="OLD"
-            />
-          </InternetIdentityProvider>
-        ) : null}
-        {!provider || provider === "NFID" ? (
-          <InternetIdentityProvider
-            authClientOptions={{
-              maxTimeToLive: BigInt(Date.now() + 7 * 24 * 60 * 60 * 1e9),
-              identityProvider: (NFIDUrl as string).replace(
-                "authenticate",
-                "idp",
-              ),
-              windowOpenerFeatures:
-                `left=${window.screen.width / 2 - 525 / 2}, ` +
-                `top=${window.screen.height / 2 - 705 / 2},` +
-                `toolbar=0,location=0,menubar=0,width=525,height=705`,
-              onSuccess: (principal) => {
-                setProvider("NFID")
-              },
-            }}
-          >
-            <AuthButton
-              reset={() => setProvider(null)}
-              provider="NFID"
-              label="NEW"
-            />
+            <AuthButton reset={() => setProvider(null)} provider="NFID" />
           </InternetIdentityProvider>
         ) : null}
       </div>
