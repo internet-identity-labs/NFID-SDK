@@ -82,6 +82,7 @@ jobs:
         run: |
           dfx identity use action
           dfx deploy --network ic demo_frontend --no-wallet
+          dfx deploy --network ic demo_frontend_single_account --no-wallet
 
   NFID_SDK_REACT:
     needs: changes

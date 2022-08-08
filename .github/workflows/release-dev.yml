@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Setup mono repo
         shell: bash
         run: yarn
@@ -32,3 +32,4 @@ jobs:
         run: |
           dfx identity use action
           dfx deploy --network dev demo_frontend --no-wallet
+          dfx deploy --network dev demo_frontend_single_account --no-wallet

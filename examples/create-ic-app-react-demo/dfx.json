@@ -29,6 +29,14 @@
       "frontend": {
         "entrypoint": "build/index.html"
       }
+    },
+    "demo_frontend_single_account": {
+      "dependencies": ["counter"],
+      "type": "assets",
+      "source": ["build"],
+      "frontend": {
+        "entrypoint": "build/index.html"
+      }
     }
   },
   "defaults": {
