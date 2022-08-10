@@ -16,7 +16,7 @@ function Auth() {
             authClientOptions={{
               maxTimeToLive: BigInt(Date.now() + 7 * 24 * 60 * 60 * 1e9),
               identityProvider:
-                "https://wookt-ayaaa-aaaaj-addwq-cai.ic0.app/#authorize",
+                "https://nprnb-waaaa-aaaaj-qax4a-cai.ic0.app/#authorize",
               windowOpenerFeatures:
                 `left=${window.screen.width / 2 - 525 / 2}, ` +
                 `top=${window.screen.height / 2 - 705 / 2},` +
