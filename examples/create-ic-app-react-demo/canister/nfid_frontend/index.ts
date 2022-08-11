@@ -10,7 +10,6 @@ declare const PUB_SUB_CHANNEL_CANISTER_ID: string
 ;(window as any).IDENTITY_MANAGER_CANISTER_ID = IDENTITY_MANAGER_CANISTER_ID
 ;(window as any).PUB_SUB_CHANNEL_CANISTER_ID = PUB_SUB_CHANNEL_CANISTER_ID
 ;(window as any).USERGEEK_API_KEY = ""
-;(window as any).IM_ADDITION_CANISTER_ID = "5yjgb-gyaaa-aaaao-aabwa-cai"
 ;(window as any).VERIFIER_CANISTER_ID = "5yjgb-gyaaa-aaaao-aabwa-cai"
 ;(window as any).SENTRY_RELEASE = "NFID-SDK"
 ;(window as any).GOOGLE_CLIENT_ID =

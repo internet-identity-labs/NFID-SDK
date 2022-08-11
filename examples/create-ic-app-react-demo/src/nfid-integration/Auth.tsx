@@ -16,10 +16,11 @@ function Auth() {
             authClientOptions={{
               maxTimeToLive: BigInt(Date.now() + 7 * 24 * 60 * 60 * 1e9),
               identityProvider:
-                "https://wookt-ayaaa-aaaaj-addwq-cai.ic0.app/#authorize",
-              windowOpenerFeatures: `toolbar=0,location=0,menubar=0,width=400,height=600,left=${
-                window.screen.width / 2 - 200
-              }, top=${window.screen.height / 2 - 300}`,
+                "https://nprnb-waaaa-aaaaj-qax4a-cai.ic0.app/#authorize",
+              windowOpenerFeatures:
+                `left=${window.screen.width / 2 - 525 / 2}, ` +
+                `top=${window.screen.height / 2 - 705 / 2},` +
+                `toolbar=0,location=0,menubar=0,width=525,height=705`,
               onSuccess: (principal) => {
                 setProvider("II")
               },
@@ -33,9 +34,10 @@ function Auth() {
             authClientOptions={{
               maxTimeToLive: BigInt(Date.now() + 7 * 24 * 60 * 60 * 1e9),
               identityProvider: NFIDUrl as string,
-              windowOpenerFeatures: `toolbar=0,location=0,menubar=0,width=400,height=600,left=${
-                window.screen.width / 2 - 200
-              }, top=${window.screen.height / 2 - 300}`,
+              windowOpenerFeatures:
+                `left=${window.screen.width / 2 - 525 / 2}, ` +
+                `top=${window.screen.height / 2 - 705 / 2},` +
+                `toolbar=0,location=0,menubar=0,width=525,height=705`,
               onSuccess: (principal) => {
                 setProvider("NFID")
               },
