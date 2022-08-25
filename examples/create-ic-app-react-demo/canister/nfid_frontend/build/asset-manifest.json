@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ff11080d.css",
-    "main.js": "/static/js/main.0636b1bd.js",
+    "main.css": "/static/css/main.f7ce1f1a.css",
+    "main.js": "/static/js/main.ef267a31.js",
     "static/media/blur_3.png": "/static/media/blur_3.ad83ddfbaa445a876c5f.png",
     "static/media/blur_green.png": "/static/media/blur_green.95c47d87fae03a158653.png",
     "static/media/blur_pink.png": "/static/media/blur_pink.f2efba86dc0d49bde509.png",
@@ -25,11 +25,11 @@
     "static/media/qrcode.svg": "/static/media/qrcode.8d8c73a00e1f5e18820ee8fcb3b4b64d.svg",
     "static/media/arrow.svg": "/static/media/arrow.55e5165550c6d9e10ee68a519fa534c2.svg",
     "static/media/menu_close.svg": "/static/media/menu_close.29cb4cd98126e26e0cdc0154987b1478.svg",
-    "main.ff11080d.css.map": "/static/css/main.ff11080d.css.map",
-    "main.0636b1bd.js.map": "/static/js/main.0636b1bd.js.map"
+    "main.f7ce1f1a.css.map": "/static/css/main.f7ce1f1a.css.map",
+    "main.ef267a31.js.map": "/static/js/main.ef267a31.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff11080d.css",
-    "static/js/main.0636b1bd.js"
+    "static/css/main.f7ce1f1a.css",
+    "static/js/main.ef267a31.js"
   ]
 }
