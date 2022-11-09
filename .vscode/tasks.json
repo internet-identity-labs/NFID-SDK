@@ -15,7 +15,8 @@
         "reveal": "always",
         "panel": "new",
         "group": "develop"
-      }
+      },
+      "problemMatcher": []
     },
     {
       "label": "NFID Frontend",
@@ -25,7 +26,8 @@
         "reveal": "always",
         "panel": "new",
         "group": "develop"
-      }
+      },
+      "problemMatcher": []
     },
     {
       "label": "NFID Frontend tunnel (ngrok)",
@@ -36,7 +38,8 @@
         "reveal": "always",
         "panel": "new",
         "group": "develop"
-      }
+      },
+      "problemMatcher": []
     },
     {
       "label": "NFID Demo",
@@ -46,7 +49,8 @@
         "reveal": "always",
         "panel": "new",
         "group": "develop"
-      }
+      },
+      "problemMatcher": []
     },
     {
       "label": "NFID SDK REACT",
@@ -57,7 +61,8 @@
         "reveal": "always",
         "panel": "new",
         "group": "develop"
-      }
+      },
+      "problemMatcher": []
     },
     {
       "label": "NFID SDK REACT | STORYBOOK",
@@ -68,7 +73,8 @@
         "reveal": "always",
         "panel": "new",
         "group": "develop"
-      }
+      },
+      "problemMatcher": []
     },
     {
       "label": "NFID DFX replica",
@@ -79,7 +85,8 @@
         "reveal": "always",
         "panel": "new",
         "group": "develop"
-      }
+      },
+      "problemMatcher": []
     },
     {
       "label": "DFX deploy demo",
@@ -90,7 +97,8 @@
         "reveal": "always",
         "panel": "new",
         "group": "backend"
-      }
+      },
+      "problemMatcher": []
     }
   ]
 }

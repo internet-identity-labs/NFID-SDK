@@ -14,6 +14,7 @@ node_modules/
 yarn-error.log
 
 dist/
+coverage/
 .dfx
 lerna-debug.log
 .npmrc

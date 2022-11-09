@@ -60,6 +60,13 @@ module.exports = {
       "/api": {
         target: `http://127.0.0.1:${DFX_PORT}`,
       },
+      "/signin": {
+        target:
+          "https://ia15v0pzlb.execute-api.us-east-1.amazonaws.com/dev/signin",
+        secure: true,
+        changeOrigin: true,
+        pathRewrite: (path) => path.replace(/^\/signin/, ""),
+      },
     },
   },
   plugins: [
