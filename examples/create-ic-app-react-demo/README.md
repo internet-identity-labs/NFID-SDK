@@ -1,7 +1,7 @@
 ## Create IC App React Demo
 
 <p align="center">
-  <img width="600" alt="image" src="docs/images/preview_demo.png">
+  <img width="600" alt="image" src="docs/images/landing.png">
 </p>
 
 A fully developed application with NFID integrated using React, built on top of an existing application from the community.
