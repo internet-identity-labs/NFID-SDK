@@ -98,7 +98,7 @@
     }
   },
   "dependencies": {
-    "@dfinity/candid": "0.11.0",
+    "@dfinity/candid": "0.15.1",
     "@dfinity/principal": "0.11.0",
     "clsx": "1.1.1",
     "qrcode": "1.5.0",
