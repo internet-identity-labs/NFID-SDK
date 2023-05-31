@@ -7,8 +7,8 @@
     "internet_identity": {
       "type": "custom",
       "candid": "canister/internet_identity/internet_identity.did",
-      "wasm": "canister/internet_identity/internet_identity.wasm",
-      "build": "curl -sSL https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm -o canister/internet_identity/internet_identity.wasm"
+      "wasm": "canister/internet_identity/internet_identity_dev.wasm.gz",
+      "build": "curl -sSL https://github.com/dfinity/internet-identity/releases/download/release-2023-05-30/internet_identity_dev.wasm.gz -o canister/internet_identity/internet_identity_dev.wasm.gz"
     },
     "identity_manager": {
       "type": "custom",
