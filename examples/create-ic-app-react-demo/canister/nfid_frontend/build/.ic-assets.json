@@ -1,8 +1,0 @@
-[
-  {
-    "match": "static/*",
-    "headers": {
-      "Cache-Control": "private, max-age=604800"
-    }
-  }
-]

@@ -3,8 +3,8 @@
     "internet_identity": {
       "type": "custom",
       "candid": "build/internet_identity/internet_identity.did",
-      "wasm": "build/internet_identity/internet_identity.wasm",
-      "build": "curl -sSL https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm -o build/internet_identity/internet_identity.wasm"
+      "wasm": "build/internet_identity/internet_identity.wasm.gz",
+      "build": "curl -sSL https://github.com/dfinity/internet-identity/releases/download/release-2023-05-30/internet_identity_dev.wasm.gz -o build/internet_identity/internet_identity.wasm.gz"
     },
     "identity_manager": {
       "type": "custom",
