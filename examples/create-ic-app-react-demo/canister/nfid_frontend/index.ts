@@ -11,6 +11,11 @@ declare const PUB_SUB_CHANNEL_CANISTER_ID: string
 ;(window as any).INTERNET_IDENTITY_CANISTER_ID = INTERNET_IDENTITY_CANISTER_ID
 ;(window as any).IDENTITY_MANAGER_CANISTER_ID = IDENTITY_MANAGER_CANISTER_ID
 ;(window as any).PUB_SUB_CHANNEL_CANISTER_ID = PUB_SUB_CHANNEL_CANISTER_ID
+;(window as any).VAULT_CANISTER_ID = "ymvb6-7qaaa-aaaan-qbgga-cai"
+;(window as any).ETH_SECRET_STORAGE_CANISTER_ID = "25nnx-kyaaa-aaaao-ab43a-cai"
+;(window as any).ECDSA_SIGNER_CANISTER_ID = "txkre-oyaaa-aaaap-qa3za-cai"
+;(window as any).BTC_SIGNER_CANISTER_ID = "7b5jg-paaaa-aaaap-aa32q-cai"
+
 ;(window as any).USERGEEK_API_KEY = ""
 ;(window as any).VERIFIER_CANISTER_ID = "5yjgb-gyaaa-aaaao-aabwa-cai"
 ;(window as any).LEDGER_CANISTER_ID = "ryjl3-tyaaa-aaaaa-aaaba-cai"

@@ -1,2 +1,3 @@
-internet_identity.wasm
-internet_identity.old.did
+*.wasm
+*.wasm.gz
+*.old.did
