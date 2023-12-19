@@ -1,17 +1,17 @@
 import clsx from 'clsx';
 import React from 'react';
-import { Button } from '../../atoms/button';
-import { RadioButton } from '../../atoms/button/radio';
-import { NFIDGradientBar } from '../../atoms/gradient-bar';
-import { Logo } from '../../atoms/images/logo';
-import { H5 } from '../../atoms/typography';
+import { Button } from '../atoms/button';
+import { RadioButton } from '../atoms/button/radio';
+import { NFIDGradientBar } from '../atoms/gradient-bar';
+import { Logo } from '../atoms/images/logo';
+import { H5 } from '../atoms/typography';
 
-interface AccountLinkingScreenProps {
+export interface LinkExistingAccountProps {
   onLinkAccount: () => void;
   onNewUser: () => void;
 }
 
-export const AccountLinkingScreen: React.FC<AccountLinkingScreenProps> = ({
+export const LinkExistingAccount: React.FC<LinkExistingAccountProps> = ({
   onLinkAccount,
   onNewUser,
 }) => {
